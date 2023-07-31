@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev:uat": "copy .env.uat .env.local && next dev",
+    "dev:prod": "copy .env.prod .env.local && next dev",
+    "build:uat": "copy .env.uat .env.production && next build",
+    "build:prod": "copy .env.prod .env.production && next build",
     "lint": "next lint"
   },
   "dependencies": {
