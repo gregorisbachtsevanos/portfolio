@@ -1,12 +1,19 @@
-"use client";
-import React from "react";
-import { Provider } from "react-redux";
-import Home from "@/components/Home";
-import { defaultTheme } from "./theme";
-import { ThemeProvider } from "styled-components";
+'use client';
+import React from 'react';
+import Home from '@/features/Home/Home';
+import { Sidebar } from '@/components/Sidebar';
+import Projects from '@/features/Projects/Projects';
 
 const Page = () => {
-	return <Home />;
+  return (
+    <>
+      <Sidebar />
+      <Home />
+      <Projects />
+      {/* <About /> */}
+      {/* <Contact /> */}
+    </>
+  );
 };
 
 export default Page;
