@@ -12,14 +12,16 @@ const Contact = () => {
   return (
     <StyledContactContainer id={routes.CONTACT}>
       <div className="contact-container">
-        <div className={`text-container`}>
+        <div className="stay_in_touch-container">
           <div className="intro-container">
             <p>{contact.INTRODUCTION}</p>
+          </div>
+          <div className="social-container">
+            <Social />
           </div>
         </div>
         <div className="contact-form-container">
           <ContactForm />
-          <div className="social-container">{/* <Social /> */}</div>
         </div>
       </div>
     </StyledContactContainer>

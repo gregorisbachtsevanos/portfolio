@@ -8,9 +8,13 @@ export const StyledContactContainer = styled.div`
   .contact-container {
     display: flex;
 
-    .text-container {
+    .stay_in_touch-container {
       width: 40%;
       margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
       .intro-container {
         p {
@@ -26,13 +30,15 @@ export const StyledContactContainer = styled.div`
           letter-spacing: 0.15em; /* Adjust as needed */
         }
       }
+
+      .social-container {
+        transform: translateY(50px);
+      }
     }
 
     .contact-form-container {
       width: 40%;
       margin: auto;
-      /* @include flex(); */
-      gap: 1rem;
     }
   }
 `;

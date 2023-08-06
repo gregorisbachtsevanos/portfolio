@@ -5,10 +5,13 @@ import React, { useRef } from 'react';
 // import { Input } from "src/components/Input/";
 // import { Button } from "src/components/Button/";
 import send from 'src/assets/images/icons/send.png';
+import { yupResolver } from '@hookform/resolvers/yup';
+
 import { Input } from '@/components/Input';
 import { useForm, Controller } from 'react-hook-form';
 import { contact } from '../../constants';
 import { StyledContactFormContainer } from './ContactForm.styled';
+import { validationSchema } from './validationSchema';
 
 type FormValues = {
   name: string;
@@ -32,7 +35,7 @@ export const ContactForm = () => {
       content: '',
     },
     mode: 'onBlur',
-    // resolver: yupResolver(validationSchema),
+    resolver: yupResolver(validationSchema),
   });
 
   const handleSubmitForm = () => {};
@@ -49,7 +52,7 @@ export const ContactForm = () => {
             label={contact.NAME_LABEL}
             value={value}
             onChange={onChange}
-            required
+            error={errors.name?.message}
           />
         )}
       />
@@ -63,7 +66,7 @@ export const ContactForm = () => {
             label={contact.EMAIL_LABEL}
             value={value}
             onChange={onChange}
-            required
+            error={errors.email?.message}
           />
         )}
       />
@@ -77,7 +80,7 @@ export const ContactForm = () => {
             label={contact.TEXT_LABEL}
             value={value}
             onChange={onChange}
-            required
+            error={errors.content?.message}
           />
         )}
       />
