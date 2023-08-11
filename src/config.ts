@@ -1,8 +1,10 @@
 const config = {
-  environment: process.env.NEXT_PUBLIC_CUSTOM_ENV,
+  environment: process.env.NEXT_PUBLIC_ENV,
   dataAPI: process.env.NEXT_PUBLIC_DATA_API,
+  contactAPI: process.env.NEXT_PUBLIC_CONTACT_API,
+  nodemailerPassword: process.env.NEXT_PUBLIC_NODEMAILER_PASSWORD,
+  nodemailerEmail: process.env.NEXT_PUBLIC_NODEMAILER_EMAIL,
   auth: {
-    clientId: 'sharing.client',
     clientSecret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
   },
 };
