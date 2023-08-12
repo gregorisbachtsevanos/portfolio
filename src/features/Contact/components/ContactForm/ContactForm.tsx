@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 
 // import { CONTACT } from "src/app/data/contact-data";
 // import { EmailService } from "src/services/emailApi";
@@ -12,6 +12,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { contact } from '../../constants';
 import { StyledContactFormContainer } from './ContactForm.styled';
 import { validationSchema } from './validationSchema';
+import { usePostEmailMutation } from '@/store/services/contactApi';
 
 type FormValues = {
   name: string;
@@ -39,9 +40,17 @@ export const ContactForm = () => {
   });
 
   const handleSubmitForm = () => {};
+  const [postEmail, { isSuccess }] = usePostEmailMutation();
 
+  const handleEmail = useCallback(
+    (data: any) => {
+      console.log(data);
+      postEmail({ name: data.name, email: data.email, content: data.content });
+    },
+    [postEmail]
+  );
   return (
-    <StyledContactFormContainer onSubmit={handleSubmit((data) => console.log(data))}>
+    <StyledContactFormContainer onSubmit={handleSubmit(handleEmail)}>
       <Controller
         control={control}
         name="name"
