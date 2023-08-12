@@ -1,9 +1,5 @@
 import React from 'react';
 
-import { Intro } from './components/Intro';
-import { Skills } from './components/Skills';
-
-// import './About.scss';
 import { routes } from '@/constants/routes';
 import { about } from './constants';
 import { StyledAboutContainer } from './About.styled';
