@@ -15,9 +15,11 @@ const Project: FC<ProjectProps> = ({ title, link, image }) => {
   const handleMouseEnter = () => {
     setImg(image[1]);
   };
+
   const handleMouseLeave = () => {
     setImg(image[0]);
   };
+
   const defaultOptions = {
     reverse: false, // reverse the tilt direction
     max: 35, // max tilt rotation (degrees)
@@ -29,6 +31,7 @@ const Project: FC<ProjectProps> = ({ title, link, image }) => {
     reset: true, // If the tilt effect has to be reset on exit.
     easing: 'cubic-bezier(.03,.98,.52,.99)', // Easing on enter/exit.
   };
+
   return (
     <StyledProjectContainer
       className={`card`}
