@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect } from 'react';
-import { Element, Link } from 'react-scroll';
 import { routes } from '@/constants/routes';
 import { lettersAnimation } from '@/utils/lettersAnimation';
 import { home } from './constants';
@@ -16,6 +15,9 @@ const Home = () => {
       <div className="home-container">
         <div className="image-container">
           <Image src={home.IMAGE} alt="profile image" fill />
+          <div className="image-reflection">
+            <Image src={home.IMAGE} alt="profile image reflection" fill />
+          </div>
         </div>
         <div className="text-container">
           <Title2Xl className="animate-title">{home.NAME}</Title2Xl>
