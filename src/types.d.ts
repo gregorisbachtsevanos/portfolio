@@ -15,3 +15,9 @@ export type UsersInfo = {
   about_intro: string;
   projects: Project[];
 };
+
+export type EmailProps = {
+  name: string;
+  email: string;
+  content: string;
+};
