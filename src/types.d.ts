@@ -17,7 +17,9 @@ export type UsersInfo = {
 };
 
 export type EmailProps = {
-  name: string;
-  email: string;
-  content: string;
+  from: string;
+  subject: string;
+  html: string;
+  replyTo: string;
+  html: string;
 };
