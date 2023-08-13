@@ -43,9 +43,13 @@ export const ContactForm = () => {
   const [postEmail, { isSuccess }] = usePostEmailMutation();
 
   const handleEmail = useCallback(
-    (data: any) => {
+    async (data: any) => {
       console.log(data);
-      postEmail({ name: data.name, email: data.email, content: data.content });
+      await postEmail({
+        subject: data.name,
+        html: data.content,
+        email: data.email,
+      });
     },
     [postEmail]
   );
