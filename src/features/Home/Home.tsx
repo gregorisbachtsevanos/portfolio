@@ -15,9 +15,9 @@ const Home = () => {
       <div className="home-container">
         <div className="image-container">
           <Image src={home.IMAGE} alt="profile image" fill />
-          <div className="image-reflection">
+          {/* <div className="image-reflection">
             <Image src={home.IMAGE} alt="profile image reflection" fill />
-          </div>
+          </div> */}
         </div>
         <div className="text-container">
           <Title2Xl className="animate-title">{home.NAME}</Title2Xl>
