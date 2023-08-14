@@ -26,7 +26,7 @@ const StyledPreloaderContainer = styled.div`
       top: 0;
     }
     to {
-      top: -1000px;
+      top: -100vh;
     }
   }
 `;
