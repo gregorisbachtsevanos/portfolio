@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 interface PreloaderLayoutProps {
   children: ReactNode;
   withAnimation?: boolean;
-  withOutScroll?: boolean;
+  noScroll?: boolean;
 }
 
 const StyledPreloaderContainer = styled.div`
@@ -31,13 +31,11 @@ const StyledPreloaderContainer = styled.div`
   }
 `;
 
-const PreloaderLayout: FC<PreloaderLayoutProps> = ({ withAnimation, withOutScroll, children }) => {
+const PreloaderLayout: FC<PreloaderLayoutProps> = ({ withAnimation, noScroll, children }) => {
   const style = useMemo(
     () =>
-      [withAnimation && 'preloader-container', withOutScroll && 'no-scroll']
-        .filter(Boolean)
-        .join(' '),
-    [withAnimation, withOutScroll]
+      [withAnimation && 'preloader-container', noScroll && 'no-scroll'].filter(Boolean).join(' '),
+    [withAnimation, noScroll]
   );
 
   return <StyledPreloaderContainer className={style}>{children}</StyledPreloaderContainer>;
