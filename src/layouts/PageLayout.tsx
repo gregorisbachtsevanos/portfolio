@@ -1,19 +1,20 @@
-import React, { FC, ReactNode } from 'react';
+import useWindowSize from '@/hooks/useWindowSize';
+import React, { FC, useMemo, ReactNode } from 'react';
 import { styled } from 'styled-components';
 
 interface PageLayoutProps {
   children: ReactNode;
-  customClass?: string;
+  noScroll?: boolean;
 }
 
 const StyledPageContainer = styled.div``;
 
-const PreloaderLayout: FC<PageLayoutProps> = ({ customClass, children }) => {
-  return (
-    <StyledPageContainer className={`${customClass ? customClass : ''}`}>
-      {children}
-    </StyledPageContainer>
-  );
+const PreloaderLayout: FC<PageLayoutProps> = ({ noScroll, children }) => {
+  const windowSize = useWindowSize();
+
+  const style = useMemo(() => [noScroll && 'no-scroll'].filter(Boolean).join(' '), [, noScroll]);
+
+  return <StyledPageContainer className={style}>{children}</StyledPageContainer>;
 };
 
 export default PreloaderLayout;

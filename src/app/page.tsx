@@ -13,6 +13,7 @@ import PageLayout from '@/layouts/PageLayout';
 import { Sidebar } from '@/components/Sidebar';
 import { Preloader } from '@/components/Preloader/Preloader';
 import config from '@/config';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const Home = dynamic(() => import('@/features/Home/'), { ssr: false });
 const Projects = dynamic(() => import('@/features/Projects/'), { ssr: false });
@@ -21,12 +22,13 @@ const Contact = dynamic(() => import('@/features/Contact/'), { ssr: false });
 
 const Page = () => {
   const isVisible = usePageVisibility();
+
   console.log(config);
   return (
     <>
       {true && (
         <>
-          <PreloaderLayout withAnimation withOutScroll>
+          <PreloaderLayout withAnimation noScroll>
             <Preloader />
           </PreloaderLayout>
           <PageLayout>
