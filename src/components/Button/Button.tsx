@@ -1,5 +1,4 @@
 import React, { useMemo, FC } from 'react';
-import './Button.scss';
 import { StyledButtonContainer } from './Button.styled';
 
 interface ButtonProps {
@@ -7,10 +6,11 @@ interface ButtonProps {
   value: string;
   type?: 'button' | 'submit' | 'reset';
   callback?: () => void;
-  customClass?: string;
+  cancel?: string;
+  submit?: string;
 }
 
-export const Button: FC<ButtonProps> = ({ role, value, type, callback, customClass }) => {
+export const Button: FC<ButtonProps> = ({ role, value, type, callback, ...rest }) => {
   const action = useMemo(() => {
     switch (role) {
       case 'login':
@@ -26,7 +26,7 @@ export const Button: FC<ButtonProps> = ({ role, value, type, callback, customCla
 
   return (
     <StyledButtonContainer onClick={callback}>
-      <button type={type ?? 'button'} className={customClass}>
+      <button type={type ?? 'button'} {...rest}>
         {action}
       </button>
     </StyledButtonContainer>
