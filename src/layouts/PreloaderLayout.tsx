@@ -17,7 +17,7 @@ const StyledPreloaderContainer = styled.div`
     animation: test 2s ease forwards 0s;
   }
 
-  &.no-scroll {
+  &.noScroll {
     overflow: hidden;
   }
 
@@ -34,7 +34,7 @@ const StyledPreloaderContainer = styled.div`
 const PreloaderLayout: FC<PreloaderLayoutProps> = ({ withAnimation, noScroll, children }) => {
   const style = useMemo(
     () =>
-      [withAnimation && 'preloader-container', noScroll && 'no-scroll'].filter(Boolean).join(' '),
+      [withAnimation && 'preloader-container', noScroll && 'noScroll'].filter(Boolean).join(' '),
     [withAnimation, noScroll]
   );
 
