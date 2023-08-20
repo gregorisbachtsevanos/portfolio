@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow: hidden;
     width: 100%; 
   }
+
   body {
     padding: 0;
     margin: 0;
@@ -22,6 +23,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow: hidden;
 
   }
+  
   a {
     color: inherit;
     text-decoration: none;
