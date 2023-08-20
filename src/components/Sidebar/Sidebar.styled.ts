@@ -43,4 +43,23 @@ export const StyledSidebarContainer = styled.nav`
       }
     }
   }
+
+  @media only screen and (${({ theme }) => theme.sizes.tablet}) {
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: 8%;
+
+    .items {
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 65px;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
+    display: none;
+  }
 `;
