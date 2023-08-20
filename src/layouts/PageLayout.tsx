@@ -4,17 +4,24 @@ import { styled } from 'styled-components';
 
 interface PageLayoutProps {
   children: ReactNode;
-  noScroll?: boolean;
+  noOverflow?: boolean;
 }
 
-const StyledPageContainer = styled.div``;
+const StyledPageContainer = styled.div`
+  &.noOverflow {
+    /* overflow: hidden; */
+  }
+`;
 
-const PreloaderLayout: FC<PageLayoutProps> = ({ noScroll, children }) => {
+const PageLayout: FC<PageLayoutProps> = ({ noOverflow, children }) => {
   const windowSize = useWindowSize();
-
-  const style = useMemo(() => [noScroll && 'no-scroll'].filter(Boolean).join(' '), [, noScroll]);
+  console.log(windowSize.width);
+  const style = useMemo(
+    () => [windowSize.width < 500 && 'noOverflow'].filter(Boolean).join(' '),
+    [windowSize.width]
+  );
 
   return <StyledPageContainer className={style}>{children}</StyledPageContainer>;
 };
 
-export default PreloaderLayout;
+export default PageLayout;
