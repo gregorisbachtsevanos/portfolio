@@ -4,14 +4,15 @@ import { routes } from '@/constants/routes';
 import { about } from './constants';
 import { StyledAboutContainer } from './About.styled';
 import Image from 'next/image';
+import { Text } from '@/app/theme';
 
 const About = () => {
   return (
     <StyledAboutContainer id={routes.ABOUT}>
       <div className="about-container">
         <div className="intro">
-          <div className="intro-container box">
-            <p className="split">{about.INTRODUCTION}</p>
+          <div className="intro-container">
+            <span>{about.INTRODUCTION}</span>
           </div>
         </div>
         <div className="skills">

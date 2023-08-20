@@ -15,8 +15,7 @@ export const StyledAboutContainer = styled.div`
         padding: 2.5rem 0;
         padding-top: 2rem;
         margin: auto;
-        .split {
-          margin-left: 5rem;
+        span {
           line-height: 2.5rem;
           background: -webkit-linear-gradient(
             ${({ theme }) => theme.palette.highlight[2]},
@@ -107,6 +106,31 @@ export const StyledAboutContainer = styled.div`
             display: flex;
             transform: rotateX(-180deg) translateZ(100px);
           }
+        }
+      }
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.tablet}) {
+    .about-container {
+      height: 90vh;
+      flex-direction: column;
+      /* justify-content: space-around; */
+      /* margin-top:-20vh; */
+      gap: 70px;
+      .intro {
+        width: 100%;
+        .intro-container {
+          span {
+            line-height: 1.5rem;
+            font-size: 13px;
+          }
+        }
+      }
+      .skills {
+        width: 100%;
+        .skills-container {
+          transform: scale(0.9);
         }
       }
     }
