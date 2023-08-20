@@ -24,4 +24,27 @@ export const StyledProjectContainer = styled.div`
     a {
     }
   }
+
+  @media only screen and (${({ theme }) => theme.sizes.tablet}) {
+    width: 200px;
+    height: 200px;
+
+    div {
+      width: 200px !important;
+      height: 200px !important;
+
+      .more-info {
+        transform: translate(15%, -40%);
+        row-gap: 3px;
+
+        h4 {
+          font-size: 16px;
+        }
+
+        span {
+          font-size: 11px;
+        }
+      }
+    }
+  }
 `;
