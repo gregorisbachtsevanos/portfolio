@@ -17,8 +17,7 @@ export const StyledContactContainer = styled.div`
       justify-content: center;
 
       .intro-container {
-        p {
-          margin-left: 5rem;
+        span {
           line-height: 2.5rem;
           background: -webkit-linear-gradient(
             ${({ theme }) => theme.palette.highlight[3]},
@@ -39,6 +38,35 @@ export const StyledContactContainer = styled.div`
     .contact-form-container {
       width: 40%;
       margin: auto;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.tablet}) {
+    .contact-container {
+      height: 90vh;
+      flex-direction: column;
+      .stay_in_touch-container {
+        width: 90%;
+        text-align: center;
+        margin: 30px auto 0 auto;
+        .intro-container {
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+      .contact-form-container {
+        width: 60%;
+        form {
+          div {
+            div {
+              label {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;
