@@ -12,7 +12,7 @@ const About = () => {
       <div className="about-container">
         <div className="intro">
           <div className="intro-container">
-            <span>{about.INTRODUCTION}</span>
+            <Text>{about.INTRODUCTION}</Text>
           </div>
         </div>
         <div className="skills">

@@ -10,6 +10,7 @@ export const StyledAboutContainer = styled.div`
 
     .intro {
       width: 60%;
+      margin-left: 5%;
       .intro-container {
         width: 80%;
         padding: 2.5rem 0;
