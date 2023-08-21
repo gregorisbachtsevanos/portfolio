@@ -9,15 +9,17 @@ const Projects = () => {
   const data = projectsData;
   return (
     <StyledProjectsContainer id={routes.PROJECTS}>
-      <div className="project-container">
-        {data.map((project, index) => (
-          <Project
-            key={project?.id}
-            title={project.title}
-            link={project.link}
-            image={project.image}
-          />
-        ))}
+      <div className="container">
+        <div className="projects">
+          {data.map((project, index) => (
+            <Project
+              key={project?.id}
+              title={project.title}
+              link={project.link}
+              image={project.image}
+            />
+          ))}
+        </div>
       </div>
     </StyledProjectsContainer>
   );
