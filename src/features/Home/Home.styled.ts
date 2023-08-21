@@ -35,8 +35,10 @@ export const StyledHomeContainer = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 100% !important;
         width: 100% !important;
-        width: 100% !important;
+        object-fit: cover !important;
+        aspect-ratio: 3.5/3;
         transform: scaleY(-1);
         opacity: 0.2;
         -webkit-mask-image: linear-gradient(
@@ -64,7 +66,6 @@ export const StyledHomeContainer = styled.div`
       .animate-text span {
         position: relative;
         display: inline-block;
-
         transition: 0s;
         padding: 0.5rem 0;
       }
@@ -79,14 +80,25 @@ export const StyledHomeContainer = styled.div`
   }
 
   @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
-    .home-container,
-    .image-container {
-      height: 85vh;
-      img {
-        height: 100% !important;
-        width: 100% !important;
-        object-fit: cover !important;
-        aspect-ratio: 3.5/3;
+    .home-container {
+      margin-top: 5%;
+      .image-container {
+        height: 90vh;
+        img {
+          height: 100% !important;
+          width: 100% !important;
+          object-fit: cover !important;
+          aspect-ratio: 3.5/3;
+        }
+      }
+      .text-container {
+        transform: translateY(-250%);
+        h1 {
+          font-size: 28px;
+        }
+        h2 {
+          font-size: 20px;
+        }
       }
     }
   }
