@@ -6,8 +6,12 @@ import { home } from './constants';
 import Image from 'next/image';
 import { StyledHomeContainer } from './Home.styled';
 import { Title2Xl, TitleXl } from '@/app/theme';
+import useWindowSize from '@/hooks/useWindowSize';
+import { mobileView } from '@/constants/data';
 
 const Home = () => {
+  const { width } = useWindowSize();
+
   useEffect(() => lettersAnimation(), []);
 
   return (
@@ -15,9 +19,11 @@ const Home = () => {
       <div className="home-container">
         <div className="image-container">
           <Image src={home.IMAGE} alt="profile image" fill />
-          {/* <div className="image-reflection">
-            <Image src={home.IMAGE} alt="profile image reflection" fill />
-          </div> */}
+          {width <= mobileView && (
+            <div className="image-reflection">
+              <Image src={home.IMAGE} alt="profile image reflection" fill />
+            </div>
+          )}
         </div>
         <div className="text-container">
           <Title2Xl className="animate-title">{home.NAME}</Title2Xl>

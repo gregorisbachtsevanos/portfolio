@@ -21,17 +21,15 @@ export const StyledHomeContainer = styled.div`
 
       img {
         object-fit: contain;
-        width: 70% !important;
+        /* width: 70% !important; */
         position: relative !important;
         height: unset !important;
         display: block;
         max-width: 100%;
         display: block;
-        max-width: 100%;
-        height: auto;
       }
 
-      /* .image-reflection {
+      .image-reflection {
         position: relative !important;
         display: flex;
         flex-direction: column;
@@ -44,14 +42,11 @@ export const StyledHomeContainer = styled.div`
         -webkit-mask-image: linear-gradient(
           to bottom,
           rgba(0, 0, 0, 0) 0%,
-          rgba(0, 0, 0, 0.1) 60%,
-          rgba(0, 0, 0, 0.2) 70%,
-          rgba(0, 0, 0, 0.3) 80%,
-          rgba(0, 0, 0, 0.6) 90%,
+          rgba(0, 0, 0, 0.5) 50%,
           rgba(0, 0, 0, 1) 100%
         );
         mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-      } */
+      }
     }
 
     .text-container {
@@ -80,6 +75,19 @@ export const StyledHomeContainer = styled.div`
     .home-container,
     .image-container {
       height: 85vh;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
+    .home-container,
+    .image-container {
+      height: 85vh;
+      img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        aspect-ratio: 3.5/3;
+      }
     }
   }
 `;
