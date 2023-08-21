@@ -11,12 +11,14 @@ export const StyledContactContainer = styled.div`
     .stay_in_touch-container {
       width: 40%;
       margin: auto;
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
 
       .intro-container {
+        margin-left: 10%;
         span {
           line-height: 2.5rem;
           background: -webkit-linear-gradient(

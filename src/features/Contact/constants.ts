@@ -6,5 +6,4 @@ export const contact = Object.freeze({
   TEXT_LABEL: 'What do you need?',
   linkedin: 'https://www.linkedin.com/in/gregorisbachtsevanos',
   github: 'https://github.com/gregorisbachtsevanos',
-  tabletView: 786,
 });

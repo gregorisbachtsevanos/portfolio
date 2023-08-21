@@ -8,6 +8,7 @@ import { contact } from './constants';
 import { StyledContactContainer } from './contact.styled';
 import { Text } from '@/app/theme';
 import useWindowSize from '@/hooks/useWindowSize';
+import { tabletView } from '@/constants/data';
 
 const Contact = () => {
   const { width } = useWindowSize();
@@ -19,7 +20,7 @@ const Contact = () => {
           <div className="intro-container">
             <Text>{contact.INTRODUCTION}</Text>
           </div>
-          {width > contact.tabletView && (
+          {width > tabletView && (
             <div className="social-container">
               <Social />
             </div>
