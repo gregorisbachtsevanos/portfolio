@@ -36,6 +36,10 @@ export const StyledSidebarContainer = styled.nav`
         ${({ theme }) => theme.palette.highlight[3]} 100%
       );
 
+      &.icons {
+        background: transparent;
+      }
+
       a {
         padding: 0 0.75rem;
         margin: auto;
