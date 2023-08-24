@@ -10,6 +10,7 @@ import useSmoothScroll from '@/hooks/useSmoothScroll';
 import SvgIcon from '../SvgIcon/SvgIcon';
 import useWindowSize from '@/hooks/useWindowSize';
 import { tabletView } from '@/constants/data';
+
 const SmoothLink = Scroll.Link;
 
 export const Sidebar = () => {
