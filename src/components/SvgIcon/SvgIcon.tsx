@@ -7,7 +7,6 @@ interface SvgIconProps {
 
 const SvgIcon: FC<SvgIconProps> = ({ type }) => {
   console.log(type);
-
   // TODO: in some icons the color can not change, find the right icons
   const style = { color: 'red', fontSize: '1.5em' };
   switch (type) {
