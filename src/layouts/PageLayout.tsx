@@ -8,8 +8,12 @@ interface PageLayoutProps {
 }
 
 const StyledPageContainer = styled.div`
+  &.mobileView {
+    width: 100vw;
+    height: 100vh;
+  }
   &.noOverflow {
-    /* overflow: hidden; */
+    overflow: hidden;
   }
 `;
 

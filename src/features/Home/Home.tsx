@@ -8,6 +8,7 @@ import { StyledHomeContainer } from './Home.styled';
 import { Title2Xl, TitleXl } from '@/app/theme';
 import useWindowSize from '@/hooks/useWindowSize';
 import { mobileView } from '@/constants/data';
+import { Menu } from '@/components/Menu';
 
 const Home = () => {
   const { width } = useWindowSize();
@@ -17,7 +18,7 @@ const Home = () => {
   return (
     <StyledHomeContainer id={routes.HOME}>
       <div className="home-container">
-        E
+        {width <= mobileView && <Menu />}
         <div className="image-container">
           <Image src={home.IMAGE} alt="profile image" fill />
           {width <= mobileView && (
