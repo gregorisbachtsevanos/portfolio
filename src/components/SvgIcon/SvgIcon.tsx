@@ -1,5 +1,9 @@
 import React, { FC } from 'react';
-import { GrProjects, GrStatusInfo, GrContact, GrHomeRounded } from 'react-icons/gr';
+import home from 'public/icons/home.png';
+import info from 'public/icons/info.png';
+import projects from 'public/icons/projects.png';
+import mail from 'public/icons/mail.png';
+import Image from 'next/image';
 
 interface SvgIconProps {
   type: string;
@@ -8,16 +12,15 @@ interface SvgIconProps {
 const SvgIcon: FC<SvgIconProps> = ({ type }) => {
   console.log(type);
   // TODO: in some icons the color can not change, find the right icons
-  const style = { color: 'red', fontSize: '1.5em' };
   switch (type) {
     case 'Home':
-      return <GrHomeRounded style={style} />;
+      return <Image src={home} alt="home" width={25} height={25} />;
     case 'Projects':
-      return <GrProjects style={style} />;
+      return <Image src={projects} alt="home" width={25} height={25} />;
     case 'About':
-      return <GrStatusInfo />;
+      return <Image src={info} alt="home" width={25} height={25} />;
     case 'Contact':
-      return <GrContact />;
+      return <Image src={mail} alt="home" width={25} height={25} />;
 
     default:
       return;

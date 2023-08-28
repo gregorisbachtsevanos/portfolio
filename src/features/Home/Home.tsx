@@ -17,6 +17,7 @@ const Home = () => {
   return (
     <StyledHomeContainer id={routes.HOME}>
       <div className="home-container">
+        E
         <div className="image-container">
           <Image src={home.IMAGE} alt="profile image" fill />
           {width <= mobileView && (
