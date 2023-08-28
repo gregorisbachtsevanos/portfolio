@@ -1,26 +1,28 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
+
 import home from 'public/icons/home.png';
 import info from 'public/icons/info.png';
 import projects from 'public/icons/projects.png';
 import mail from 'public/icons/mail.png';
-import Image from 'next/image';
+import menu from 'public/icons/menu.png';
 
 interface SvgIconProps {
   type: string;
 }
 
 const SvgIcon: FC<SvgIconProps> = ({ type }) => {
-  console.log(type);
-  // TODO: in some icons the color can not change, find the right icons
-  switch (type) {
-    case 'Home':
+  switch (type.toLowerCase()) {
+    case 'home':
       return <Image src={home} alt="home" width={25} height={25} />;
-    case 'Projects':
+    case 'projects':
       return <Image src={projects} alt="home" width={25} height={25} />;
-    case 'About':
+    case 'about':
       return <Image src={info} alt="home" width={25} height={25} />;
-    case 'Contact':
+    case 'contact':
       return <Image src={mail} alt="home" width={25} height={25} />;
+    case 'menu':
+      return <Image src={menu} alt="home" width={25} height={25} />;
 
     default:
       return;
