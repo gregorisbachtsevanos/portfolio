@@ -24,8 +24,9 @@ export const StyledProjectsContainer = styled.div`
 
   @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
     position: absolute;
-    top: calc(100vh - 80%);
+    height: unset;
     width: 100%;
+    bottom: 10px;
     .container {
       width: 100%;
       .projects {
