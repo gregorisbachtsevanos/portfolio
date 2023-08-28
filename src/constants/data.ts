@@ -1,3 +1,3 @@
-export const mobileView = 415;
+export const mobileView = 425;
 
 export const tabletView = 786;
