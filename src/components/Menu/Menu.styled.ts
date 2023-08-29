@@ -17,12 +17,20 @@ export const StyledMenuContainer = styled.nav`
     background-color: ${({ theme }) => theme.palette.black[4]};
     position: absolute;
     z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
     .close-icon {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
       padding: 0 17px;
+    }
+
+    .items {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
     }
   }
 
