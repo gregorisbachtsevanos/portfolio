@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { ContactForm } from './components/ContactForm';
 import { Social } from './components/Social';
 
 import { routes } from '@/constants/routes';
@@ -9,6 +8,7 @@ import { StyledContactContainer } from './contact.styled';
 import { Text } from '@/app/theme';
 import useWindowSize from '@/hooks/useWindowSize';
 import { tabletView } from '@/constants/data';
+import { ContactForm } from '@/components/ContactForm';
 
 const Contact = () => {
   const { width } = useWindowSize();
