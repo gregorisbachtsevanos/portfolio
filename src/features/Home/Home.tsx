@@ -14,7 +14,7 @@ const Home = () => {
   const { width } = useWindowSize();
 
   useEffect(() => lettersAnimation(), []);
-
+  // TODO: Blur the button of the image for small devices
   return (
     <StyledHomeContainer id={routes.HOME}>
       <div className="home-container">

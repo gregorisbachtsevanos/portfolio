@@ -32,6 +32,10 @@ export const StyledMenuContainer = styled.nav`
       justify-content: center;
       margin: 0 auto;
     }
+
+    .cube {
+      width: 100%;
+    }
   }
 
   img {

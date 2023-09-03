@@ -68,4 +68,8 @@ export const StyledCubeContainer = styled.div`
       transform: rotateX(-180deg) translateZ(100px);
     }
   }
+
+  @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
+    transform: scale(0.6);
+  }
 `;

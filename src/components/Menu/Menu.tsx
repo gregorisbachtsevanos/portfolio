@@ -3,12 +3,13 @@ import { StyledMenuContainer } from './Menu.styled';
 import Image from 'next/image';
 import SvgIcon from '../SvgIcon/SvgIcon';
 import { ContactForm } from '../ContactForm';
+import { Cube } from '../Cube';
 
 export const Menu = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const toggleMenu = useCallback(() => {
-    setShowMenu((prev: any) => !prev);
-  }, []);
+
+  const toggleMenu = useCallback(() => setShowMenu((prev: boolean) => !prev), []);
+
   return (
     <StyledMenuContainer>
       <div className="menu-icons" onClick={toggleMenu}>
@@ -22,6 +23,9 @@ export const Menu = () => {
           </div>
           <div className="items">
             <ContactForm />
+          </div>
+          <div className="cube">
+            <Cube />
           </div>
         </div>
       )}
