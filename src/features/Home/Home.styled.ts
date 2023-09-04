@@ -21,12 +21,20 @@ export const StyledHomeContainer = styled.div`
 
       img {
         object-fit: contain;
-        /* width: 70% !important; */
         position: relative !important;
         height: unset !important;
         display: block;
         max-width: 100%;
         display: block;
+        /* -webkit-mask-image: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(rgba(0, 0, 0, 1)),
+          to(rgba(0, 0, 0, 0))
+        );
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
       }
 
       .image-reflection {
@@ -81,7 +89,7 @@ export const StyledHomeContainer = styled.div`
 
   @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
     .home-container {
-      margin-top: 5%;
+      margin-top: -5%;
       .image-container {
         height: 90vh;
         img {
