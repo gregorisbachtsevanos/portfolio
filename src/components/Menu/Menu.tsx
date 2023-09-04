@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
 import { StyledMenuContainer } from './Menu.styled';
-import Image from 'next/image';
 import SvgIcon from '../SvgIcon/SvgIcon';
 import { ContactForm } from '../ContactForm';
 import { Cube } from '../Cube';
