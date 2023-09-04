@@ -68,6 +68,12 @@ export const StyledAboutContainer = styled.div`
     }
   }
 
+  @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
+    .about-container {
+      display: none;
+    }
+  }
+
   @keyframes spin {
     from {
       transform: rotateX(0deg) rotateY(0deg);

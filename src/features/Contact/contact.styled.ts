@@ -71,4 +71,10 @@ export const StyledContactContainer = styled.div`
       }
     }
   }
+
+  @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
+    .contact-container {
+      display: none;
+    }
+  }
 `;
