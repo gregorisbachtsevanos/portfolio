@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import { styled } from 'styled-components';
 
@@ -14,6 +14,8 @@ import { Sidebar } from '@/components/Sidebar';
 import { Preloader } from '@/components/Preloader/Preloader';
 import config from '@/config';
 import useWindowSize from '@/hooks/useWindowSize';
+import { mobileView } from '@/constants/data';
+import { Menu } from '@/components/Menu';
 
 const Home = dynamic(() => import('@/features/Home/'), { ssr: false });
 const Projects = dynamic(() => import('@/features/Projects/'), { ssr: false });
@@ -22,8 +24,10 @@ const Contact = dynamic(() => import('@/features/Contact/'), { ssr: false });
 
 const Page = () => {
   const isVisible = usePageVisibility();
+  const { width } = useWindowSize();
 
   console.log(config);
+  const shouldRender = useMemo(() => width <= mobileView, [width]);
   return (
     <>
       {true && (
@@ -32,11 +36,12 @@ const Page = () => {
             <Preloader />
           </PreloaderLayout>
           <PageLayout>
-            <Sidebar />
+            {!shouldRender && <Sidebar />}
+            {shouldRender && <Menu />}
             <Home />
             <Projects />
-            <About />
-            <Contact />
+            {!shouldRender && <About />}
+            {!shouldRender && <Contact />}
           </PageLayout>
         </>
       )}
