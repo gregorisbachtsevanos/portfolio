@@ -39,7 +39,6 @@ export const ContactForm = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  const handleSubmitForm = () => {};
   const [postEmail, { isSuccess }] = usePostEmailMutation();
 
   const handleEmail = useCallback(
@@ -62,7 +61,7 @@ export const ContactForm = () => {
           <Input
             type="text"
             name="name"
-            label={contactForm.NAME_LABEL}
+            label={!value && contactForm.NAME_LABEL}
             value={value}
             onChange={onChange}
             error={errors.name?.message}
@@ -76,7 +75,7 @@ export const ContactForm = () => {
           <Input
             type="email"
             name="email"
-            label={contactForm.EMAIL_LABEL}
+            label={!value && contactForm.EMAIL_LABEL}
             value={value}
             onChange={onChange}
             error={errors.email?.message}
@@ -90,7 +89,7 @@ export const ContactForm = () => {
           <Input
             type="content"
             name="content"
-            label={contactForm.TEXT_LABEL}
+            label={!value && contactForm.TEXT_LABEL}
             value={value}
             onChange={onChange}
             error={errors.content?.message}
