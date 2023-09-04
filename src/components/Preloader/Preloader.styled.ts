@@ -14,18 +14,19 @@ export const StyledPreloaderContainer = styled.div`
 
     .wr-preloader {
       width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1.5fr 1fr;
-      grid-template-rows: 0.3fr 1fr;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       .items {
-        grid-column: 2/3;
-        grid-row: 2/3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
         svg {
-          width: 100%;
-
-          .cls-1 {
+          .logo {
             fill: none;
             stroke: ${({ theme }) => theme.palette.highlight[2]};
             stroke-miterlimit: 10;
@@ -36,17 +37,16 @@ export const StyledPreloaderContainer = styled.div`
           }
         }
 
-        .ml5 {
-          width: 100%;
+        .name {
           padding: 2rem;
           display: flex;
           text-align: center;
           font-weight: bold;
-          /* font-size: var(--secondHeaderSize); */
           letter-spacing: 0.9rem;
           color: ${({ theme }) => theme.palette.highlight[2]};
 
-          .word {
+          span {
+            font-size: 4vw;
             padding: 1rem;
             opacity: 0;
             display: inline-block;
@@ -60,6 +60,13 @@ export const StyledPreloaderContainer = styled.div`
   @keyframes line-animation {
     to {
       stroke-dashoffset: 0;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
+    .name {
+      flex-direction: column;
+      letter-spacing: 0.5rem !important;
     }
   }
 `;

@@ -48,7 +48,7 @@ export const renderName = () => {
   animationScheduled = true;
 
   // Cache the anime targets if not already cached
-  if (!cachedTargets) cachedTargets = document.querySelectorAll('.ml5 .word');
+  if (!cachedTargets) cachedTargets = document.querySelectorAll('.name span');
 
   // Use requestAnimationFrame to schedule the animation
   const start = performance.now();
