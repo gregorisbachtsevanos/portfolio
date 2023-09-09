@@ -24,7 +24,10 @@ declare module 'styled-components' {
       mobileL: string;
       tablet: string;
       laptop: string;
-      desktop: string;
+      desktopS: string;
+      desktopM: string;
+      desktopL: string;
+      desktop4k: string;
     };
     maxWidth: string;
     pagePadding: string;

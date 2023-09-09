@@ -7,13 +7,16 @@ type Project = {
 };
 
 export type UsersInfo = {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   occupation: string;
-  image: string;
-  contact_intro: string;
-  about_intro: string;
-  projects: Project[];
+  image?: string;
+  contact: {
+    type: Map;
+    of: String;
+  };
+  about: { info: String };
+  // projects?: Project[];
 };
 
 export type EmailProps = {
