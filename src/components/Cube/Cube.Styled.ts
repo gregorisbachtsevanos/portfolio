@@ -69,6 +69,16 @@ export const StyledCubeContainer = styled.div`
     }
   }
 
+  @keyframes spin {
+    from {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    to {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+
   @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
     transform: scale(0.6);
   }
