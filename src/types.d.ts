@@ -1,9 +1,8 @@
 type Project = {
-  id: string;
   title: string;
-  content: string;
+  // content: string;
   link: string;
-  image: string[];
+  images: string[];
 };
 
 export type UsersInfo = {
