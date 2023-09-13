@@ -6,6 +6,7 @@ interface User extends UsersInfo, Document {}
 const UserSchema: Schema<User> = new mongoose.Schema({
   firstName: String,
   lastName: String,
+  image: String,
   occupation: String,
   about: { info: String },
   contact: {
