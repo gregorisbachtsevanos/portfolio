@@ -6,6 +6,7 @@ interface En extends UsersInfo, Document {}
 const EnSchema: Schema<En> = new mongoose.Schema({
   firstName: String,
   lastName: String,
+  image: String,
   occupation: String,
   about: { info: String },
   contact: {
