@@ -8,7 +8,7 @@ async function getData() {
   const res = await fetch(`${config.dataAPI}/api/user`, { next: { revalidate: 86400 } });
   const data = await res.json();
   // Pass data to the page via props
-  return { props: data };
+  return { props: data.user };
 }
 const Page = () => {
   const { props } = use(getData());
