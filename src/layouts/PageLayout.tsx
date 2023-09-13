@@ -19,7 +19,7 @@ const StyledPageContainer = styled.div`
 
 const PageLayout: FC<PageLayoutProps> = ({ noOverflow, children }) => {
   const windowSize = useWindowSize();
-  console.log(windowSize.width);
+  // console.log(windowSize.width);
 
   const style = useMemo(
     () => [windowSize.width < 500 && 'noOverflow'].filter(Boolean).join(' '),
