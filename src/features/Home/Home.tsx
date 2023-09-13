@@ -12,7 +12,7 @@ import { selectUserInfo } from '@/store/state/userInfoSlice';
 
 const Home = () => {
   const { width } = useWindowSize();
-  const { user }: any = useSelector(selectUserInfo);
+  const user: any = useSelector(selectUserInfo);
   console.log(user);
   useEffect(() => lettersAnimation(), []);
   // TODO: Blur the button of the image for small devices
@@ -23,7 +23,7 @@ const Home = () => {
           <Image src={home.IMAGE} alt="profile image" fill />
           {width <= mobileView && (
             <div className="image-reflection">
-              <Image src={home.IMAGE} alt="profile image reflection" fill />
+              <Image src={home.IMAGE} alt="profile image reflection" fill priority />
             </div>
           )}
         </div>

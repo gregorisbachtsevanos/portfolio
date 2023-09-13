@@ -14,7 +14,7 @@ import { selectUserInfo } from '@/store/state/userInfoSlice';
 
 const Contact = () => {
   const { width } = useWindowSize();
-  const { user }: any = useSelector(selectUserInfo);
+  const user: any = useSelector(selectUserInfo);
 
   return (
     <StyledContactContainer id={routes.CONTACT}>

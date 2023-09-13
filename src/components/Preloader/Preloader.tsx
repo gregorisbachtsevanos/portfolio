@@ -9,7 +9,7 @@ import { selectUserInfo } from '@/store/state/userInfoSlice';
 
 export const Preloader = () => {
   const windowSize = useWindowSize();
-  const { user }: any = useSelector(selectUserInfo);
+  const user: any = useSelector(selectUserInfo);
 
   useEffect(() => {
     renderName();

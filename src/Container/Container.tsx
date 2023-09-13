@@ -16,9 +16,8 @@ import { Preloader } from '@/components/Preloader/Preloader';
 import useWindowSize from '@/hooks/useWindowSize';
 import { mobileView } from '@/constants/data';
 import { Menu } from '@/components/Menu';
-import { useGetUsersInfoQuery } from '@/store/services/dataApi';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectUserInfo, setUserData } from '@/store/state/userInfoSlice';
+import { useDispatch } from 'react-redux';
+import { setUserData } from '@/store/state/userInfoSlice';
 
 const Home = dynamic(() => import('@/features/Home/'), { ssr: false });
 const Projects = dynamic(() => import('@/features/Projects/'), { ssr: false });
@@ -30,7 +29,6 @@ const Container = ({ data }: { data: any }) => {
   dispatch(setUserData(data));
   const isVisible = usePageVisibility();
   const { width } = useWindowSize();
-  const user = useSelector(selectUserInfo);
   const isMobile = useMemo(() => width <= mobileView, [width]);
   return (
     <>

@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 import { selectUserInfo } from '@/store/state/userInfoSlice';
 
 const About = () => {
-  const { user }: any = useSelector(selectUserInfo);
+  const user: any = useSelector(selectUserInfo);
 
   return (
     <StyledAboutContainer id={routes.ABOUT}>
