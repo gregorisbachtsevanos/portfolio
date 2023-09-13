@@ -28,6 +28,7 @@ export const ContactForm = () => {
   const {
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
@@ -43,14 +44,15 @@ export const ContactForm = () => {
 
   const handleEmail = useCallback(
     async (data: any) => {
-      console.log(data);
+      console.log('Email data: ', data);
       await postEmail({
         subject: data.name,
         html: data.content,
         email: data.email,
       });
+      reset();
     },
-    [postEmail]
+    [postEmail, reset]
   );
   return (
     <StyledContactFormContainer onSubmit={handleSubmit(handleEmail)}>
