@@ -9,20 +9,23 @@ import { Text } from '@/app/theme';
 import useWindowSize from '@/hooks/useWindowSize';
 import { tabletView } from '@/constants/data';
 import { ContactForm } from '@/components/ContactForm';
+import { useSelector } from 'react-redux';
+import { selectUserInfo } from '@/store/state/userInfoSlice';
 
 const Contact = () => {
   const { width } = useWindowSize();
+  const { user }: any = useSelector(selectUserInfo);
 
   return (
     <StyledContactContainer id={routes.CONTACT}>
       <div className="contact-container">
         <div className="stay_in_touch-container">
           <div className="intro-container">
-            <Text>{contact.INTRODUCTION}</Text>
+            <Text>{user.contact.intro}</Text>
           </div>
           {width > tabletView && (
             <div className="social-container">
-              <Social />
+              <Social github={user.contact.github} linkedin={user.contact.linkedin} />
             </div>
           )}
         </div>

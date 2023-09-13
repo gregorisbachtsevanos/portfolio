@@ -1,4 +1,3 @@
-'use client';
 import React, { useEffect } from 'react';
 import { routes } from '@/constants/routes';
 import { lettersAnimation } from '@/utils/lettersAnimation';
@@ -8,10 +7,13 @@ import { StyledHomeContainer } from './Home.styled';
 import { Title2Xl, TitleXl } from '@/app/theme';
 import useWindowSize from '@/hooks/useWindowSize';
 import { mobileView } from '@/constants/data';
+import { useSelector } from 'react-redux';
+import { selectUserInfo } from '@/store/state/userInfoSlice';
 
 const Home = () => {
   const { width } = useWindowSize();
-
+  const { user }: any = useSelector(selectUserInfo);
+  console.log(user);
   useEffect(() => lettersAnimation(), []);
   // TODO: Blur the button of the image for small devices
   return (
@@ -26,8 +28,10 @@ const Home = () => {
           )}
         </div>
         <div className="text-container">
-          <Title2Xl className="animate-title">{home.NAME}</Title2Xl>
-          <TitleXl className="animate-text">{home.OCCUPATION}</TitleXl>
+          <Title2Xl className="animate-title">
+            {user.firstName} {user.lastName}
+          </Title2Xl>
+          <TitleXl className="animate-text">{user.occupation}</TitleXl>
         </div>
       </div>
     </StyledHomeContainer>
