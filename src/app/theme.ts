@@ -21,7 +21,7 @@ export const defaultTheme: DefaultTheme = {
     mobileS: 'max-width:320px',
     mobileM: 'max-width:375px',
     mobileL: 'max-width:425px',
-    tablet: 'max-width:768px',
+    tablet: 'max-width:820px',
     laptop: 'max-width:1024px',
     desktopS: 'max-width:1300px',
     desktopM: 'max-width:1650px',
