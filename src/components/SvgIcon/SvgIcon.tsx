@@ -7,6 +7,7 @@ import projects from 'public/icons/projects.png';
 import mail from 'public/icons/mail.png';
 import menu from 'public/icons/menu.png';
 import close from 'public/icons/close.png';
+import up from 'public/icons/up.png';
 
 interface SvgIconProps {
   type: string;
@@ -26,6 +27,8 @@ const SvgIcon: FC<SvgIconProps> = ({ type }) => {
       return <Image src={menu} alt="home" width={25} height={25} />;
     case 'close':
       return <Image src={close} alt="home" width={17} height={17} />;
+    case 'up':
+      return <Image src={up} alt="pu" width={35} height={40} />;
     default:
       return;
   }
