@@ -8,11 +8,13 @@ async function getData() {
   const res = await fetch(`${config.dataAPI}/api/user`, { next: { revalidate: 86400 } });
   const data = await res.json();
   // Pass data to the page via props
-  return { props: data.user };
+  return { props: data };
 }
+
 const Page = () => {
-  const { props } = use(getData());
-  return <Container data={props} />;
+  const { props: user } = use(getData());
+  console.log(user);
+  return <Container data={user} />;
 };
 
 export default Page;
