@@ -27,6 +27,7 @@ const Contact = dynamic(() => import('@/features/Contact/'), { ssr: false });
 const Container = ({ data }: { data: any }) => {
   const dispatch = useDispatch();
   dispatch(setUserData(data));
+  console.log(data);
   const isVisible = usePageVisibility();
   const { width } = useWindowSize();
   const isMobile = useMemo(() => width <= mobileView, [width]);
