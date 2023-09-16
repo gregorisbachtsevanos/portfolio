@@ -13,7 +13,7 @@ import { selectUserInfo } from '@/store/state/userInfoSlice';
 const Home = () => {
   const { width } = useWindowSize();
   const user: any = useSelector(selectUserInfo);
-  console.log(user);
+
   useEffect(() => lettersAnimation(), []);
   // TODO: Blur the button of the image for small devices
   return (
@@ -28,9 +28,7 @@ const Home = () => {
           )}
         </div>
         <div className="text-container">
-          <Title2Xl className="animate-title">
-            {user.firstName} {user.lastName}
-          </Title2Xl>
+          <Title2Xl className="animate-title">{`${user.firstName} ${user.lastName}`}</Title2Xl>
           <TitleXl className="animate-text">{user.occupation}</TitleXl>
         </div>
       </div>
