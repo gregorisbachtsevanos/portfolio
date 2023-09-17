@@ -28,6 +28,7 @@ export async function middleware(request: NextRequest) {
   if (corsOptions.allowedOrigins.includes('*') || corsOptions.allowedOrigins.includes(origin))
     response.headers.set('Access-Control-Allow-Origin', origin);
 
+  response.headers.set('Access-Control-Allow-Origin', '*');
   // Set default CORS headers
   response.headers.set('Access-Control-Allow-Credentials', corsOptions.credentials.toString());
   response.headers.set('Access-Control-Allow-Methods', corsOptions.allowedMethods.join(','));
