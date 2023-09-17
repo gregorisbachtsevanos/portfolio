@@ -11,10 +11,15 @@ import { tabletView } from '@/constants/data';
 import { ContactForm } from '@/components/ContactForm';
 import { useSelector } from 'react-redux';
 import { selectUserInfo } from '@/store/state/userInfoSlice';
+import SvgIcon from '@/components/SvgIcon/SvgIcon';
+import Link from 'next/link';
+import useSmoothScroll from '@/hooks/useSmoothScroll';
+import { sidebar } from '@/components/Sidebar/constants';
 
 const Contact = () => {
   const { width } = useWindowSize();
   const user: any = useSelector(selectUserInfo);
+  const handleScroll = useSmoothScroll();
 
   return (
     <StyledContactContainer id={routes.CONTACT}>
@@ -32,6 +37,16 @@ const Contact = () => {
         <div className="contact-form-container">
           <ContactForm />
         </div>
+      </div>
+      <div className="arrow-container">
+        <Link href={`#${sidebar[0].target}`} className="icon" onClick={handleScroll}>
+          <div className="main">
+            <SvgIcon type="up" />
+          </div>
+          <div className="second">
+            <SvgIcon type="up" />
+          </div>
+        </Link>
       </div>
     </StyledContactContainer>
   );
