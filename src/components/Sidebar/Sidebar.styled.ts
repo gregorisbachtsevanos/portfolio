@@ -48,6 +48,39 @@ export const StyledSidebarContainer = styled.nav`
     }
   }
 
+  @media only screen and (${({ theme }) => theme.sizes.desktop4k}) {
+    width: 60px;
+    .items {
+      transform: scale(1.2);
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktopL}) {
+    .items {
+      transform: scale(1);
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktopM}) {
+    width: 50px;
+
+    .items {
+      transform: scale(0.9);
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktopS}) {
+    .items {
+      transform: scale(1);
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.laptop}) {
+    .items {
+      transform: scale(1);
+    }
+  }
+
   @media only screen and (${({ theme }) => theme.sizes.tablet}) {
     bottom: 0;
     top: auto;

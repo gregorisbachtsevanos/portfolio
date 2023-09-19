@@ -66,9 +66,14 @@ export const StyledHomeContainer = styled.div`
       z-index: 20;
       transform: translateY(-150%);
       color: ${({ theme }) => theme.palette.highlight[2]};
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* justify-content: center; */
 
       .animate-text {
         line-height: 2rem;
+        display: flex;
       }
       .animate-title span,
       .animate-text span {
@@ -76,6 +81,67 @@ export const StyledHomeContainer = styled.div`
         display: inline-block;
         transition: 0s;
         padding: 0.5rem 0;
+      }
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktop4k}) {
+    .home-container {
+      .image-container {
+        transform: scale(0.9);
+      }
+      .text-container {
+        h1 {
+          margin-top: -20rem;
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+  @media only screen and (${({ theme }) => theme.sizes.desktopL}) {
+    .home-container {
+      .image-container {
+        transform: scale(0.9);
+      }
+      .text-container {
+        h1 {
+          margin-top: 0rem;
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktopM}) {
+    .home-container {
+      .image-container {
+        height: 100vh;
+        transform: scale(1.1);
+      }
+      .text-container {
+        h1 {
+          margin-top: 0rem;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktopS}) {
+    .home-container {
+      .image-container {
+        margin-top: 0rem;
+        height: 100vh;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.laptop}) {
+    .home-container {
+      .image-container {
+        height: 90vh;
+        transform: scale(1.1);
       }
     }
   }
@@ -89,14 +155,16 @@ export const StyledHomeContainer = styled.div`
 
   @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
     .home-container {
-      margin-top: -5%;
+      margin-top: -10px;
       .image-container {
+        margin-top: 10%;
         height: 90vh;
+
         img {
           height: 100% !important;
           width: 100% !important;
           object-fit: cover !important;
-          aspect-ratio: 3.5/3;
+          /* aspect-ratio: 3.5/3; */
         }
       }
       .text-container {
@@ -107,6 +175,32 @@ export const StyledHomeContainer = styled.div`
         h2 {
           font-size: 20px;
         }
+      }
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.mobileM}) {
+    .home-container {
+      .image-container {
+        margin-top: 15%;
+        transform: scale(1);
+      }
+      .text-container {
+        transform: translateY(-200%);
+        h1 {
+          font-size: 28px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  @media only screen and (${({ theme }) => theme.sizes.mobileS}) {
+    .home-container {
+      .image-container {
+        width: 100%;
+        margin-top: 15%;
       }
     }
   }

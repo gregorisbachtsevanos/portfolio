@@ -57,6 +57,24 @@ export const StyledPreloaderContainer = styled.div`
     }
   }
 
+  @media only screen and (${({ theme }) => theme.sizes.desktop4k}) {
+    .wr-preloader {
+      transform: scale(0.8);
+    }
+  }
+  @media only screen and (${({ theme }) => theme.sizes.desktopL}) {
+    .wr-preloader {
+      transform: scale(0.7);
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .name {
+      font-size: 0.8rem;
+      letter-spacing: 0.5rem !important;
+    }
+  }
+
   @keyframes line-animation {
     to {
       stroke-dashoffset: 0;

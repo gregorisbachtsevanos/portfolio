@@ -6,6 +6,12 @@ export const StyledProjectsContainer = styled.div`
   align-items: center;
 
   .container {
+    height: 100%;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+
     .projects {
       display: flex;
       justify-content: center;
@@ -13,6 +19,49 @@ export const StyledProjectsContainer = styled.div`
       flex-wrap: wrap;
       width: 80%;
       margin: auto;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktop4k}) {
+    .container {
+      transform: scale(1.2);
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktopL}) {
+    .container {
+      transform: scale(1.2);
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktopM}) {
+    .container {
+      transform: scale(0.9);
+      .projects {
+        width: 100%;
+      }
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktopS}) {
+    .container {
+      transform: scale(1);
+    }
+  }
+
+  @media only screen and (max-width: 1145px) {
+    .container {
+      width: 100%;
+      transform: scale(0.8);
+      .projects {
+        width: 100%;
+      }
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.laptop}) {
+    .project-container {
+      transform: scale(1);
     }
   }
 

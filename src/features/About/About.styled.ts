@@ -7,7 +7,8 @@ export const StyledAboutContainer = styled.div`
 
   .about-container {
     display: flex;
-
+    width: 70%;
+    margin: auto;
     .intro {
       width: 60%;
       margin-left: 5%;
@@ -40,6 +41,37 @@ export const StyledAboutContainer = styled.div`
       justify-content: center;
       flex-direction: column;
       align-items: center;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktop4k}) {
+    .about-container {
+      transform: scale(1.3);
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktopL}) {
+    .about-container {
+      transform: scale(1.2);
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktopM}) {
+    .about-container {
+      transform: scale(1);
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.desktopS}) {
+    .about-container {
+      transform: scale(0.8) !important;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.sizes.laptop}) {
+    .about-container {
+      transform: scale(1);
     }
   }
 
