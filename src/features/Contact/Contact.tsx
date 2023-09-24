@@ -1,20 +1,22 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import Link from 'next/link';
 
-import { Social } from './components/Social';
+import { Text } from '@/app/theme';
+import { selectUserInfo } from '@/store/state/userInfoSlice';
+
+import useWindowSize from '@/hooks/useWindowSize';
+import useSmoothScroll from '@/hooks/useSmoothScroll';
 
 import { routes } from '@/constants/routes';
-import { contact } from './constants';
-import { StyledContactContainer } from './contact.styled';
-import { Text } from '@/app/theme';
-import useWindowSize from '@/hooks/useWindowSize';
 import { tabletView } from '@/constants/data';
+
 import { ContactForm } from '@/components/ContactForm';
-import { useSelector } from 'react-redux';
-import { selectUserInfo } from '@/store/state/userInfoSlice';
+import { Social } from './components/Social';
 import SvgIcon from '@/components/SvgIcon/SvgIcon';
-import Link from 'next/link';
-import useSmoothScroll from '@/hooks/useSmoothScroll';
 import { sidebar } from '@/components/Sidebar/constants';
+
+import { StyledContactContainer } from './contact.styled';
 
 const Contact = () => {
   const { width } = useWindowSize();
