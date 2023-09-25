@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react';
-import { routes } from '@/constants/routes';
-import { lettersAnimation } from '@/utils/lettersAnimation';
-import { home } from './constants';
 import Image from 'next/image';
-import { StyledHomeContainer } from './Home.styled';
-import { Title2Xl, TitleXl } from '@/app/theme';
-import useWindowSize from '@/hooks/useWindowSize';
-import { mobileView } from '@/constants/data';
 import { useSelector } from 'react-redux';
+
+import { Title2Xl, TitleXl } from '@/app/theme';
 import { selectUserInfo } from '@/store/state/userInfoSlice';
+import { lettersAnimation } from '@/utils/lettersAnimation';
+
+import useWindowSize from '@/hooks/useWindowSize';
+
+import { home } from './constants';
+import { mobileView } from '@/constants/data';
+import { routes } from '@/constants/routes';
+
+import { StyledHomeContainer } from './Home.styled';
 
 const Home = () => {
   const { width } = useWindowSize();
