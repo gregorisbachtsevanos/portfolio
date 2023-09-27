@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
+import { selectUserInfo } from '@/store/state/userInfoSlice';
 import { renderPreloaderOut, renderName } from '../../utils/preloader';
 
-import { StyledPreloaderContainer } from './Preloader.styled';
-import { preloader } from './constants';
 import useWindowSize from '@/hooks/useWindowSize';
-import { useSelector } from 'react-redux';
-import { selectUserInfo } from '@/store/state/userInfoSlice';
 
+import { StyledPreloaderContainer } from './Preloader.styled';
 export const Preloader = () => {
   const windowSize = useWindowSize();
   const user: any = useSelector(selectUserInfo);
