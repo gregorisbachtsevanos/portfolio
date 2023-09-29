@@ -2,22 +2,24 @@
 
 import React, { use, useMemo } from 'react';
 import dynamic from 'next/dynamic';
-import { styled } from 'styled-components';
+import { useDispatch } from 'react-redux';
 
+import { setUserData } from '@/store/state/userInfoSlice';
+
+import useWindowSize from '@/hooks/useWindowSize';
+import usePageVisibility from '@/hooks/usePageVisibility';
+
+import { mobileView } from '@/constants/data';
 // import Projects from '@/features/Projects/Projects';
 // import About from '@/features/About/About';
 // import Contact from '@/features/Contact/Contact';
 
-import usePageVisibility from '@/hooks/usePageVisibility';
 import PreloaderLayout from '@/layouts/PreloaderLayout';
 import PageLayout from '@/layouts/PageLayout';
+
 import { Sidebar } from '@/components/Sidebar';
 import { Preloader } from '@/components/Preloader/Preloader';
-import useWindowSize from '@/hooks/useWindowSize';
-import { mobileView } from '@/constants/data';
 import { Menu } from '@/components/Menu';
-import { useDispatch } from 'react-redux';
-import { setUserData } from '@/store/state/userInfoSlice';
 
 const Home = dynamic(() => import('@/features/Home/'), { ssr: false });
 const Projects = dynamic(() => import('@/features/Projects/'), { ssr: false });
