@@ -1,7 +1,7 @@
-import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import React, { FC, useMemo } from 'react';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+
 import { StyledSocialContainer } from './Social.styled';
-import { contact } from '../../constants';
 
 interface SocialProps {
   github: string;
