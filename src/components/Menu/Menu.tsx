@@ -1,8 +1,10 @@
 import React, { useCallback, useState } from 'react';
-import { StyledMenuContainer } from './Menu.styled';
-import SvgIcon from '../SvgIcon/SvgIcon';
+
 import { ContactForm } from '../ContactForm';
 import { Cube } from '../Cube';
+
+import SvgIcon from '../SvgIcon/SvgIcon';
+import { StyledMenuContainer } from './Menu.styled';
 
 export const Menu = () => {
   const [showMenu, setShowMenu] = useState(false);

@@ -1,7 +1,8 @@
 import React, { InputHTMLAttributes } from 'react';
-import { StyledInputContainer } from './Input.styled';
+
 import { Caption } from '@/app/theme';
 
+import { StyledInputContainer } from './Input.styled';
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type: string;
   name: string;
