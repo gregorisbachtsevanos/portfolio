@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import { keyframes, styled } from 'styled-components';
 
 export const StyledCubeContainer = styled.div`
   width: 200px;
@@ -81,5 +81,11 @@ export const StyledCubeContainer = styled.div`
 
   @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
     transform: scale(0.6);
+  }
+`;
+
+const spin = keyframes`
+  to {
+    stroke-dashoffset: 0;
   }
 `;

@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import { keyframes, styled } from 'styled-components';
 
 export const StyledPreloaderContainer = styled.div`
   transition: 1s;
@@ -86,5 +86,11 @@ export const StyledPreloaderContainer = styled.div`
       flex-direction: column;
       letter-spacing: 0.5rem !important;
     }
+  }
+`;
+
+const lineAnimation = keyframes`
+  to {
+    stroke-dashoffset: 0;
   }
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const StyledAboutContainer = styled.div`
   height: 100vh;
@@ -131,5 +131,23 @@ export const StyledAboutContainer = styled.div`
     to {
       border-color: transparent;
     }
+  }
+`;
+
+const blinkcaret = keyframes`
+  to {
+    stroke-dashoffset: 0;
+  }
+`;
+
+const typing = keyframes`
+  to {
+    stroke-dashoffset: 0;
+  }
+`;
+
+const spin = keyframes`
+  to {
+    stroke-dashoffset: 0;
   }
 `;
