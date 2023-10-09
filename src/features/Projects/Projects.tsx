@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import Project from './components/Project';
+
+import { useGetProjectsQuery } from '@/store/services/projectApi';
 
 import { routes } from '@/constants/routes';
+
+import Project from './components/Project';
+
 import { StyledProjectsContainer } from './Projects.styled';
-import { projectsData } from './constants';
-import { useGetProjectsQuery } from '@/store/services/projectApi';
-import { selectUserProject } from '@/store/state/userInfoSlice';
-import { useSelector } from 'react-redux';
 
 const Projects = () => {
   const { data: projectData, isLoading, isSuccess } = useGetProjectsQuery();

@@ -1,8 +1,10 @@
 import { FC, useState } from 'react';
-import { StyledProjectContainer } from './Project.styled';
-import Image from 'next/image';
-import { LinkStyle, Title, TitleMd } from '@/app/theme';
 import { Tilt } from 'react-tilt';
+import Image from 'next/image';
+
+import { LinkStyle, TitleMd } from '@/app/theme';
+
+import { StyledProjectContainer } from './Project.styled';
 
 interface ProjectProps {
   title: string;
