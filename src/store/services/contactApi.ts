@@ -1,6 +1,7 @@
-import { EmailProps } from '@/types';
-import { api } from './api';
 import { config } from '@/config';
+import { EmailProps } from '@/types';
+
+import { api } from './api';
 
 const CONTACT_API = config.contactAPI;
 

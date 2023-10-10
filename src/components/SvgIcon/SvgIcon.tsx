@@ -1,14 +1,12 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
-
+import close from 'public/icons/close.png';
 import home from 'public/icons/home.png';
 import info from 'public/icons/info.png';
-import projects from 'public/icons/projects.png';
 import mail from 'public/icons/mail.png';
 import menu from 'public/icons/menu.png';
-import close from 'public/icons/close.png';
+import projects from 'public/icons/projects.png';
 import up from 'public/icons/up.png';
-
 interface SvgIconProps {
   type: string;
 }

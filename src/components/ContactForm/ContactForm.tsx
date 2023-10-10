@@ -1,18 +1,17 @@
 import React, { useCallback, useRef } from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
+import { Input } from '@/components/Input';
 // import { CONTACT } from "src/app/data/contact-data";
 // import { EmailService } from "src/services/emailApi";
 // import { Input } from "src/components/Input/";
 // import { Button } from "src/components/Button/";
 import { usePostEmailMutation } from '@/store/services/contactApi';
+
 import { contactForm } from './constants';
-import { validationSchema } from './validationSchema';
-
-import { Input } from '@/components/Input';
-
 import { StyledContactFormContainer } from './ContactForm.styled';
+import { validationSchema } from './validationSchema';
 
 type FormValues = {
   name: string;

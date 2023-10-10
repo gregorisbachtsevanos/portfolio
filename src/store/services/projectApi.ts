@@ -1,6 +1,7 @@
 import { config } from '@/config';
-import { api } from './api/';
 import { Project } from '@/types';
+
+import { api } from './api/';
 
 const DATA_API = config.dataAPI;
 

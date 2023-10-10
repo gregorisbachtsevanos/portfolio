@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
-import Image from 'next/image';
 import { useSelector } from 'react-redux';
+import Image from 'next/image';
 
 import { Title2Xl, TitleXl } from '@/app/theme';
+import { mobileView } from '@/constants/data';
+import { routes } from '@/constants/routes';
+import useWindowSize from '@/hooks/useWindowSize';
 import { selectUserInfo } from '@/store/state/userInfoSlice';
 import { lettersAnimation } from '@/utils/lettersAnimation';
 
-import useWindowSize from '@/hooks/useWindowSize';
-
 import { home } from './constants';
-import { mobileView } from '@/constants/data';
-import { routes } from '@/constants/routes';
-
 import { StyledHomeContainer } from './Home.styled';
 
 const Home = () => {

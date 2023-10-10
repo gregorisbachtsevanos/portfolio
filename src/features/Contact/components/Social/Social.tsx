@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC } from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
 import { StyledSocialContainer } from './Social.styled';

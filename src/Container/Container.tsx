@@ -1,25 +1,21 @@
 'use client';
 
 import React, { use, useMemo } from 'react';
-import dynamic from 'next/dynamic';
 import { useDispatch } from 'react-redux';
+import dynamic from 'next/dynamic';
 
-import { setUserData } from '@/store/state/userInfoSlice';
-
-import useWindowSize from '@/hooks/useWindowSize';
-import usePageVisibility from '@/hooks/usePageVisibility';
-
+import { Menu } from '@/components/Menu';
+import { Preloader } from '@/components/Preloader/Preloader';
+import { Sidebar } from '@/components/Sidebar';
 import { mobileView } from '@/constants/data';
+import usePageVisibility from '@/hooks/usePageVisibility';
+import useWindowSize from '@/hooks/useWindowSize';
+import PageLayout from '@/layouts/PageLayout';
 // import Projects from '@/features/Projects/Projects';
 // import About from '@/features/About/About';
 // import Contact from '@/features/Contact/Contact';
-
 import PreloaderLayout from '@/layouts/PreloaderLayout';
-import PageLayout from '@/layouts/PageLayout';
-
-import { Sidebar } from '@/components/Sidebar';
-import { Preloader } from '@/components/Preloader/Preloader';
-import { Menu } from '@/components/Menu';
+import { setUserData } from '@/store/state/userInfoSlice';
 
 const Home = dynamic(() => import('@/features/Home/'), { ssr: false });
 const Projects = dynamic(() => import('@/features/Projects/'), { ssr: false });

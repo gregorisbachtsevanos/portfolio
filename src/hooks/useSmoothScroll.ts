@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
 const useSmoothScroll = () => {
   const handleScroll = useCallback((e: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void => {

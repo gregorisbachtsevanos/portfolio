@@ -3,17 +3,14 @@ import Scroll from 'react-scroll';
 import Link from 'next/link';
 
 import { Title } from '@/app/theme';
-
-import useWindowSize from '@/hooks/useWindowSize';
-import useSmoothScroll from '@/hooks/useSmoothScroll';
-
-import { sidebar } from './constants';
 import { tabletView } from '@/constants/data';
+import useSmoothScroll from '@/hooks/useSmoothScroll';
+import useWindowSize from '@/hooks/useWindowSize';
 
 import SvgIcon from '../SvgIcon/SvgIcon';
-import { StyledSidebarContainer } from './Sidebar.styled';
 
-const SmoothLink = Scroll.Link;
+import { sidebar } from './constants';
+import { StyledSidebarContainer } from './Sidebar.styled';
 
 export const Sidebar = () => {
   const handleScroll = useSmoothScroll();

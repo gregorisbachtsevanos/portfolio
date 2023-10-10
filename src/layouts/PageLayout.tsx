@@ -1,6 +1,7 @@
-import useWindowSize from '@/hooks/useWindowSize';
-import React, { FC, useMemo, ReactNode } from 'react';
+import React, { FC, ReactNode, useMemo } from 'react';
 import { styled } from 'styled-components';
+
+import useWindowSize from '@/hooks/useWindowSize';
 
 interface PageLayoutProps {
   children: ReactNode;

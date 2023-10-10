@@ -2,8 +2,8 @@ import React, { useCallback, useState } from 'react';
 
 import { ContactForm } from '../ContactForm';
 import { Cube } from '../Cube';
-
 import SvgIcon from '../SvgIcon/SvgIcon';
+
 import { StyledMenuContainer } from './Menu.styled';
 
 export const Menu = () => {

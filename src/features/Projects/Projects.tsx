@@ -1,11 +1,9 @@
 import React, { FC } from 'react';
 
+import { routes } from '@/constants/routes';
 import { useGetProjectsQuery } from '@/store/services/projectApi';
 
-import { routes } from '@/constants/routes';
-
 import Project from './components/Project';
-
 import { StyledProjectsContainer } from './Projects.styled';
 
 const Projects = () => {

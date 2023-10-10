@@ -3,19 +3,16 @@ import { useSelector } from 'react-redux';
 import Link from 'next/link';
 
 import { Text } from '@/app/theme';
+import { ContactForm } from '@/components/ContactForm';
+import { sidebar } from '@/components/Sidebar/constants';
+import SvgIcon from '@/components/SvgIcon/SvgIcon';
+import { tabletView } from '@/constants/data';
+import { routes } from '@/constants/routes';
+import useSmoothScroll from '@/hooks/useSmoothScroll';
+import useWindowSize from '@/hooks/useWindowSize';
 import { selectUserInfo } from '@/store/state/userInfoSlice';
 
-import useWindowSize from '@/hooks/useWindowSize';
-import useSmoothScroll from '@/hooks/useSmoothScroll';
-
-import { routes } from '@/constants/routes';
-import { tabletView } from '@/constants/data';
-
-import { ContactForm } from '@/components/ContactForm';
 import { Social } from './components/Social';
-import SvgIcon from '@/components/SvgIcon/SvgIcon';
-import { sidebar } from '@/components/Sidebar/constants';
-
 import { StyledContactContainer } from './contact.styled';
 
 const Contact = () => {

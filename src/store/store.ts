@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+
 import { api } from './services/api/api';
 import userReducer from './state/userInfoSlice';
 
