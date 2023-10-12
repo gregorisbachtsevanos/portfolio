@@ -1,5 +1,11 @@
 import { keyframes, styled } from 'styled-components';
 
+const lineAnimation = keyframes`
+  to {
+    stroke-dashoffset: 0;
+  }
+`;
+
 export const StyledPreloaderContainer = styled.div`
   transition: 1s;
   position: absolute;
@@ -33,7 +39,7 @@ export const StyledPreloaderContainer = styled.div`
             stroke-width: 20px;
             stroke-dasharray: 9967.4140625;
             stroke-dashoffset: 9967.4140625;
-            animation: line-animation 25s ease forwards 1s;
+            animation: ${lineAnimation} 25s ease forwards 1s;
           }
         }
 
@@ -75,22 +81,10 @@ export const StyledPreloaderContainer = styled.div`
     }
   }
 
-  @keyframes line-animation {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-
   @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
     .name {
       flex-direction: column;
       letter-spacing: 0.5rem !important;
     }
-  }
-`;
-
-const lineAnimation = keyframes`
-  to {
-    stroke-dashoffset: 0;
   }
 `;

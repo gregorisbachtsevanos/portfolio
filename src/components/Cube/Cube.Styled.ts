@@ -1,5 +1,11 @@
 import { keyframes, styled } from 'styled-components';
 
+const spin = keyframes`
+  to {
+    stroke-dashoffset: 0;
+  }
+`;
+
 export const StyledCubeContainer = styled.div`
   width: 200px;
   height: 200px;
@@ -12,7 +18,7 @@ export const StyledCubeContainer = styled.div`
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    animation: spin 9s infinite linear;
+    animation: ${spin} 9s infinite linear;
 
     .face {
       display: flex;
@@ -69,23 +75,7 @@ export const StyledCubeContainer = styled.div`
     }
   }
 
-  @keyframes spin {
-    from {
-      transform: rotateX(0deg) rotateY(0deg);
-    }
-
-    to {
-      transform: rotateX(360deg) rotateY(360deg);
-    }
-  }
-
   @media only screen and (${({ theme }) => theme.sizes.mobileL}) {
     transform: scale(0.6);
-  }
-`;
-
-const spin = keyframes`
-  to {
-    stroke-dashoffset: 0;
   }
 `;

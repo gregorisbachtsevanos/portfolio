@@ -1,5 +1,23 @@
 import styled, { keyframes } from 'styled-components';
 
+const blinkCaret = keyframes`
+  to {
+    stroke-dashoffset: 0;
+  }
+`;
+
+const typing = keyframes`
+  to {
+    stroke-dashoffset: 0;
+  }
+`;
+
+const spin = keyframes`
+  to {
+    stroke-dashoffset: 0;
+  }
+`;
+
 export const StyledAboutContainer = styled.div`
   height: 100vh;
   display: flex;
@@ -28,8 +46,8 @@ export const StyledAboutContainer = styled.div`
           white-space: normal; /* Keeps the content on a single line */
           letter-spacing: 0.15em; /* Adjust as needed */
           // animation:
-          // typing 3.5s steps(40, end),
-          // blink-caret .75s step-end infinite;
+          // ${typing} 3.5s steps(40, end),
+          // ${blinkCaret} .75s step-end infinite;
         }
       }
     }
@@ -104,50 +122,5 @@ export const StyledAboutContainer = styled.div`
     .about-container {
       display: none;
     }
-  }
-
-  @keyframes spin {
-    from {
-      transform: rotateX(0deg) rotateY(0deg);
-    }
-
-    to {
-      transform: rotateX(360deg) rotateY(360deg);
-    }
-  }
-
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-  }
-`;
-
-const blinkcaret = keyframes`
-  to {
-    stroke-dashoffset: 0;
-  }
-`;
-
-const typing = keyframes`
-  to {
-    stroke-dashoffset: 0;
-  }
-`;
-
-const spin = keyframes`
-  to {
-    stroke-dashoffset: 0;
   }
 `;
