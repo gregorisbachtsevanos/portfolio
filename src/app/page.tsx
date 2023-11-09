@@ -1,6 +1,7 @@
-import Container from '@/Container/Container';
-import { config } from '@/config';
 import React, { use } from 'react';
+
+import { config } from '@/config';
+import Container from '@/Container/Container';
 
 // This gets called on every request
 async function getData() {
