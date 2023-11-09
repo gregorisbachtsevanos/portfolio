@@ -1,13 +1,15 @@
 'use client';
+import { Provider } from 'react-redux';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import StyledComponentsRegistry from './lib/registry';
-import { GlobalStyles } from './global.styled';
 import { ThemeProvider } from 'styled-components';
-import { defaultTheme } from './theme';
-import { Provider } from 'react-redux';
+
 import { store } from '@/store/store';
+
+import StyledComponentsRegistry from './lib/registry';
 import { roboto } from './font';
+import { GlobalStyles } from './global.styled';
+import { defaultTheme } from './theme';
 
 const inter = Inter({ subsets: ['latin'] });
 
