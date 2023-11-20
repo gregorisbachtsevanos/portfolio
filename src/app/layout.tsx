@@ -1,15 +1,8 @@
 'use client';
-import { Provider } from 'react-redux';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from 'styled-components';
 
-import { store } from '@/store/store';
-
-import StyledComponentsRegistry from './lib/registry';
-import { roboto } from './font';
-import { GlobalStyles } from './global.styled';
-import { defaultTheme } from './theme';
+import Wrapper from './wrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,14 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html>
       <body>
-        <Provider store={store}>
-          <ThemeProvider theme={defaultTheme}>
-            <StyledComponentsRegistry>
-              <GlobalStyles />
-              <main className={inter.className}>{children}</main>
-            </StyledComponentsRegistry>
-          </ThemeProvider>
-        </Provider>
+        <Wrapper>
+          <main className={inter.className}>{children}</main>
+        </Wrapper>
       </body>
     </html>
   );
