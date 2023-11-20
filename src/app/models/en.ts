@@ -1,5 +1,6 @@
-import { UsersInfo } from '@/types';
 import mongoose, { Document, Model, Schema } from 'mongoose';
+
+import { UsersInfo } from '@/types';
 
 interface En extends UsersInfo, Document {}
 

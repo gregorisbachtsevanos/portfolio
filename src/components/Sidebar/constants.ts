@@ -1,4 +1,5 @@
 import { routes } from '@/constants/routes';
+
 import logo from '../../assets/GB-dark.svg';
 
 export const sidebar = [

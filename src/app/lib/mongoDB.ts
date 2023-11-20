@@ -1,5 +1,6 @@
-import { config } from '@/config';
 import { MongoClient } from 'mongodb';
+
+import { config } from '@/config';
 
 const mongoDB = config.mongoDB;
 

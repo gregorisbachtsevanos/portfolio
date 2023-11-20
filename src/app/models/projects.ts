@@ -1,5 +1,6 @@
-import { Project } from '@/types';
 import mongoose, { Document, Model, Schema } from 'mongoose';
+
+import { Project } from '@/types';
 
 interface Projects extends Project, Document {}
 

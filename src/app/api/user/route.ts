@@ -1,6 +1,7 @@
+import { NextRequest, NextResponse } from 'next/server';
+
 import clientPromise from '@/app/lib/mongoDB';
 import En from '@/app/models/en';
-import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   const client = await clientPromise;
