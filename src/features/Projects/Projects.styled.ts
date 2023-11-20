@@ -24,13 +24,13 @@ export const StyledProjectsContainer = styled.div`
 
   @media only screen and (${({ theme }) => theme.sizes.desktop4k}) {
     .container {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
 
   @media only screen and (${({ theme }) => theme.sizes.desktopL}) {
     .container {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
 

@@ -1,9 +1,13 @@
 import { keyframes, styled } from 'styled-components';
 
 const spin = keyframes`
-  to {
-    stroke-dashoffset: 0;
-  }
+  from {
+		transform: rotateX(0deg) rotateY(0deg);
+	}
+
+	to {
+		transform: rotateX(360deg) rotateY(360deg);
+	}
 `;
 
 export const StyledCubeContainer = styled.div`
