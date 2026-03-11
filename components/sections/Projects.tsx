@@ -1,29 +1,29 @@
-'use client';
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
 
 const projects = [
   {
-    title: 'Authentication Platform',
+    title: "Authentication Platform",
     description:
-      'Secure authentication backend handling machine tokens, refresh tokens, and access tokens for multiple applications. Built with industry-standard security practices.',
-    tech: ['Node.js', 'Express', 'MongoDB', 'JWT'],
-    result: 'Handles 10k+ daily auth requests',
+      "Secure authentication backend handling machine tokens, refresh tokens, and access tokens for multiple applications. Built with industry-standard security practices.",
+    tech: ["Node.js", "Express", "MongoDB", "JWT"],
+    result: "Handles 10k+ daily auth requests",
   },
   {
-    title: 'Task Management Platform',
+    title: "Task Management Platform",
     description:
-      'Full-stack project and task management system with projects, groups, tasks, and subtasks. Complete with real-time updates and collaborative features.',
-    tech: ['React', 'Redux Toolkit', 'Node.js', 'PostgreSQL'],
-    result: 'Improved team productivity by 40%',
+      "Full-stack project and task management system with projects, groups, tasks, and subtasks. Complete with real-time updates and collaborative features.",
+    tech: ["React", "Redux Toolkit", "Node.js", "PostgreSQL"],
+    result: "Improved team productivity by 40%",
   },
   {
-    title: 'Developer Dashboard',
+    title: "Developer Dashboard",
     description:
-      'Modern analytics dashboard with advanced state management and API integrations. Real-time data visualization and performance metrics.',
-    tech: ['React', 'TypeScript', 'Redux Toolkit', 'Vite'],
-    result: 'Processes 100k+ data points/day',
+      "Modern analytics dashboard with advanced state management and API integrations. Real-time data visualization and performance metrics.",
+    tech: ["React", "TypeScript", "Redux Toolkit", "Vite"],
+    result: "Processes 100k+ data points/day",
   },
 ];
 
@@ -36,7 +36,8 @@ export default function Projects() {
             Featured Projects
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Recent work showcasing full-stack development and system architecture
+            Recent work showcasing full-stack development and system
+            architecture
           </p>
         </div>
 

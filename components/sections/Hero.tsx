@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { ArrowRight, Github, Linkedin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ArrowRight, Github, Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -42,7 +42,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6 rounded-lg group"
             >
@@ -50,7 +50,7 @@ export default function Hero() {
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
-              onClick={() => scrollToSection('projects')}
+              onClick={() => scrollToSection("projects")}
               size="lg"
               variant="outline"
               className="border-gray-700 bg-transparent hover:bg-white/5 text-white text-lg px-8 py-6 rounded-lg"

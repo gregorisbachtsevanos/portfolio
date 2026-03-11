@@ -1,49 +1,50 @@
-'use client';
+"use client";
 
-import { Code, Server, Zap, Cloud, TrendingUp } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Code, Server, Zap, Cloud, TrendingUp } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 
 const services = [
   {
     icon: Code,
-    title: 'Full-Stack Web Application Development',
+    title: "Full-Stack Web Application Development",
     description:
-      'Custom web platforms built with React and Node.js. End-to-end solutions tailored to your business needs.',
+      "Custom web platforms built with React and Node.js. End-to-end solutions tailored to your business needs.",
   },
   {
     icon: Server,
-    title: 'API Development & Backend Systems',
+    title: "API Development & Backend Systems",
     description:
-      'Secure and scalable backend services. REST APIs, authentication systems, and database architecture.',
+      "Secure and scalable backend services. REST APIs, authentication systems, and database architecture.",
   },
   {
     icon: Zap,
-    title: 'Startup MVP Development',
+    title: "Startup MVP Development",
     description:
-      'Building the first version of your startup product quickly and efficiently. Get to market faster without sacrificing quality.',
+      "Building the first version of your startup product quickly and efficiently. Get to market faster without sacrificing quality.",
   },
   {
     icon: Cloud,
-    title: 'DevOps & Deployment',
+    title: "DevOps & Deployment",
     description:
-      'Dockerized applications, Linux server configuration, and CI/CD pipelines for reliable deployments.',
+      "Dockerized applications, Linux server configuration, and CI/CD pipelines for reliable deployments.",
   },
   {
     icon: TrendingUp,
-    title: 'Performance Optimization',
+    title: "Performance Optimization",
     description:
-      'Improving speed and scalability of existing applications. Comprehensive audits and optimizations.',
+      "Improving speed and scalability of existing applications. Comprehensive audits and optimizations.",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-black to-gray-950">
+    <section
+      id="services"
+      className="py-24 bg-gradient-to-b from-black to-gray-950"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Services
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Services</h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Comprehensive full-stack development services to bring your ideas to
             life

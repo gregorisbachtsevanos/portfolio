@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Mail, Github, Linkedin, Send } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
+import { useState } from "react";
+import { Mail, Github, Linkedin, Send } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
+import { Textarea } from "@/components/ui/Textarea";
+import { useToast } from "@/hooks/useToast";
 
 export default function Contact() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -22,10 +22,10 @@ export default function Contact() {
 
     setTimeout(() => {
       toast({
-        title: 'Message sent!',
+        title: "Message sent!",
         description: "I'll get back to you as soon as possible.",
       });
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: "", email: "", message: "" });
       setIsSubmitting(false);
     }, 1000);
   };
@@ -133,8 +133,11 @@ export default function Contact() {
                 disabled={isSubmitting}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg group"
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-                <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                {isSubmitting ? "Sending..." : "Send Message"}
+                <Send
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                  size={20}
+                />
               </Button>
             </form>
           </div>
