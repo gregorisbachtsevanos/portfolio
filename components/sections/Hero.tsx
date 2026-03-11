@@ -16,13 +16,13 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-black to-black" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-black to-black" />
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-background to-background dark:via-black dark:to-black" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-background to-background dark:via-black dark:to-black" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
         <div className="animate-fade-in">
-          <div className="inline-block mb-4 px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full">
-            <span className="text-sm text-blue-400">
+          <div className="inline-block mb-4 px-4 py-1.5 bg-blue-500/10 dark:bg-blue-500/10 border border-blue-500/20 dark:border-blue-500/20 rounded-full">
+            <span className="text-sm text-blue-600 dark:text-blue-400">
               Available for freelance projects
             </span>
           </div>
@@ -35,7 +35,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="text-xl sm:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
             I help startups and businesses build fast, reliable, and scalable
             software.
           </p>
@@ -53,7 +53,7 @@ export default function Hero() {
               onClick={() => scrollToSection("projects")}
               size="lg"
               variant="outline"
-              className="border-gray-700 bg-transparent hover:bg-white/5 text-white text-lg px-8 py-6 rounded-lg"
+              className="text-lg px-8 py-6 rounded-lg"
             >
               View My Work
             </Button>
@@ -64,7 +64,7 @@ export default function Hero() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Github size={24} />
             </a>
@@ -72,7 +72,7 @@ export default function Hero() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Linkedin size={24} />
             </a>
@@ -80,7 +80,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background dark:from-black to-transparent" />
     </section>
   );
 }
