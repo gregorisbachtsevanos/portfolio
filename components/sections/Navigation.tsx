@@ -39,7 +39,7 @@ export default function Navigation() {
               onClick={() => scrollToSection("hero")}
               className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
             >
-              Nikos Georgopoulos
+              Gregoris Bachtsevanos
             </button>
           </div>
 
