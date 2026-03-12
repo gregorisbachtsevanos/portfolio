@@ -4,13 +4,14 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/src/components/ui/Button";
 import { useTheme } from "@/app/providers";
+import { content } from "@/src/lang/en";
 
 export default function Navigation() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [mounted, setMounted] = useState(false);
 	const { theme, toggleTheme } = useTheme();
-
+	const { navigation } = content;
 	useEffect(() => {
 		setMounted(true);
 	}, []);
@@ -46,7 +47,7 @@ export default function Navigation() {
 							onClick={() => scrollToSection("hero")}
 							className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
 						>
-							Gregoris Bachtsevanos
+							{navigation.name}
 						</button>
 					</div>
 
@@ -56,25 +57,25 @@ export default function Navigation() {
 								onClick={() => scrollToSection("about")}
 								className="text-muted-foreground hover:text-foreground transition-colors"
 							>
-								About
+								{navigation.about}
 							</button>
 							<button
 								onClick={() => scrollToSection("services")}
 								className="text-muted-foreground hover:text-foreground transition-colors"
 							>
-								Services
+								{navigation.services}
 							</button>
 							<button
 								onClick={() => scrollToSection("projects")}
 								className="text-muted-foreground hover:text-foreground transition-colors"
 							>
-								Projects
+								{navigation.projects}
 							</button>
 							<button
 								onClick={() => scrollToSection("tech-stack")}
 								className="text-muted-foreground hover:text-foreground transition-colors"
 							>
-								Tech Stack
+								{navigation.techStack}
 							</button>
 							{mounted && (
 								<button
@@ -93,7 +94,7 @@ export default function Navigation() {
 								onClick={() => scrollToSection("contact")}
 								className="bg-blue-600 hover:bg-blue-700 text-white"
 							>
-								Contact
+								{navigation.contact}
 							</Button>
 						</div>
 					</div>
@@ -135,31 +136,31 @@ export default function Navigation() {
 							onClick={() => scrollToSection("about")}
 							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
 						>
-							About
+							{navigation.about}
 						</button>
 						<button
 							onClick={() => scrollToSection("services")}
 							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
 						>
-							Services
+							{navigation.services}
 						</button>
 						<button
 							onClick={() => scrollToSection("projects")}
 							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
 						>
-							Projects
+							{navigation.projects}
 						</button>
 						<button
 							onClick={() => scrollToSection("tech-stack")}
 							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
 						>
-							Tech Stack
+							{navigation.techStack}
 						</button>
 						<button
 							onClick={() => scrollToSection("contact")}
 							className="block w-full text-left px-3 py-2 text-blue-600 hover:text-blue-700 hover:bg-secondary/5 rounded-md transition-colors"
 						>
-							Contact
+							{navigation.contact}
 						</button>
 					</div>
 				</div>

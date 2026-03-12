@@ -7,47 +7,24 @@ import {
 	CardTitle,
 } from "@/src/components/ui/Card";
 import { Badge } from "@/src/components/ui/Badge";
-
-const projects = [
-	{
-		title: "Authentication Platform",
-		description:
-			"Secure authentication backend handling machine tokens, refresh tokens, and access tokens for multiple applications. Built with industry-standard security practices.",
-		tech: ["Node.js", "Express", "MongoDB", "JWT"],
-		result: "Handles 10k+ daily auth requests",
-	},
-	{
-		title: "Task Management Platform",
-		description:
-			"Full-stack project and task management system with projects, groups, tasks, and subtasks. Complete with real-time updates and collaborative features.",
-		tech: ["React", "Redux Toolkit", "Node.js", "PostgreSQL"],
-		result: "Improved team productivity by 40%",
-	},
-	{
-		title: "Developer Dashboard",
-		description:
-			"Modern analytics dashboard with advanced state management and API integrations. Real-time data visualization and performance metrics.",
-		tech: ["React", "TypeScript", "Redux Toolkit", "Vite"],
-		result: "Processes 100k+ data points/day",
-	},
-];
+import { content } from "@/src/lang/en";
 
 export default function Projects() {
+	const { projects } = content;
 	return (
 		<section id="projects" className="py-24 bg-background">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-						Featured Projects
+						{projects.title}
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-						Recent work showcasing full-stack development and system
-						architecture
+						{projects.subtitle}
 					</p>
 				</div>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{projects.map((project, index) => (
+					{projects.items.map((project, index) => (
 						<Card
 							key={index}
 							className="bg-gradient-to-br from-secondary/50 to-secondary/0 border-border hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"

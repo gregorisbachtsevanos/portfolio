@@ -7,41 +7,11 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/src/components/ui/Card";
-
-const services = [
-	{
-		icon: Code,
-		title: "Full-Stack Web Application Development",
-		description:
-			"Custom web platforms built with React and Node.js. End-to-end solutions tailored to your business needs.",
-	},
-	{
-		icon: Server,
-		title: "API Development & Backend Systems",
-		description:
-			"Secure and scalable backend services. REST APIs, authentication systems, and database architecture.",
-	},
-	{
-		icon: Zap,
-		title: "Startup MVP Development",
-		description:
-			"Building the first version of your startup product quickly and efficiently. Get to market faster without sacrificing quality.",
-	},
-	{
-		icon: Cloud,
-		title: "DevOps & Deployment",
-		description:
-			"Dockerized applications, Linux server configuration, and CI/CD pipelines for reliable deployments.",
-	},
-	{
-		icon: TrendingUp,
-		title: "Performance Optimization",
-		description:
-			"Improving speed and scalability of existing applications. Comprehensive audits and optimizations.",
-	},
-];
+import { content } from "@/src/lang/en";
 
 export default function Services() {
+	const { services } = content;
+
 	return (
 		<section
 			id="services"
@@ -50,16 +20,15 @@ export default function Services() {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-						Services
+						{services.title}
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-						Comprehensive full-stack development services to bring
-						your ideas to life
+						{services.subtitle}
 					</p>
 				</div>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-					{services.map((service, index) => (
+					{services.items.map((service, index) => (
 						<Card
 							key={index}
 							className="bg-gradient-to-br from-secondary/50 to-secondary/0 border-border hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 group"

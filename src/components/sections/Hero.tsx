@@ -2,8 +2,10 @@
 
 import { ArrowRight, Github, Linkedin } from "lucide-react";
 import { Button } from "@/src/components/ui/Button";
+import { content } from "@/src/lang/en";
 
 export default function Hero() {
+	const { hero } = content;
 	const scrollToSection = (id: string) => {
 		const element = document.getElementById(id);
 		if (element) {
@@ -23,21 +25,20 @@ export default function Hero() {
 				<div className="animate-fade-in">
 					<div className="inline-block mb-4 px-4 py-1.5 bg-blue-500/10 dark:bg-blue-500/10 border border-blue-500/20 dark:border-blue-500/20 rounded-full">
 						<span className="text-sm text-blue-600 dark:text-blue-400">
-							Available for freelance projects
+							{hero.availability}
 						</span>
 					</div>
 
 					<h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-						Full-Stack Developer
+						{hero.title}
 						<br />
 						<span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
-							Building Scalable Web Applications & APIs
+							{hero.subtitle}
 						</span>
 					</h1>
 
 					<p className="text-xl sm:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-						I help startups and businesses build fast, reliable, and
-						scalable software.
+						{hero.description}
 					</p>
 
 					<div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -46,7 +47,7 @@ export default function Hero() {
 							size="lg"
 							className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6 rounded-lg group"
 						>
-							Start a Project
+							{hero.ctaProject}
 							<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
 						</Button>
 						<Button
@@ -55,7 +56,7 @@ export default function Hero() {
 							variant="outline"
 							className="text-lg px-8 py-6 rounded-lg"
 						>
-							View My Work
+							{hero.ctaWork}
 						</Button>
 					</div>
 
