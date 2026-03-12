@@ -1,8 +1,8 @@
 "use client";
 
 import { ArrowRight, Github, Linkedin } from "lucide-react";
-import { Button } from "@/src/components/ui/Button";
-import { content } from "@/src/lang/en";
+import { Button } from "@/components/ui/Button";
+import { content } from "@/lang/en";
 
 export default function Hero() {
 	const { hero } = content;

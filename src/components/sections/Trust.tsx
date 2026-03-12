@@ -1,6 +1,6 @@
 "use client";
 
-import { content } from "@/src/lang/en";
+import { content } from "@/lang/en";
 import { CircleCheck as CheckCircle2 } from "lucide-react";
 
 export default function Trust() {

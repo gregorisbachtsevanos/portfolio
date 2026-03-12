@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { Mail, Github, Linkedin, Send } from "lucide-react";
-import { Button } from "@/src/components/ui/Button";
-import { Input } from "@/src/components/ui/Input";
-import { Textarea } from "@/src/components/ui/Textarea";
-import { useToast } from "@/src/hooks/useToast";
-import { content } from "@/src/lang/en";
+import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
+import { Textarea } from "@/components/ui/Textarea";
+import { useToast } from "@/hooks/useToast";
+import { content } from "@/lang/en";
 
 export default function Contact() {
 	const { toast } = useToast();

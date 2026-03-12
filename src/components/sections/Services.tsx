@@ -1,13 +1,8 @@
 "use client";
 
 import { Code, Server, Zap, Cloud, TrendingUp } from "lucide-react";
-import {
-	Card,
-	CardContent,
-	CardHeader,
-	CardTitle,
-} from "@/src/components/ui/Card";
-import { content } from "@/src/lang/en";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { content } from "@/lang/en";
 
 export default function Services() {
 	const { services } = content;

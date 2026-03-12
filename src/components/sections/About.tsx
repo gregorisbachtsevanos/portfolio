@@ -1,6 +1,6 @@
 "use client";
 
-import { content } from "@/src/lang/en";
+import { content } from "@/lang/en";
 import { MapPin } from "lucide-react";
 
 export default function About() {

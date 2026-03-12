@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import { Button } from "@/src/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 import { useTheme } from "@/app/providers";
-import { content } from "@/src/lang/en";
+import { content } from "@/lang/en";
 
 export default function Navigation() {
 	const [isScrolled, setIsScrolled] = useState(false);

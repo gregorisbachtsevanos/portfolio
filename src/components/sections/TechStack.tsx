@@ -1,6 +1,6 @@
 "use client";
 
-import { content } from "@/src/lang/en";
+import { content } from "@/lang/en";
 
 export default function TechStack() {
 	const { techStack } = content;

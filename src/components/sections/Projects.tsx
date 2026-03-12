@@ -1,13 +1,8 @@
 "use client";
 
-import {
-	Card,
-	CardContent,
-	CardHeader,
-	CardTitle,
-} from "@/src/components/ui/Card";
-import { Badge } from "@/src/components/ui/Badge";
-import { content } from "@/src/lang/en";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
+import { content } from "@/lang/en";
 
 export default function Projects() {
 	const { projects } = content;
