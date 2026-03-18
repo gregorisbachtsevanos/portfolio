@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { useToast } from "@/hooks/useToast";
-import { content } from "@/lang/en";
+import { t } from "@/lib/i18n";
 
 export default function Contact() {
 	const { toast } = useToast();
@@ -16,15 +16,15 @@ export default function Contact() {
 		message: "",
 	});
 	const [isSubmitting, setIsSubmitting] = useState(false);
-	const { contact } = content;
+
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		setIsSubmitting(true);
 
 		setTimeout(() => {
 			toast({
-				title: contact.toastTitle,
-				description: contact.toastDescription,
+				title: t("en", "contact.toastTitle"),
+				description: t("en", "contact.toastDescription"),
 			});
 			setFormData({ name: "", email: "", message: "" });
 			setIsSubmitting(false);
@@ -36,20 +36,20 @@ export default function Contact() {
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-						{contact.title}
+						{t("en", "contact.title")}
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-						{contact.subtitle}
+						{t("en", "contact.subtitle")}
 					</p>
 				</div>
 
 				<div className="grid md:grid-cols-2 gap-12">
 					<div>
 						<h3 className="text-2xl font-semibold mb-6">
-							{contact.getInTouch}
+							{t("en", "contact.getInTouch")}
 						</h3>
 						<p className="text-muted-foreground mb-8 leading-relaxed">
-							{contact.paragraphs[0]}
+							{t("en", "contact.paragraphs.0")}
 						</p>
 
 						<div className="space-y-4">
@@ -103,7 +103,10 @@ export default function Contact() {
 							<div>
 								<Input
 									type="text"
-									placeholder={contact.formPlaceholders.name}
+									placeholder={t(
+										"en",
+										"contact.formPlaceholders.name",
+									)}
 									value={formData.name}
 									onChange={(e) =>
 										setFormData({
@@ -119,7 +122,10 @@ export default function Contact() {
 							<div>
 								<Input
 									type="email"
-									placeholder={contact.formPlaceholders.email}
+									placeholder={t(
+										"en",
+										"contact.formPlaceholders.email",
+									)}
 									value={formData.email}
 									onChange={(e) =>
 										setFormData({
@@ -134,9 +140,10 @@ export default function Contact() {
 
 							<div>
 								<Textarea
-									placeholder={
-										contact.formPlaceholders.message
-									}
+									placeholder={t(
+										"en",
+										"contact.formPlaceholders.message",
+									)}
 									value={formData.message}
 									onChange={(e) =>
 										setFormData({
@@ -156,8 +163,8 @@ export default function Contact() {
 								className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg group"
 							>
 								{isSubmitting
-									? contact.submitButton.sending
-									: contact.submitButton.send}
+									? t("en", "contact.submitButton.sending")
+									: t("en", "contact.submitButton.send")}
 								<Send
 									className="ml-2 group-hover:translate-x-1 transition-transform"
 									size={20}
@@ -168,7 +175,7 @@ export default function Contact() {
 				</div>
 
 				<div className="mt-16 pt-8 border-t border-border text-center text-muted-foreground">
-					<p>{contact.copyright}</p>
+					<p>{t("en", "contact.copyright")}</p>
 				</div>
 			</div>
 		</section>

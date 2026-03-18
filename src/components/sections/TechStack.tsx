@@ -1,23 +1,22 @@
 "use client";
 
-import { content } from "@/lang/en";
+import { t } from "@/lib/i18n";
 
 export default function TechStack() {
-	const { techStack } = content;
 	return (
 		<section id="tech-stack" className="py-24 bg-background">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-						{techStack.title}
+						{t("en", "techStack.title")}
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-						{techStack.subtitle}
+						{t("en", "techStack.subtitle")}
 					</p>
 				</div>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-					{techStack.categories.map((category, index) => (
+					{t("en", "techStack.categories").map((category, index) => (
 						<div
 							key={index}
 							className="bg-gradient-to-br from-secondary/50 to-secondary/0 border border-border rounded-xl p-6 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10"
@@ -30,21 +29,25 @@ export default function TechStack() {
 									/>
 								</div>
 								<h3 className="text-xl font-semibold">
-									{category.category}
+									{t(
+										"en",
+										`techStack.categories.${index}.category`,
+									)}
 								</h3>
 							</div>
 							<ul className="space-y-2">
-								{category.technologies.map(
-									(tech, techIndex) => (
-										<li
-											key={techIndex}
-											className="text-muted-foreground flex items-center gap-2"
-										>
-											<div className="w-1.5 h-1.5 bg-teal-600 dark:bg-teal-400 rounded-full" />
-											{tech}
-										</li>
-									),
-								)}
+								{t(
+									"en",
+									`techStack.categories.${index}.technologies`,
+								).map((tech, techIndex) => (
+									<li
+										key={techIndex}
+										className="text-muted-foreground flex items-center gap-2"
+									>
+										<div className="w-1.5 h-1.5 bg-teal-600 dark:bg-teal-400 rounded-full" />
+										{tech}
+									</li>
+								))}
 							</ul>
 						</div>
 					))}
