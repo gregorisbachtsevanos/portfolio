@@ -1,19 +1,14 @@
 "use client";
 
-import {
-	createContext,
-	useContext,
-	useEffect,
-	useState,
-	type ReactNode,
-} from "react";
+import { createContext, useEffect, useState, type ReactNode } from "react";
 
 import {
 	defaultLocale,
+	detectLocaleFromLanguage,
 	locales,
+	messagesByLocale,
 	type Locale,
 	type Messages,
-	messagesByLocale,
 } from "@/lang";
 
 const STORAGE_KEY = "locale";
@@ -24,9 +19,11 @@ interface I18nContextValue {
 	messages: Messages;
 }
 
-const I18nContext = createContext<I18nContextValue | undefined>(undefined);
+export const I18nContext = createContext<I18nContextValue | undefined>(
+	undefined,
+);
 
-export function I18nProvider({ children }: { children: ReactNode }) {
+export const I18nProvider = ({ children }: { children: ReactNode }) => {
 	const [locale, setLocale] = useState<Locale>(defaultLocale);
 
 	useEffect(() => {
@@ -36,10 +33,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 			return;
 		}
 
-		const browserLocale = navigator.language.toLowerCase().startsWith("el")
-			? "gr"
-			: defaultLocale;
-		setLocale(browserLocale);
+		setLocale(detectLocaleFromLanguage(navigator.language));
 	}, []);
 
 	useEffect(() => {
@@ -58,17 +52,4 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 			{children}
 		</I18nContext.Provider>
 	);
-}
-
-export function useI18n() {
-	const context = useContext(I18nContext);
-	if (!context) {
-		return {
-			locale: defaultLocale,
-			setLocale: () => {},
-			messages: messagesByLocale[defaultLocale],
-		};
-	}
-
-	return context;
-}
+};

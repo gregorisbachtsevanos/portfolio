@@ -21,19 +21,21 @@ interface ThemeContextValue {
 	isReady: boolean;
 }
 
-const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
+export const ThemeContext = createContext<ThemeContextValue | undefined>(
+	undefined,
+);
 
-function resolveInitialTheme(): Theme {
+const resolveInitialTheme = (): Theme => {
 	return window.matchMedia("(prefers-color-scheme: dark)").matches
 		? "dark"
 		: "light";
-}
+};
 
-function applyTheme(theme: Theme) {
+const applyTheme = (theme: Theme) => {
 	document.documentElement.classList.toggle("dark", theme === "dark");
-}
+};
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 	const [theme, setThemeState] = useState<Theme>("dark");
 	const [isReady, setIsReady] = useState(false);
 
@@ -78,19 +80,4 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 			{children}
 		</ThemeContext.Provider>
 	);
-}
-
-export function useTheme() {
-	const context = useContext(ThemeContext);
-
-	if (!context) {
-		return {
-			theme: "dark" as const,
-			setTheme: () => {},
-			toggleTheme: () => {},
-			isReady: false,
-		};
-	}
-
-	return context;
-}
+};

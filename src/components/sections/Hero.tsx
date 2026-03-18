@@ -1,10 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import { useI18n } from "@/lib/i18n";
+import { siteConfig } from "@/config/site";
+import useI18n from "@/hooks/useI18n";
+
 import { ArrowRight, Github, Linkedin } from "lucide-react";
 
-export default function Hero() {
+const Hero = () => {
 	const { messages } = useI18n();
 	const { hero } = messages;
 
@@ -64,7 +66,7 @@ export default function Hero() {
 
 					<div className="flex items-center justify-center gap-6">
 						<a
-							href="https://github.com"
+							href={siteConfig.githubUrl}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-muted-foreground hover:text-foreground transition-colors"
@@ -72,7 +74,7 @@ export default function Hero() {
 							<Github size={24} />
 						</a>
 						<a
-							href="https://linkedin.com"
+							href={siteConfig.linkedinUrl}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-muted-foreground hover:text-foreground transition-colors"
@@ -86,4 +88,6 @@ export default function Hero() {
 			<div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background dark:from-black to-transparent" />
 		</section>
 	);
-}
+};
+
+export default Hero;

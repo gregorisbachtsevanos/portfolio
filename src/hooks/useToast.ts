@@ -24,10 +24,10 @@ const actionTypes = {
 
 let count = 0;
 
-function genId() {
+const genId = () => {
 	count = (count + 1) % Number.MAX_SAFE_INTEGER;
 	return count.toString();
-}
+};
 
 type ActionType = typeof actionTypes;
 
@@ -54,6 +54,9 @@ interface State {
 }
 
 const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>();
+const listeners = new Set<(state: State) => void>();
+
+let memoryState: State = { toasts: [] };
 
 const addToRemoveQueue = (toastId: string) => {
 	if (toastTimeouts.has(toastId)) {
@@ -78,7 +81,6 @@ export const reducer = (state: State, action: Action): State => {
 				...state,
 				toasts: [action.toast, ...state.toasts].slice(0, TOAST_LIMIT),
 			};
-
 		case "UPDATE_TOAST":
 			return {
 				...state,
@@ -86,19 +88,8 @@ export const reducer = (state: State, action: Action): State => {
 					t.id === action.toast.id ? { ...t, ...action.toast } : t,
 				),
 			};
-
 		case "DISMISS_TOAST": {
 			const { toastId } = action;
-
-			// ! Side effects ! - This could be extracted into a dismissToast() action,
-			// but I'll keep it here for simplicity
-			if (toastId) {
-				addToRemoveQueue(toastId);
-			} else {
-				state.toasts.forEach((toast) => {
-					addToRemoveQueue(toast.id);
-				});
-			}
 
 			return {
 				...state,
@@ -123,23 +114,40 @@ export const reducer = (state: State, action: Action): State => {
 				...state,
 				toasts: state.toasts.filter((t) => t.id !== action.toastId),
 			};
+		default:
+			return state;
 	}
 };
 
-const listeners: Array<(state: State) => void> = [];
-
-let memoryState: State = { toasts: [] };
-
-function dispatch(action: Action) {
+const dispatch = (action: Action) => {
 	memoryState = reducer(memoryState, action);
 	listeners.forEach((listener) => {
 		listener(memoryState);
 	});
-}
+};
+
+const subscribe = (listener: (state: State) => void) => {
+	listeners.add(listener);
+	return () => {
+		listeners.delete(listener);
+	};
+};
+
+const dismissToast = (toastId?: string) => {
+	if (toastId) {
+		addToRemoveQueue(toastId);
+	} else {
+		memoryState.toasts.forEach((toast) => {
+			addToRemoveQueue(toast.id);
+		});
+	}
+
+	dispatch({ type: "DISMISS_TOAST", toastId });
+};
 
 type Toast = Omit<ToasterToast, "id">;
 
-function toast({ ...props }: Toast) {
+const toast = ({ ...props }: Toast) => {
 	const id = genId();
 
 	const update = (props: ToasterToast) =>
@@ -147,7 +155,7 @@ function toast({ ...props }: Toast) {
 			type: "UPDATE_TOAST",
 			toast: { ...props, id },
 		});
-	const dismiss = () => dispatch({ type: "DISMISS_TOAST", toastId: id });
+	const dismiss = () => dismissToast(id);
 
 	dispatch({
 		type: "ADD_TOAST",
@@ -166,27 +174,20 @@ function toast({ ...props }: Toast) {
 		dismiss,
 		update,
 	};
-}
+};
 
-function useToast() {
+const useToast = () => {
 	const [state, setState] = React.useState<State>(memoryState);
 
 	React.useEffect(() => {
-		listeners.push(setState);
-		return () => {
-			const index = listeners.indexOf(setState);
-			if (index > -1) {
-				listeners.splice(index, 1);
-			}
-		};
-	}, [state]);
+		return subscribe(setState);
+	}, []);
 
 	return {
 		...state,
 		toast,
-		dismiss: (toastId?: string) =>
-			dispatch({ type: "DISMISS_TOAST", toastId }),
+		dismiss: dismissToast,
 	};
-}
+};
 
 export { useToast, toast };

@@ -1,9 +1,10 @@
 "use client";
 
-import { useI18n } from "@/lib/i18n";
+import { trustReasons } from "@/config/site-content";
+import useI18n from "@/hooks/useI18n";
 import { CircleCheck as CheckCircle2 } from "lucide-react";
 
-export default function Trust() {
+const Trust = () => {
 	const { messages } = useI18n();
 	const { trust } = messages;
 
@@ -20,27 +21,35 @@ export default function Trust() {
 				</div>
 
 				<div className="grid md:grid-cols-2 gap-8">
-					{trust.reasons.map((reason) => (
-						<div
-							key={reason.id}
-							className="flex gap-4 p-6 rounded-xl bg-gradient-to-br from-secondary/50 to-secondary/0 border border-border hover:border-green-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/10"
-						>
-							<div className="flex-shrink-0">
-								<CheckCircle2
-									className="text-green-600 dark:text-green-400"
-									size={24}
-								/>
+					{trustReasons.map((reasonId) => {
+						const reason = trust.reasons[reasonId];
+
+						return (
+							<div
+								key={reasonId}
+								className="flex gap-4 p-6 rounded-xl bg-gradient-to-br from-secondary/50 to-secondary/0 border border-border hover:border-green-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/10"
+							>
+								<div className="flex-shrink-0">
+									<CheckCircle2
+										className="text-green-600 dark:text-green-400"
+										size={24}
+									/>
+								</div>
+								<div>
+									<h3 className="text-xl font-semibold mb-2">
+										{reason.title}
+									</h3>
+									<p className="text-muted-foreground leading-relaxed">
+										{reason.description}
+									</p>
+								</div>
 							</div>
-							<div>
-								<h3 className="text-xl font-semibold mb-2">{reason.title}</h3>
-								<p className="text-muted-foreground leading-relaxed">
-									{reason.description}
-								</p>
-							</div>
-						</div>
-					))}
+						);
+					})}
 				</div>
 			</div>
 		</section>
 	);
-}
+};
+
+export default Trust;

@@ -23,8 +23,13 @@ export type TrustReasonId =
 	| "full-stack-expertise";
 
 export interface Messages {
+	metadata: {
+		title: string;
+		description: string;
+		openGraphTitle: string;
+		openGraphDescription: string;
+	};
 	navigation: {
-		name: string;
 		about: string;
 		services: string;
 		projects: string;
@@ -43,46 +48,52 @@ export interface Messages {
 	};
 	about: {
 		title: string;
-		location: string;
+		locationLabel: string;
 		paragraphs: string[];
 	};
 	services: {
 		title: string;
 		subtitle: string;
-		items: Array<{
-			id: ServiceId;
-			title: string;
-			description: string;
-		}>;
+		items: Record<
+			ServiceId,
+			{
+				title: string;
+				description: string;
+			}
+		>;
 	};
 	projects: {
 		title: string;
 		subtitle: string;
-		items: Array<{
-			id: ProjectId;
-			title: string;
-			description: string;
-			tech: string[];
-			result: string;
-		}>;
+		items: Record<
+			ProjectId,
+			{
+				title: string;
+				description: string;
+				result: string;
+			}
+		>;
 	};
 	techStack: {
 		title: string;
 		subtitle: string;
-		categories: Array<{
-			id: TechCategoryId;
-			label: string;
-			technologies: string[];
-		}>;
+		categories: Record<
+			TechCategoryId,
+			{
+				label: string;
+			}
+		>;
 	};
 	trust: {
 		title: string;
 		subtitle: string;
-		reasons: Array<{
-			id: TrustReasonId;
-			title: string;
-			description: string;
-		}>;
+		reasons: Record<
+			TrustReasonId,
+			{
+				title: string;
+				description: string;
+			}
+		>;
 	};
 	contact: {
 		title: string;
@@ -101,7 +112,6 @@ export interface Messages {
 		toastTitle: string;
 		toastDescription: string;
 		copyright: string;
-		email: string;
 		github: string;
 		linkedin: string;
 	};

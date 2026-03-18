@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { useTheme } from "@/lib/theme";
+import { siteConfig } from "@/config/site";
 import { locales } from "@/lang";
-import { useI18n } from "@/lib/i18n";
+import useI18n from "@/hooks/useI18n";
+import useTheme from "@/hooks/useTheme";
 
-export default function Navigation() {
+const Navigation = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const { theme, toggleTheme, isReady } = useTheme();
@@ -68,7 +69,7 @@ export default function Navigation() {
 							onClick={() => scrollToSection("hero")}
 							className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
 						>
-							{navigation.name}
+							{siteConfig.name}
 						</button>
 					</div>
 
@@ -190,4 +191,6 @@ export default function Navigation() {
 			)}
 		</nav>
 	);
-}
+};
+
+export default Navigation;

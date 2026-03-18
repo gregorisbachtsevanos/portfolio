@@ -1,9 +1,10 @@
 "use client";
 
-import { useI18n } from "@/lib/i18n";
+import { siteConfig } from "@/config/site";
+import useI18n from "@/hooks/useI18n";
 import { MapPin } from "lucide-react";
 
-export default function About() {
+const About = () => {
 	const { messages } = useI18n();
 	const { about } = messages;
 
@@ -16,7 +17,7 @@ export default function About() {
 					</h2>
 					<div className="flex items-center justify-center gap-2 text-muted-foreground">
 						<MapPin size={16} />
-						<span>{about.location}</span>
+						<span>{`${about.locationLabel} ${siteConfig.location}`}</span>
 					</div>
 				</div>
 
@@ -25,7 +26,9 @@ export default function About() {
 						<p
 							key={paragraph}
 							className={`text-lg sm:text-xl text-foreground leading-relaxed ${
-								index < about.paragraphs.length - 1 ? "mb-6" : ""
+								index < about.paragraphs.length - 1
+									? "mb-6"
+									: ""
 							}`}
 						>
 							{paragraph}
@@ -35,4 +38,6 @@ export default function About() {
 			</div>
 		</section>
 	);
-}
+};
+
+export default About;

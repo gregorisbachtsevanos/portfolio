@@ -1,10 +1,10 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { serviceIcons } from "@/lang";
-import { useI18n } from "@/lib/i18n";
+import { services as serviceItems } from "@/config/site-content";
+import useI18n from "@/hooks/useI18n";
 
-export default function Services() {
+const Services = () => {
 	const { messages } = useI18n();
 	const { services } = messages;
 
@@ -24,8 +24,9 @@ export default function Services() {
 				</div>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-					{services.items.map((service) => {
-						const Icon = serviceIcons[service.id];
+					{serviceItems.map((service) => {
+						const Icon = service.icon;
+						const copy = services.items[service.id];
 
 						return (
 							<Card
@@ -39,11 +40,13 @@ export default function Services() {
 											size={24}
 										/>
 									</div>
-									<CardTitle className="text-xl">{service.title}</CardTitle>
+									<CardTitle className="text-xl">
+										{copy.title}
+									</CardTitle>
 								</CardHeader>
 								<CardContent>
 									<p className="text-muted-foreground leading-relaxed">
-										{service.description}
+										{copy.description}
 									</p>
 								</CardContent>
 							</Card>
@@ -53,4 +56,6 @@ export default function Services() {
 			</div>
 		</section>
 	);
-}
+};
+
+export default Services;

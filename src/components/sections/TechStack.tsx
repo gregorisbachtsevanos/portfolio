@@ -1,9 +1,9 @@
 "use client";
 
-import { techCategoryIcons } from "@/lang";
-import { useI18n } from "@/lib/i18n";
+import { techCategories } from "@/config/site-content";
+import useI18n from "@/hooks/useI18n";
 
-export default function TechStack() {
+const TechStack = () => {
 	const { messages } = useI18n();
 	const { techStack } = messages;
 
@@ -20,8 +20,9 @@ export default function TechStack() {
 				</div>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-					{techStack.categories.map((category) => {
-						const Icon = techCategoryIcons[category.id];
+					{techCategories.map((category) => {
+						const Icon = category.icon;
+						const copy = techStack.categories[category.id];
 
 						return (
 							<div
@@ -35,7 +36,9 @@ export default function TechStack() {
 											size={20}
 										/>
 									</div>
-									<h3 className="text-xl font-semibold">{category.label}</h3>
+									<h3 className="text-xl font-semibold">
+										{copy.label}
+									</h3>
 								</div>
 								<ul className="space-y-2">
 									{category.technologies.map((tech) => (
@@ -55,4 +58,6 @@ export default function TechStack() {
 			</div>
 		</section>
 	);
-}
+};
+
+export default TechStack;

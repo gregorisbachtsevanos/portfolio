@@ -1,37 +1,18 @@
 "use client";
 
-import { useState } from "react";
 import { Mail, Github, Linkedin, Send } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
-import { useToast } from "@/hooks/useToast";
-import { useI18n } from "@/lib/i18n";
+import { siteConfig } from "@/config/site";
+import useContactForm from "@/hooks/useContactForm";
+import useI18n from "@/hooks/useI18n";
 
-export default function Contact() {
-	const { toast } = useToast();
+const Contact = () => {
 	const { messages } = useI18n();
 	const { contact } = messages;
-	const [formData, setFormData] = useState({
-		name: "",
-		email: "",
-		message: "",
-	});
-	const [isSubmitting, setIsSubmitting] = useState(false);
-
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault();
-		setIsSubmitting(true);
-
-		setTimeout(() => {
-			toast({
-				title: contact.toastTitle,
-				description: contact.toastDescription,
-			});
-			setFormData({ name: "", email: "", message: "" });
-			setIsSubmitting(false);
-		}, 1000);
-	};
+	const { formData, isSubmitting, handleChange, handleSubmit } =
+		useContactForm();
 
 	return (
 		<section id="contact" className="py-24 bg-background">
@@ -56,7 +37,7 @@ export default function Contact() {
 
 						<div className="space-y-4">
 							<a
-								href={`mailto:${contact.email}`}
+								href={`mailto:${siteConfig.email}`}
 								className="flex items-center gap-3 text-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
 							>
 								<div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
@@ -65,11 +46,11 @@ export default function Contact() {
 										className="text-blue-600 dark:text-blue-400"
 									/>
 								</div>
-								<span>{contact.email}</span>
+								<span>{siteConfig.email}</span>
 							</a>
 
 							<a
-								href="https://github.com"
+								href={siteConfig.githubUrl}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-3 text-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
@@ -84,7 +65,7 @@ export default function Contact() {
 							</a>
 
 							<a
-								href="https://linkedin.com"
+								href={siteConfig.linkedinUrl}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-3 text-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
@@ -107,12 +88,7 @@ export default function Contact() {
 									type="text"
 									placeholder={contact.formPlaceholders.name}
 									value={formData.name}
-									onChange={(e) =>
-										setFormData({
-											...formData,
-											name: e.target.value,
-										})
-									}
+									onChange={handleChange("name")}
 									required
 									className="focus:border-blue-500/50 placeholder:text-muted-foreground"
 								/>
@@ -123,12 +99,7 @@ export default function Contact() {
 									type="email"
 									placeholder={contact.formPlaceholders.email}
 									value={formData.email}
-									onChange={(e) =>
-										setFormData({
-											...formData,
-											email: e.target.value,
-										})
-									}
+									onChange={handleChange("email")}
 									required
 									className="focus:border-blue-500/50 placeholder:text-muted-foreground"
 								/>
@@ -136,14 +107,11 @@ export default function Contact() {
 
 							<div>
 								<Textarea
-									placeholder={contact.formPlaceholders.message}
-									value={formData.message}
-									onChange={(e) =>
-										setFormData({
-											...formData,
-											message: e.target.value,
-										})
+									placeholder={
+										contact.formPlaceholders.message
 									}
+									value={formData.message}
+									onChange={handleChange("message")}
 									required
 									rows={6}
 									className="focus:border-blue-500/50 placeholder:text-muted-foreground resize-none"
@@ -173,4 +141,6 @@ export default function Contact() {
 			</div>
 		</section>
 	);
-}
+};
+
+export default Contact;

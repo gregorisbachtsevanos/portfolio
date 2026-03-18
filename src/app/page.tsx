@@ -1,5 +1,3 @@
-"use client";
-
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
@@ -9,7 +7,7 @@ import Trust from "@/components/sections/Trust";
 import Contact from "@/components/sections/Contact";
 import Navigation from "@/components/sections/Navigation";
 
-export default function Home() {
+const Home = () => {
 	return (
 		<main className="min-h-screen bg-background text-foreground transition-colors duration-300">
 			<Navigation />
@@ -22,4 +20,6 @@ export default function Home() {
 			<Contact />
 		</main>
 	);
-}
+};
+
+export default Home;
