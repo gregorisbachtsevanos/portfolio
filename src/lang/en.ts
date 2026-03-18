@@ -1,14 +1,6 @@
-import {
-	Cloud,
-	Code,
-	Code2,
-	Database,
-	Server,
-	Zap,
-	TrendingUp,
-} from "lucide-react";
+import type { Messages } from "./schema";
 
-export const content = {
+export const en = {
 	navigation: {
 		name: "Gregoris Bachtsevanos",
 		about: "About",
@@ -16,6 +8,11 @@ export const content = {
 		projects: "Projects",
 		techStack: "Tech Stack",
 		contact: "Contact",
+		languageLabel: "Language",
+		languages: {
+			en: "EN",
+			gr: "GR",
+		},
 	},
 	hero: {
 		title: "Full-Stack Developer",
@@ -41,31 +38,31 @@ export const content = {
 			"Comprehensive full-stack development services to bring your ideas to life",
 		items: [
 			{
-				icon: Code,
+				id: "full-stack-web-apps",
 				title: "Full-Stack Web Application Development",
 				description:
 					"Custom web platforms built with React and Node.js. End-to-end solutions tailored to your business needs.",
 			},
 			{
-				icon: Server,
+				id: "api-backend",
 				title: "API Development & Backend Systems",
 				description:
 					"Secure and scalable backend services. REST APIs, authentication systems, and database architecture.",
 			},
 			{
-				icon: Zap,
+				id: "startup-mvp",
 				title: "Startup MVP Development",
 				description:
 					"Building the first version of your startup product quickly and efficiently. Get to market faster without sacrificing quality.",
 			},
 			{
-				icon: Cloud,
+				id: "devops-deployment",
 				title: "DevOps & Deployment",
 				description:
 					"Dockerized applications, Linux server configuration, and CI/CD pipelines for reliable deployments.",
 			},
 			{
-				icon: TrendingUp,
+				id: "performance-optimization",
 				title: "Performance Optimization",
 				description:
 					"Improving speed and scalability of existing applications. Comprehensive audits and optimizations.",
@@ -78,6 +75,7 @@ export const content = {
 			"Recent work showcasing full-stack development and system architecture",
 		items: [
 			{
+				id: "authentication-platform",
 				title: "Authentication Platform",
 				description:
 					"Secure authentication backend handling machine tokens, refresh tokens, and access tokens for multiple applications. Built with industry-standard security practices.",
@@ -85,6 +83,7 @@ export const content = {
 				result: "Handles 10k+ daily auth requests",
 			},
 			{
+				id: "task-management-platform",
 				title: "Task Management Platform",
 				description:
 					"Full-stack project and task management system with projects, groups, tasks, and subtasks. Complete with real-time updates and collaborative features.",
@@ -92,6 +91,7 @@ export const content = {
 				result: "Improved team productivity by 40%",
 			},
 			{
+				id: "developer-dashboard",
 				title: "Developer Dashboard",
 				description:
 					"Modern analytics dashboard with advanced state management and API integrations. Real-time data visualization and performance metrics.",
@@ -106,8 +106,8 @@ export const content = {
 			"Modern technologies and tools I use to build reliable solutions",
 		categories: [
 			{
-				category: "Frontend",
-				icon: Code2,
+				id: "frontend",
+				label: "Frontend",
 				technologies: [
 					"React.js",
 					"Next.js",
@@ -119,8 +119,8 @@ export const content = {
 				],
 			},
 			{
-				category: "Backend",
-				icon: Server,
+				id: "backend",
+				label: "Backend",
 				technologies: [
 					"Node.js",
 					"Express.js",
@@ -130,13 +130,13 @@ export const content = {
 				],
 			},
 			{
-				category: "Database",
-				icon: Database,
+				id: "database",
+				label: "Database",
 				technologies: ["MongoDB", "MySQL", "PostgreSQL"],
 			},
 			{
-				category: "DevOps",
-				icon: Cloud,
+				id: "devops",
+				label: "DevOps",
 				technologies: [
 					"Docker",
 					"Linux Servers",
@@ -153,21 +153,25 @@ export const content = {
 			"Delivering excellence through proven principles and practices",
 		reasons: [
 			{
+				id: "clean-code",
 				title: "Clean and Maintainable Code",
 				description:
 					"Following best practices and industry standards to ensure your codebase stays manageable as it grows.",
 			},
 			{
+				id: "scalability",
 				title: "Focus on Scalability",
 				description:
 					"Architecture designed to handle growth. Built to scale from MVP to enterprise.",
 			},
 			{
+				id: "production-ready",
 				title: "Production-Ready Architecture",
 				description:
 					"Every project is built with production in mind. Security, performance, and reliability from day one.",
 			},
 			{
+				id: "full-stack-expertise",
 				title: "Strong Backend and Frontend Expertise",
 				description:
 					"Full-stack capabilities mean seamless integration between your frontend and backend systems.",
@@ -197,4 +201,4 @@ export const content = {
 		github: "GitHub Profile",
 		linkedin: "LinkedIn Profile",
 	},
-};
+} satisfies Messages;

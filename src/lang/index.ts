@@ -1,7 +1,12 @@
-import { content as en } from "./en";
-import { content as gr } from "./gr";
+import { serviceIcons, techCategoryIcons } from "./config";
+import { en } from "./en";
+import { gr } from "./gr";
+import { defaultLocale, locales } from "./schema";
 
-export const languages = {
+export { defaultLocale, locales, serviceIcons, techCategoryIcons };
+export type * from "./schema";
+
+export const messagesByLocale = {
 	en,
 	gr,
 };

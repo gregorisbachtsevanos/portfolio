@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/Toaster";
+import { I18nProvider } from "@/lib/i18n";
 import { ThemeProvider } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -41,10 +42,12 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body className={inter.className}>
-				<ThemeProvider>
-					{children}
-					<Toaster />
-				</ThemeProvider>
+				<I18nProvider>
+					<ThemeProvider>
+						{children}
+						<Toaster />
+					</ThemeProvider>
+				</I18nProvider>
 			</body>
 		</html>
 	);

@@ -4,13 +4,16 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { useTheme } from "@/app/providers";
-import { t } from "@/lib/i18n";
+import { locales } from "@/lang";
+import { useI18n } from "@/lib/i18n";
 
 export default function Navigation() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [mounted, setMounted] = useState(false);
 	const { theme, toggleTheme } = useTheme();
+	const { locale, setLocale, messages } = useI18n();
+	const { navigation } = messages;
 
 	useEffect(() => {
 		setMounted(true);
@@ -32,6 +35,29 @@ export default function Navigation() {
 		}
 	};
 
+	const renderLanguageSwitcher = () => (
+		<div
+			className="flex items-center rounded-full border border-border/70 bg-secondary/40 p-1"
+			aria-label={navigation.languageLabel}
+		>
+			{locales.map((option) => (
+				<button
+					key={option}
+					type="button"
+					onClick={() => setLocale(option)}
+					className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+						locale === option
+							? "bg-foreground text-background"
+							: "text-muted-foreground hover:text-foreground"
+					}`}
+					aria-pressed={locale === option}
+				>
+					{navigation.languages[option]}
+				</button>
+			))}
+		</div>
+	);
+
 	return (
 		<nav
 			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -47,7 +73,7 @@ export default function Navigation() {
 							onClick={() => scrollToSection("hero")}
 							className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
 						>
-							{t("gr", "navigation.name")}
+							{navigation.name}
 						</button>
 					</div>
 
@@ -57,26 +83,27 @@ export default function Navigation() {
 								onClick={() => scrollToSection("about")}
 								className="text-muted-foreground hover:text-foreground transition-colors"
 							>
-								{t("gr", "navigation.about")}
+								{navigation.about}
 							</button>
 							<button
 								onClick={() => scrollToSection("services")}
 								className="text-muted-foreground hover:text-foreground transition-colors"
 							>
-								{t("gr", "navigation.services")}
+								{navigation.services}
 							</button>
 							<button
 								onClick={() => scrollToSection("projects")}
 								className="text-muted-foreground hover:text-foreground transition-colors"
 							>
-								{t("gr", "navigation.projects")}
+								{navigation.projects}
 							</button>
 							<button
 								onClick={() => scrollToSection("tech-stack")}
 								className="text-muted-foreground hover:text-foreground transition-colors"
 							>
-								{t("gr", "navigation.techStack")}
+								{navigation.techStack}
 							</button>
+							{renderLanguageSwitcher()}
 							{mounted && (
 								<button
 									onClick={toggleTheme}
@@ -94,12 +121,13 @@ export default function Navigation() {
 								onClick={() => scrollToSection("contact")}
 								className="bg-blue-600 hover:bg-blue-700 text-white"
 							>
-								{t("gr", "navigation.contact")}
+								{navigation.contact}
 							</Button>
 						</div>
 					</div>
 
 					<div className="md:hidden flex items-center space-x-2">
+						{renderLanguageSwitcher()}
 						{mounted && (
 							<button
 								onClick={toggleTheme}
@@ -136,31 +164,31 @@ export default function Navigation() {
 							onClick={() => scrollToSection("about")}
 							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
 						>
-							{t("gr", "navigation.about")}
+							{navigation.about}
 						</button>
 						<button
 							onClick={() => scrollToSection("services")}
 							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
 						>
-							{t("gr", "navigation.services")}
+							{navigation.services}
 						</button>
 						<button
 							onClick={() => scrollToSection("projects")}
 							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
 						>
-							{t("gr", "navigation.projects")}
+							{navigation.projects}
 						</button>
 						<button
 							onClick={() => scrollToSection("tech-stack")}
 							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
 						>
-							{t("gr", "navigation.techStack")}
+							{navigation.techStack}
 						</button>
 						<button
 							onClick={() => scrollToSection("contact")}
 							className="block w-full text-left px-3 py-2 text-blue-600 hover:text-blue-700 hover:bg-secondary/5 rounded-md transition-colors"
 						>
-							{t("gr", "navigation.contact")}
+							{navigation.contact}
 						</button>
 					</div>
 				</div>
