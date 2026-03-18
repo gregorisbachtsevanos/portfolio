@@ -3,21 +3,16 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { useTheme } from "@/app/providers";
+import { useTheme } from "@/lib/theme";
 import { locales } from "@/lang";
 import { useI18n } from "@/lib/i18n";
 
 export default function Navigation() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-	const [mounted, setMounted] = useState(false);
-	const { theme, toggleTheme } = useTheme();
+	const { theme, toggleTheme, isReady } = useTheme();
 	const { locale, setLocale, messages } = useI18n();
 	const { navigation } = messages;
-
-	useEffect(() => {
-		setMounted(true);
-	}, []);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -104,7 +99,7 @@ export default function Navigation() {
 								{navigation.techStack}
 							</button>
 							{renderLanguageSwitcher()}
-							{mounted && (
+							{isReady && (
 								<button
 									onClick={toggleTheme}
 									className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
@@ -128,7 +123,7 @@ export default function Navigation() {
 
 					<div className="md:hidden flex items-center space-x-2">
 						{renderLanguageSwitcher()}
-						{mounted && (
+						{isReady && (
 							<button
 								onClick={toggleTheme}
 								className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
