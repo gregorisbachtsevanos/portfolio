@@ -23,8 +23,8 @@ export default function Contact() {
 
 		setTimeout(() => {
 			toast({
-				title: t("en", "contact.toastTitle"),
-				description: t("en", "contact.toastDescription"),
+				title: t("gr", "contact.toastTitle"),
+				description: t("gr", "contact.toastDescription"),
 			});
 			setFormData({ name: "", email: "", message: "" });
 			setIsSubmitting(false);
@@ -36,25 +36,25 @@ export default function Contact() {
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-						{t("en", "contact.title")}
+						{t("gr", "contact.title")}
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-						{t("en", "contact.subtitle")}
+						{t("gr", "contact.subtitle")}
 					</p>
 				</div>
 
 				<div className="grid md:grid-cols-2 gap-12">
 					<div>
 						<h3 className="text-2xl font-semibold mb-6">
-							{t("en", "contact.getInTouch")}
+							{t("gr", "contact.getInTouch")}
 						</h3>
 						<p className="text-muted-foreground mb-8 leading-relaxed">
-							{t("en", "contact.paragraphs.0")}
+							{t("gr", "contact.paragraphs.0")}
 						</p>
 
 						<div className="space-y-4">
 							<a
-								href="mailto:contact@example.com"
+								href={`mailto:${t("gr", "contact.email")}`}
 								className="flex items-center gap-3 text-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
 							>
 								<div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
@@ -63,7 +63,7 @@ export default function Contact() {
 										className="text-blue-600 dark:text-blue-400"
 									/>
 								</div>
-								<span>contact@example.com</span>
+								<span>{t("gr", "contact.email")}</span>
 							</a>
 
 							<a
@@ -78,7 +78,7 @@ export default function Contact() {
 										className="text-blue-600 dark:text-blue-400"
 									/>
 								</div>
-								<span>GitHub Profile</span>
+								<span>{t("gr", "contact.github")}</span>
 							</a>
 
 							<a
@@ -93,7 +93,7 @@ export default function Contact() {
 										className="text-blue-600 dark:text-blue-400"
 									/>
 								</div>
-								<span>LinkedIn Profile</span>
+								<span>{t("gr", "contact.linkedin")}</span>
 							</a>
 						</div>
 					</div>
@@ -104,7 +104,7 @@ export default function Contact() {
 								<Input
 									type="text"
 									placeholder={t(
-										"en",
+										"gr",
 										"contact.formPlaceholders.name",
 									)}
 									value={formData.name}
@@ -123,7 +123,7 @@ export default function Contact() {
 								<Input
 									type="email"
 									placeholder={t(
-										"en",
+										"gr",
 										"contact.formPlaceholders.email",
 									)}
 									value={formData.email}
@@ -141,7 +141,7 @@ export default function Contact() {
 							<div>
 								<Textarea
 									placeholder={t(
-										"en",
+										"gr",
 										"contact.formPlaceholders.message",
 									)}
 									value={formData.message}
@@ -163,8 +163,8 @@ export default function Contact() {
 								className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg group"
 							>
 								{isSubmitting
-									? t("en", "contact.submitButton.sending")
-									: t("en", "contact.submitButton.send")}
+									? t("gr", "contact.submitButton.sending")
+									: t("gr", "contact.submitButton.send")}
 								<Send
 									className="ml-2 group-hover:translate-x-1 transition-transform"
 									size={20}
@@ -175,7 +175,7 @@ export default function Contact() {
 				</div>
 
 				<div className="mt-16 pt-8 border-t border-border text-center text-muted-foreground">
-					<p>{t("en", "contact.copyright")}</p>
+					<p>{t("gr", "contact.copyright")}</p>
 				</div>
 			</div>
 		</section>

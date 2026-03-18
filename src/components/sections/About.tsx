@@ -9,25 +9,25 @@ export default function About() {
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-12">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-						{t("en", "about.title")}
+						{t("gr", "about.title")}
 					</h2>
 					<div className="flex items-center justify-center gap-2 text-muted-foreground">
 						<MapPin size={16} />
-						<span>{t("en", "about.location")}</span>
+						<span>{t("gr", "about.location")}</span>
 					</div>
 				</div>
 
 				<div className="bg-gradient-to-br from-secondary/50 to-secondary/0 border border-border rounded-2xl p-8 sm:p-12">
 					<p className="text-lg sm:text-xl text-foreground leading-relaxed mb-6">
-						{t("en", "about.paragraphs.0")}
+						{t("gr", "about.paragraphs.0")}
 					</p>
 
 					<p className="text-lg sm:text-xl text-foreground leading-relaxed mb-6">
-						{t("en", "about.paragraphs.1")}
+						{t("gr", "about.paragraphs.1")}
 					</p>
 
 					<p className="text-lg sm:text-xl text-foreground leading-relaxed">
-						{t("en", "about.paragraphs.2")}
+						{t("gr", "about.paragraphs.2")}
 					</p>
 				</div>
 			</div>

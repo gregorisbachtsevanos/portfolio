@@ -24,20 +24,20 @@ export default function Hero() {
 				<div className="animate-fade-in">
 					<div className="inline-block mb-4 px-4 py-1.5 bg-blue-500/10 dark:bg-blue-500/10 border border-blue-500/20 dark:border-blue-500/20 rounded-full">
 						<span className="text-sm text-blue-600 dark:text-blue-400">
-							{t("en", "hero.availability")}
+							{t("gr", "hero.availability")}
 						</span>
 					</div>
 
 					<h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-						{t("en", "hero.title")}
+						{t("gr", "hero.title")}
 						<br />
 						<span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
-							{t("en", "hero.subtitle")}
+							{t("gr", "hero.subtitle")}
 						</span>
 					</h1>
 
 					<p className="text-xl sm:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-						{t("en", "hero.description")}
+						{t("gr", "hero.description")}
 					</p>
 
 					<div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -46,7 +46,7 @@ export default function Hero() {
 							size="lg"
 							className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6 rounded-lg group"
 						>
-							{t("en", "hero.ctaProject")}
+							{t("gr", "hero.ctaProject")}
 							<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
 						</Button>
 						<Button
@@ -55,7 +55,7 @@ export default function Hero() {
 							variant="outline"
 							className="text-lg px-8 py-6 rounded-lg"
 						>
-							{t("en", "hero.ctaWork")}
+							{t("gr", "hero.ctaWork")}
 						</Button>
 					</div>
 

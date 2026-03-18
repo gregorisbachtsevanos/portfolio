@@ -12,15 +12,15 @@ export default function Services() {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-						{t("en", "services.title")}
+						{t("gr", "services.title")}
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-						{t("en", "services.subtitle")}
+						{t("gr", "services.subtitle")}
 					</p>
 				</div>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-					{t("en", "services.items").map((service, index) => (
+					{t("gr", "services.items").map((service, index) => (
 						<Card
 							key={index}
 							className="bg-gradient-to-br from-secondary/50 to-secondary/0 border-border hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 group"
@@ -33,13 +33,13 @@ export default function Services() {
 									/>
 								</div>
 								<CardTitle className="text-xl">
-									{t("en", `services.items.${index}.title`)}
+									{t("gr", `services.items.${index}.title`)}
 								</CardTitle>
 							</CardHeader>
 							<CardContent>
 								<p className="text-muted-foreground leading-relaxed">
 									{t(
-										"en",
+										"gr",
 										`services.items.${index}.description`,
 									)}
 								</p>

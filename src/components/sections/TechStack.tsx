@@ -8,15 +8,15 @@ export default function TechStack() {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-						{t("en", "techStack.title")}
+						{t("gr", "techStack.title")}
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-						{t("en", "techStack.subtitle")}
+						{t("gr", "techStack.subtitle")}
 					</p>
 				</div>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-					{t("en", "techStack.categories").map((category, index) => (
+					{t("gr", "techStack.categories").map((category, index) => (
 						<div
 							key={index}
 							className="bg-gradient-to-br from-secondary/50 to-secondary/0 border border-border rounded-xl p-6 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10"
@@ -30,14 +30,14 @@ export default function TechStack() {
 								</div>
 								<h3 className="text-xl font-semibold">
 									{t(
-										"en",
+										"gr",
 										`techStack.categories.${index}.category`,
 									)}
 								</h3>
 							</div>
 							<ul className="space-y-2">
 								{t(
-									"en",
+									"gr",
 									`techStack.categories.${index}.technologies`,
 								).map((tech, techIndex) => (
 									<li

@@ -9,15 +9,15 @@ export default function Trust() {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-						{t("en", "trust.title")}
+						{t("gr", "trust.title")}
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-						{t("en", "trust.subtitle")}
+						{t("gr", "trust.subtitle")}
 					</p>
 				</div>
 
 				<div className="grid md:grid-cols-2 gap-8">
-					{t("en", "trust.reasons").map((reason, index) => (
+					{t("gr", "trust.reasons").map((reason, index) => (
 						<div
 							key={index}
 							className="flex gap-4 p-6 rounded-xl bg-gradient-to-br from-secondary/50 to-secondary/0 border border-border hover:border-green-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/10"
@@ -30,11 +30,11 @@ export default function Trust() {
 							</div>
 							<div>
 								<h3 className="text-xl font-semibold mb-2">
-									{t("en", `trust.reasons.${index}.title`)}
+									{t("gr", `trust.reasons.${index}.title`)}
 								</h3>
 								<p className="text-muted-foreground leading-relaxed">
 									{t(
-										"en",
+										"gr",
 										`trust.reasons.${index}.description`,
 									)}
 								</p>

@@ -179,7 +179,7 @@ export const content = {
 		subtitle: "Let's discuss how I can help bring your ideas to life",
 		getInTouch: "Get in Touch",
 		paragraphs: [
-			"Whether you're looking to build a new product, scale an existing               platform, or need technical consultation, I'm here to help.",
+			"Whether you're looking to build a new product, scale an existing platform, or need technical consultation, I'm here to help.",
 		],
 		formPlaceholders: {
 			name: "Your Name",
@@ -193,5 +193,8 @@ export const content = {
 		toastTitle: "Message sent!",
 		toastDescription: "I'll get back to you as soon as possible.",
 		copyright: "© 2026 Gregoris Bachtsevanos. All rights reserved.",
+		email: "contact@example.com",
+		github: "GitHub Profile",
+		linkedin: "LinkedIn Profile",
 	},
 };

@@ -1,4 +1,22 @@
+import {
+	Cloud,
+	Code,
+	Code2,
+	Database,
+	Server,
+	Zap,
+	TrendingUp,
+} from "lucide-react";
+
 export const content = {
+	navigation: {
+		name: "Γρηγόρης Μπαχτσεβάνος",
+		about: "Σχετικά",
+		services: "Υπηρεσίες",
+		projects: "Έργα",
+		techStack: "Τεχνολογίες",
+		contact: "Επικοινωνία",
+	},
 	hero: {
 		title: "Full-Stack Προγραμματιστής",
 		subtitle: "Κατασκευή Κλιμακούμενων Web Εφαρμογών & APIs",
@@ -23,26 +41,31 @@ export const content = {
 			"Ολοκληρωμένες υπηρεσίες full-stack ανάπτυξης για να ζωντανέψουν οι ιδέες σας",
 		items: [
 			{
+				icon: Code,
 				title: "Ανάπτυξη Full-Stack Web Εφαρμογών",
 				description:
 					"Προσαρμοσμένες web πλατφόρμες με React και Node.js. Ολοκληρωμένες λύσεις προσαρμοσμένες στις ανάγκες της επιχείρησής σας.",
 			},
 			{
+				icon: Server,
 				title: "Ανάπτυξη APIs & Backend Συστημάτων",
 				description:
 					"Ασφαλή και κλιμακούμενα backend συστήματα. REST APIs, συστήματα authentication και αρχιτεκτονική βάσεων δεδομένων.",
 			},
 			{
+				icon: Zap,
 				title: "Ανάπτυξη MVP για Startups",
 				description:
 					"Κατασκευή της πρώτης έκδοσης του προϊόντος σας γρήγορα και αποτελεσματικά. Φτάστε στην αγορά πιο γρήγορα χωρίς να θυσιάσετε την ποιότητα.",
 			},
 			{
+				icon: Cloud,
 				title: "DevOps & Ανάπτυξη",
 				description:
 					"Dockerized εφαρμογές, ρύθμιση Linux servers και CI/CD pipelines για αξιόπιστες αναπτύξεις.",
 			},
 			{
+				icon: TrendingUp,
 				title: "Βελτιστοποίηση Απόδοσης",
 				description:
 					"Βελτίωση της ταχύτητας και κλιμακούμενων δυνατοτήτων υφιστάμενων εφαρμογών. Ολοκληρωμένοι έλεγχοι και βελτιστοποιήσεις.",
@@ -81,23 +104,98 @@ export const content = {
 		title: "Tech Stack",
 		subtitle:
 			"Σύγχρονες τεχνολογίες και εργαλεία που χρησιμοποιώ για αξιόπιστες λύσεις",
+		categories: [
+			{
+				category: "Frontend",
+				icon: Code2,
+				technologies: [
+					"React.js",
+					"Next.js",
+					"TypeScript",
+					"Redux Toolkit",
+					"HTML/CSS/SCSS",
+					"Styled Components",
+					"Vite",
+				],
+			},
+			{
+				category: "Backend",
+				icon: Server,
+				technologies: [
+					"Node.js",
+					"Express.js",
+					"REST APIs",
+					"Authentication",
+					"Token Security",
+				],
+			},
+			{
+				category: "Database",
+				icon: Database,
+				technologies: ["MongoDB", "MySQL", "PostgreSQL"],
+			},
+			{
+				category: "DevOps",
+				icon: Cloud,
+				technologies: [
+					"Docker",
+					"Linux Servers",
+					"Git",
+					"CI/CD",
+					"Cloud Deployments",
+				],
+			},
+		],
 	},
 	trust: {
 		title: "Γιατί Να Συνεργαστείτε Μαζί Μου",
 		subtitle: "Παρέχοντας αριστεία μέσω αποδεδειγμένων αρχών και πρακτικών",
+		reasons: [
+			{
+				title: "Καθαρός και Συντηρήσιμος Κώδικας",
+				description:
+					"Ακολουθώ βέλτιστες πρακτικές και πρότυπα του κλάδου ώστε ο κώδικάς σας να παραμένει διαχειρίσιμος καθώς μεγαλώνει.",
+			},
+			{
+				title: "Έμφαση στην Κλιμάκωση",
+				description:
+					"Αρχιτεκτονική σχεδιασμένη για ανάπτυξη. Κατασκευασμένη ώστε να κλιμακώνεται από MVP έως enterprise επίπεδο.",
+			},
+			{
+				title: "Αρχιτεκτονική Έτοιμη για Παραγωγή",
+				description:
+					"Κάθε έργο υλοποιείται με γνώμονα την παραγωγή. Ασφάλεια, απόδοση και αξιοπιστία από την πρώτη μέρα.",
+			},
+			{
+				title: "Ισχυρή Εξειδίκευση σε Backend και Frontend",
+				description:
+					"Full-stack δυνατότητες που εξασφαλίζουν ομαλή ενσωμάτωση μεταξύ frontend και backend συστημάτων.",
+			},
+		],
 	},
 	contact: {
 		title: "Έχετε Ένα Έργο Στο Μυαλό Σας;",
 		subtitle:
 			"Ας συζητήσουμε πώς μπορώ να βοηθήσω να ζωντανέψουν οι ιδέες σας",
 		getInTouch: "Επικοινωνήστε Μαζί Μου",
+		paragraphs: [
+			"Είτε θέλετε να δημιουργήσετε ένα νέο προϊόν, να επεκτείνετε μια υπάρχουσα πλατφόρμα ή χρειάζεστε τεχνική συμβουλή, είμαι εδώ για να βοηθήσω.",
+		],
 		formPlaceholders: {
 			name: "Το Όνομά Σας",
 			email: "Το Email Σας",
 			message: "Πείτε μου για το έργο σας...",
 		},
-		sendButton: "Αποστολή Μηνύματος",
+		submitButton: {
+			send: "Αποστολή Μηνύματος",
+			sending: "Αποστολή...",
+		},
 		toastTitle: "Το μήνυμα στάλθηκε!",
 		toastDescription: "Θα σας απαντήσω το συντομότερο δυνατό.",
+		copyright:
+			"© 2026 Γρηγόρης Μπαχτσεβάνος. Όλα τα δικαιώματα διατηρούνται.",
+		email: "contact@example.com",
+		github: "GitHub Profile",
+		linkedin: "LinkedIn Profile",
 	},
 };
