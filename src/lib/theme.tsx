@@ -1,83 +1,23 @@
 "use client";
 
-import {
-	createContext,
-	useContext,
-	useEffect,
-	useState,
-	type ReactNode,
-} from "react";
-
-const STORAGE_KEY = "theme";
+import type { ReactNode } from "react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 export const themes = ["light", "dark"] as const;
 
 export type Theme = (typeof themes)[number];
 
-interface ThemeContextValue {
-	theme: Theme;
-	setTheme: (theme: Theme) => void;
-	toggleTheme: () => void;
-	isReady: boolean;
-}
-
-export const ThemeContext = createContext<ThemeContextValue | undefined>(
-	undefined,
-);
-
-const resolveInitialTheme = (): Theme => {
-	return window.matchMedia("(prefers-color-scheme: dark)").matches
-		? "dark"
-		: "light";
-};
-
-const applyTheme = (theme: Theme) => {
-	document.documentElement.classList.toggle("dark", theme === "dark");
-};
-
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-	const [theme, setThemeState] = useState<Theme>("dark");
-	const [isReady, setIsReady] = useState(false);
-
-	useEffect(() => {
-		const savedTheme = localStorage.getItem(STORAGE_KEY);
-		const initialTheme =
-			savedTheme === "light" || savedTheme === "dark"
-				? savedTheme
-				: resolveInitialTheme();
-
-		setThemeState(initialTheme);
-		applyTheme(initialTheme);
-		setIsReady(true);
-	}, []);
-
-	useEffect(() => {
-		if (!isReady) {
-			return;
-		}
-
-		localStorage.setItem(STORAGE_KEY, theme);
-		applyTheme(theme);
-	}, [theme, isReady]);
-
-	const setTheme = (nextTheme: Theme) => {
-		setThemeState(nextTheme);
-	};
-
-	const toggleTheme = () => {
-		setTheme(theme === "dark" ? "light" : "dark");
-	};
-
 	return (
-		<ThemeContext.Provider
-			value={{
-				theme,
-				setTheme,
-				toggleTheme,
-				isReady,
-			}}
+		<NextThemesProvider
+			attribute="class"
+			defaultTheme="system"
+			enableSystem
+			enableColorScheme
+			disableTransitionOnChange
+			themes={[...themes]}
 		>
 			{children}
-		</ThemeContext.Provider>
+		</NextThemesProvider>
 	);
 };

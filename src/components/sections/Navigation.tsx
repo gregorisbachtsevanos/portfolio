@@ -11,7 +11,7 @@ import useTheme from "@/hooks/useTheme";
 const Navigation = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-	const { theme, toggleTheme, isReady } = useTheme();
+	const { toggleTheme } = useTheme();
 	const { locale, setLocale, messages } = useI18n();
 	const { navigation } = messages;
 
@@ -100,19 +100,14 @@ const Navigation = () => {
 								{navigation.techStack}
 							</button>
 							{renderLanguageSwitcher()}
-							{isReady && (
-								<button
-									onClick={toggleTheme}
-									className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
-									aria-label="Toggle theme"
-								>
-									{theme === "dark" ? (
-										<Sun size={20} />
-									) : (
-										<Moon size={20} />
-									)}
-								</button>
-							)}
+							<button
+								onClick={toggleTheme}
+								className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
+								aria-label="Toggle theme"
+							>
+								<Sun size={20} className="hidden dark:block" />
+								<Moon size={20} className="block dark:hidden" />
+							</button>
 							<Button
 								onClick={() => scrollToSection("contact")}
 								className="bg-blue-600 hover:bg-blue-700 text-white"
@@ -124,19 +119,14 @@ const Navigation = () => {
 
 					<div className="md:hidden flex items-center space-x-2">
 						{renderLanguageSwitcher()}
-						{isReady && (
-							<button
-								onClick={toggleTheme}
-								className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
-								aria-label="Toggle theme"
-							>
-								{theme === "dark" ? (
-									<Sun size={20} />
-								) : (
-									<Moon size={20} />
-								)}
-							</button>
-						)}
+						<button
+							onClick={toggleTheme}
+							className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
+							aria-label="Toggle theme"
+						>
+							<Sun size={20} className="hidden dark:block" />
+							<Moon size={20} className="block dark:hidden" />
+						</button>
 						<button
 							onClick={() =>
 								setIsMobileMenuOpen(!isMobileMenuOpen)

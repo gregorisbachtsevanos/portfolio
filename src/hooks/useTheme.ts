@@ -1,19 +1,21 @@
-import { ThemeContext } from "@/lib/theme";
-import { useContext } from "react";
+import type { Theme } from "@/lib/theme";
+import { useTheme as useNextTheme } from "next-themes";
 
 const useTheme = () => {
-	const context = useContext(ThemeContext);
+	const { resolvedTheme, setTheme } = useNextTheme();
+	const theme: Theme =
+		resolvedTheme === "dark" || resolvedTheme === "light"
+			? resolvedTheme
+			: typeof document !== "undefined" &&
+				  document.documentElement.classList.contains("dark")
+				? "dark"
+				: "light";
 
-	if (!context) {
-		return {
-			theme: "dark" as const,
-			setTheme: () => {},
-			toggleTheme: () => {},
-			isReady: false,
-		};
-	}
-
-	return context;
+	return {
+		theme,
+		setTheme: (nextTheme: Theme) => setTheme(nextTheme),
+		toggleTheme: () => setTheme(theme === "dark" ? "light" : "dark"),
+	};
 };
 
 export default useTheme;
