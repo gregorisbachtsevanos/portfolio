@@ -1,167 +1,167 @@
 import type { Messages } from "./schema";
 
 export const gr = {
-	metadata: {
-		title: "Γρηγόρης Μπαχτσεβάνος - Full-Stack Software Engineer",
-		description:
-			"Freelance Full-Stack Software Engineer με εξειδίκευση σε scalable web εφαρμογές, REST APIs και σύγχρονα React frontends. Με βάση την Ελλάδα.",
-		openGraphTitle: "Γρηγόρης Μπαχτσεβάνος - Full-Stack Software Engineer",
-		openGraphDescription:
-			"Ανάπτυξη scalable web εφαρμογών και APIs για startups και επιχειρήσεις",
-	},
-	navigation: {
-		about: "Σχετικά",
-		services: "Υπηρεσίες",
-		projects: "Έργα",
-		techStack: "Τεχνολογίες",
-		contact: "Επικοινωνία",
-		languageLabel: "Γλώσσα",
-		languages: {
-			en: "EN",
-			gr: "GR",
-		},
-	},
-	hero: {
-		title: "Full-Stack Προγραμματιστής",
-		subtitle: "Κατασκευή Κλιμακούμενων Web Εφαρμογών και APIs",
-		description:
-			"Βοηθώ startups και επιχειρήσεις να χτίσουν γρήγορο, αξιόπιστο και κλιμακούμενο λογισμικό.",
-		ctaProject: "Ξεκινήστε Ένα Έργο",
-		ctaWork: "Δείτε Τη Δουλειά Μου",
-		availability: "Διαθέσιμος για freelance projects",
-	},
-	about: {
-		title: "Σχετικά Με Εμένα",
-		locationLabel: "Με βάση",
-		paragraphs: [
-			"Είμαι full-stack software engineer και βοηθώ startups και επιχειρήσεις να χτίσουν αξιόπιστες, κλιμακούμενες web πλατφόρμες και APIs. Με εμπειρία σε σύγχρονα frontend frameworks και ισχυρά backend συστήματα, εστιάζω σε λύσεις που λειτουργούν σήμερα και αντέχουν στην ανάπτυξη του αύριο.",
-			"Η προσέγγισή μου δεν σταματά στον κώδικα. Δίνω έμφαση στην καθαρή αρχιτεκτονική, τη βελτιστοποίηση απόδοσης και τη συντηρησιμότητα, ώστε το προϊόν σας να μπορεί να εξελίσσεται μαζί με την επιχείρησή σας. Είτε λανσάρετε ένα MVP είτε επεκτείνετε μια υπάρχουσα πλατφόρμα, παραδίδω λύσεις έτοιμες για παραγωγή πάνω σε δοκιμασμένες τεχνολογίες.",
-			"Από τον σχεδιασμό ασφαλών REST APIs μέχρι τη δημιουργία σύγχρονων React διεπαφών, γεφυρώνω το χάσμα ανάμεσα στην τεχνική αρτιότητα και τα επιχειρηματικά αποτελέσματα. Ας χτίσουμε κάτι που θα διαρκέσει.",
-		],
-	},
-	services: {
-		title: "Υπηρεσίες",
-		subtitle:
-			"Ολοκληρωμένες υπηρεσίες full-stack ανάπτυξης για να ζωντανέψουν οι ιδέες σας",
-		items: {
-			"full-stack-web-apps": {
-				title: "Ανάπτυξη Full-Stack Web Εφαρμογών",
-				description:
-					"Προσαρμοσμένες web πλατφόρμες με React και Node.js. Ολοκληρωμένες λύσεις στα μέτρα της επιχείρησής σας.",
-			},
-			"api-backend": {
-				title: "Ανάπτυξη APIs και Backend Συστημάτων",
-				description:
-					"Ασφαλείς και κλιμακούμενες backend υπηρεσίες. REST APIs, authentication και αρχιτεκτονική βάσεων δεδομένων.",
-			},
-			"startup-mvp": {
-				title: "Ανάπτυξη MVP για Startups",
-				description:
-					"Χτίσιμο της πρώτης έκδοσης του προϊόντος σας γρήγορα και αποτελεσματικά. Βγείτε στην αγορά χωρίς να θυσιάσετε την ποιότητα.",
-			},
-			"devops-deployment": {
-				title: "DevOps και Deployments",
-				description:
-					"Dockerized εφαρμογές, ρύθμιση Linux servers και CI/CD pipelines για αξιόπιστες αναπτύξεις.",
-			},
-			"performance-optimization": {
-				title: "Βελτιστοποίηση Απόδοσης",
-				description:
-					"Βελτίωση ταχύτητας και κλιμάκωσης υπαρχουσών εφαρμογών. Ολοκληρωμένοι έλεγχοι και πρακτικές βελτιστοποιήσεις.",
-			},
-		},
-	},
-	projects: {
-		title: "Επιλεγμένα Έργα",
-		subtitle:
-			"Πρόσφατη δουλειά που αναδεικνύει full-stack ανάπτυξη και αρχιτεκτονική συστημάτων",
-		items: {
-			"authentication-platform": {
-				title: "Πλατφόρμα Αυθεντικοποίησης",
-				description:
-					"Ασφαλές backend αυθεντικοποίησης που διαχειρίζεται machine tokens, refresh tokens και access tokens για πολλαπλές εφαρμογές. Χτισμένο με βέλτιστες πρακτικές ασφάλειας.",
-				result: "Διαχειρίζεται 10k+ auth requests καθημερινά",
-			},
-			"task-management-platform": {
-				title: "Πλατφόρμα Διαχείρισης Εργασιών",
-				description:
-					"Full-stack σύστημα διαχείρισης έργων και εργασιών με projects, groups, tasks και subtasks. Περιλαμβάνει real-time ενημερώσεις και δυνατότητες συνεργασίας.",
-				result: "Βελτίωσε την παραγωγικότητα ομάδας κατά 40%",
-			},
-			"developer-dashboard": {
-				title: "Dashboard Προγραμματιστή",
-				description:
-					"Σύγχρονο analytics dashboard με προηγμένη διαχείριση κατάστασης και API integrations. Οπτικοποίηση δεδομένων σε πραγματικό χρόνο και μετρήσεις απόδοσης.",
-				result: "Επεξεργάζεται 100k+ δεδομένα την ημέρα",
-			},
-		},
-	},
-	techStack: {
-		title: "Tech Stack",
-		subtitle:
-			"Σύγχρονες τεχνολογίες και εργαλεία που χρησιμοποιώ για να χτίζω αξιόπιστες λύσεις",
-		categories: {
-			frontend: {
-				label: "Frontend",
-			},
-			backend: {
-				label: "Backend",
-			},
-			database: {
-				label: "Βάσεις Δεδομένων",
-			},
-			devops: {
-				label: "DevOps",
-			},
-		},
-	},
-	trust: {
-		title: "Γιατί Να Συνεργαστείτε Μαζί Μου",
-		subtitle:
-			"Παραδίδω ποιότητα μέσα από αποδεδειγμένες αρχές και πρακτικές",
-		reasons: {
-			"clean-code": {
-				title: "Καθαρός και Συντηρήσιμος Κώδικας",
-				description:
-					"Ακολουθώ βέλτιστες πρακτικές και πρότυπα του κλάδου ώστε ο κώδικάς σας να παραμένει διαχειρίσιμος όσο μεγαλώνει.",
-			},
-			scalability: {
-				title: "Έμφαση στην Κλιμάκωση",
-				description:
-					"Αρχιτεκτονική σχεδιασμένη για ανάπτυξη. Χτισμένη ώστε να κλιμακώνεται από MVP μέχρι enterprise επίπεδο.",
-			},
-			"production-ready": {
-				title: "Αρχιτεκτονική Έτοιμη για Παραγωγή",
-				description:
-					"Κάθε έργο χτίζεται με γνώμονα την παραγωγή. Ασφάλεια, απόδοση και αξιοπιστία από την πρώτη μέρα.",
-			},
-			"full-stack-expertise": {
-				title: "Ισχυρή Εξειδίκευση σε Backend και Frontend",
-				description:
-					"Οι full-stack δυνατότητες εξασφαλίζουν ομαλή ενσωμάτωση μεταξύ frontend και backend συστημάτων.",
-			},
-		},
-	},
-	contact: {
-		title: "Έχετε Ένα Έργο Στο Μυαλό Σας;",
-		subtitle: "Ας συζητήσουμε πώς μπορώ να βοηθήσω να γίνει πράξη",
-		getInTouch: "Επικοινωνήστε Μαζί Μου",
-		paragraphs: [
-			"Είτε θέλετε να δημιουργήσετε ένα νέο προϊόν, να επεκτείνετε μια υπάρχουσα πλατφόρμα ή χρειάζεστε τεχνική συμβουλή, είμαι εδώ για να βοηθήσω.",
-		],
-		formPlaceholders: {
-			name: "Το Όνομά Σας",
-			email: "Το Email Σας",
-			message: "Πείτε μου για το έργο σας...",
-		},
-		submitButton: {
-			send: "Αποστολή Μηνύματος",
-			sending: "Αποστολή...",
-		},
-		toastTitle: "Το μήνυμα στάλθηκε!",
-		toastDescription: "Θα επικοινωνήσω μαζί σας το συντομότερο δυνατό.",
-		copyright: "© 2026 Γρηγόρης Μπαχτσεβάνος. Με επιφύλαξη παντός δικαιώματος.",
-		github: "GitHub Profile",
-		linkedin: "LinkedIn Profile",
-	},
+  metadata: {
+    title: "Γρηγόρης Μπαχτσεβάνος - Full-Stack Software Engineer",
+    description:
+      "Freelance Full-Stack Software Engineer με εμπειρία στην ανάπτυξη scalable web εφαρμογών, REST APIs και σύγχρονων React εφαρμογών. Με έδρα την Ελλάδα.",
+    openGraphTitle: "Γρηγόρης Μπαχτσεβάνος - Full-Stack Software Engineer",
+    openGraphDescription:
+      "Ανάπτυξη αξιόπιστων και scalable web εφαρμογών και APIs για startups και επιχειρήσεις",
+  },
+  navigation: {
+    about: "Σχετικά",
+    services: "Υπηρεσίες",
+    projects: "Έργα",
+    techStack: "Τεχνολογίες",
+    contact: "Επικοινωνία",
+    languageLabel: "Γλώσσα",
+    languages: {
+      en: "EN",
+      gr: "GR",
+    },
+  },
+  hero: {
+    title: "Full-Stack Developer",
+    subtitle: "Ανάπτυξη Scalable Web Εφαρμογών & APIs",
+    description:
+      "Βοηθάω startups και επιχειρήσεις να δημιουργήσουν γρήγορο, αξιόπιστο και scalable λογισμικό.",
+    ctaProject: "Έναρξη Project",
+    ctaWork: "Δείτε τη Δουλειά μου",
+    availability: "Διαθέσιμος για freelance συνεργασίες",
+  },
+  about: {
+    title: "Σχετικά με Εμένα",
+    locationLabel: "Έδρα",
+    paragraphs: [
+      "Είμαι full-stack software engineer και βοηθάω startups και επιχειρήσεις να δημιουργούν αξιόπιστες και scalable web πλατφόρμες και APIs. Με εμπειρία τόσο στο frontend όσο και στο backend, εστιάζω σε λύσεις που καλύπτουν τις ανάγκες του σήμερα αλλά μπορούν να υποστηρίξουν και τη μελλοντική ανάπτυξη.",
+
+      "Η προσέγγισή μου δεν περιορίζεται μόνο στον κώδικα. Δίνω έμφαση στην καθαρή αρχιτεκτονική, την απόδοση και τη συντηρησιμότητα, ώστε το προϊόν σας να μπορεί να εξελίσσεται χωρίς τεχνικά εμπόδια. Είτε πρόκειται για MVP είτε για scaling υπάρχοντος συστήματος, στόχος μου είναι πάντα ένα production-ready αποτέλεσμα.",
+
+      "Από τον σχεδιασμό ασφαλών REST APIs μέχρι την ανάπτυξη σύγχρονων React εφαρμογών, γεφυρώνω το τεχνικό κομμάτι με τις πραγματικές ανάγκες της επιχείρησης. Στόχος είναι να δημιουργούμε λύσεις που έχουν διάρκεια.",
+    ],
+  },
+  services: {
+    title: "Υπηρεσίες",
+    subtitle:
+      "Ολοκληρωμένες λύσεις full-stack ανάπτυξης για την υλοποίηση των ιδεών σας",
+    items: {
+      "full-stack-web-apps": {
+        title: "Ανάπτυξη Full-Stack Web Εφαρμογών",
+        description:
+          "Custom web εφαρμογές με React και Node.js. Ολοκληρωμένες λύσεις προσαρμοσμένες στις ανάγκες της επιχείρησής σας.",
+      },
+      "api-backend": {
+        title: "Ανάπτυξη APIs & Backend Συστημάτων",
+        description:
+          "Ασφαλή και scalable backend services, REST APIs, authentication και σωστή αρχιτεκτονική δεδομένων.",
+      },
+      "startup-mvp": {
+        title: "Ανάπτυξη MVP για Startups",
+        description:
+          "Γρήγορη και αποδοτική υλοποίηση της πρώτης έκδοσης του προϊόντος σας, ώστε να βγείτε στην αγορά χωρίς καθυστερήσεις.",
+      },
+      "devops-deployment": {
+        title: "DevOps & Deployment",
+        description:
+          "Docker, Linux servers και CI/CD pipelines για σταθερά και αξιόπιστα deployments.",
+      },
+      "performance-optimization": {
+        title: "Βελτιστοποίηση Απόδοσης",
+        description:
+          "Βελτίωση ταχύτητας και scalability υπαρχουσών εφαρμογών μέσα από στοχευμένες παρεμβάσεις.",
+      },
+    },
+  },
+  projects: {
+    title: "Επιλεγμένα Έργα",
+    subtitle:
+      "Παραδείγματα δουλειάς σε full-stack ανάπτυξη και αρχιτεκτονική συστημάτων",
+    items: {
+      "authentication-platform": {
+        title: "Authentication Platform",
+        description:
+          "Backend σύστημα αυθεντικοποίησης που διαχειρίζεται machine, refresh και access tokens για πολλαπλές εφαρμογές, με έμφαση στην ασφάλεια.",
+        result: "Διαχειρίζεται 10k+ authentication requests ημερησίως",
+      },
+      "task-management-platform": {
+        title: "Task Management Platform",
+        description:
+          "Full-stack σύστημα διαχείρισης έργων και εργασιών με real-time ενημερώσεις και δυνατότητες συνεργασίας.",
+        result: "Αύξηση παραγωγικότητας ομάδας κατά 40%",
+      },
+      "developer-dashboard": {
+        title: "Developer Dashboard",
+        description:
+          "Σύγχρονο analytics dashboard με real-time δεδομένα και advanced state management.",
+        result: "Διαχειρίζεται 100k+ δεδομένα ημερησίως",
+      },
+    },
+  },
+  techStack: {
+    title: "Τεχνολογίες",
+    subtitle:
+      "Τα εργαλεία και οι τεχνολογίες που χρησιμοποιώ για αξιόπιστα αποτελέσματα",
+    categories: {
+      frontend: {
+        label: "Frontend",
+      },
+      backend: {
+        label: "Backend",
+      },
+      database: {
+        label: "Βάσεις Δεδομένων",
+      },
+      devops: {
+        label: "DevOps",
+      },
+    },
+  },
+  trust: {
+    title: "Γιατί να συνεργαστείτε μαζί μου",
+    subtitle: "Εστίαση στην ποιότητα μέσα από σωστές πρακτικές ανάπτυξης",
+    reasons: {
+      "clean-code": {
+        title: "Καθαρός & Συντηρήσιμος Κώδικας",
+        description:
+          "Χρήση βέλτιστων πρακτικών ώστε ο κώδικας να παραμένει οργανωμένος και εύκολα επεκτάσιμος.",
+      },
+      scalability: {
+        title: "Scalable Αρχιτεκτονική",
+        description:
+          "Σχεδιασμός που υποστηρίζει την ανάπτυξη από MVP μέχρι enterprise επίπεδο.",
+      },
+      "production-ready": {
+        title: "Production-Ready Προσεγγίσεις",
+        description: "Έμφαση σε ασφάλεια, απόδοση και αξιοπιστία από την αρχή.",
+      },
+      "full-stack-expertise": {
+        title: "Full-Stack Εξειδίκευση",
+        description:
+          "Ομαλή σύνδεση frontend και backend για ολοκληρωμένες λύσεις.",
+      },
+    },
+  },
+  contact: {
+    title: "Έχετε κάποιο project στο μυαλό σας;",
+    subtitle: "Ας δούμε πώς μπορώ να βοηθήσω",
+    getInTouch: "Επικοινωνία",
+    paragraphs: [
+      "Είτε θέλετε να δημιουργήσετε κάτι νέο, να επεκτείνετε ένα υπάρχον σύστημα ή χρειάζεστε τεχνική καθοδήγηση, μπορώ να βοηθήσω.",
+    ],
+    formPlaceholders: {
+      name: "Όνομα",
+      email: "Email",
+      message: "Περιγράψτε το project σας...",
+    },
+    submitButton: {
+      send: "Αποστολή",
+      sending: "Αποστολή...",
+    },
+    toastTitle: "Το μήνυμα στάλθηκε!",
+    toastDescription: "Θα επικοινωνήσω μαζί σας σύντομα.",
+    copyright: "© 2026 Γρηγόρης Μπαχτσεβάνος.",
+    github: "GitHub",
+    linkedin: "LinkedIn",
+  },
 } satisfies Messages;
