@@ -4,5 +4,6 @@ export const siteConfig = {
   githubUrl: "https://github.com",
   linkedinUrl: "https://linkedin.com",
   location: "Greece",
-  ogImageUrl: " ",
+  url: "https://gregorisbachtsevanos.vercel.app/",
+  ogImageUrl: "/og-image.jpg",
 } as const;
