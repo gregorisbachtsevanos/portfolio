@@ -5,5 +5,5 @@ export const siteConfig = {
   linkedinUrl: "https://linkedin.com",
   location: "Greece",
   url: "https://gregorisbachtsevanos.vercel.app/",
-  ogImageUrl: "/og-image.jpg",
+  ogImageUrl: "/og-image.png",
 } as const;
