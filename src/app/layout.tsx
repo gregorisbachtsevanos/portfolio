@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Inter } from "next/font/google";
-import { Toaster } from "@/components/ui/Toaster";
+import { Toaster } from "@/components/Toaster";
 import { siteConfig } from "@/config/site";
 import { detectLocaleFromLanguage, messagesByLocale } from "@/lang";
 import { I18nProvider } from "@/lib/i18n";

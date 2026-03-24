@@ -1,9 +1,9 @@
-import { defaultLocale, type Locale } from "./schema";
+import { defaultLocale, type TLocale } from "./schema";
 
-export const detectLocaleFromLanguage = (language?: string | null): Locale => {
-	if (!language) {
-		return defaultLocale;
-	}
+export const detectLocaleFromLanguage = (language?: string | null): TLocale => {
+  if (!language) {
+    return defaultLocale;
+  }
 
-	return language.toLowerCase().startsWith("el") ? "gr" : defaultLocale;
+  return language.toLowerCase().startsWith("el") ? "gr" : defaultLocale;
 };

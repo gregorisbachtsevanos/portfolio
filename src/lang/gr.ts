@@ -1,4 +1,4 @@
-import type { Messages } from "./schema";
+import type { IMessages } from "./schema";
 
 export const gr = {
   metadata: {
@@ -164,4 +164,4 @@ export const gr = {
     github: "GitHub",
     linkedin: "LinkedIn",
   },
-} satisfies Messages;
+} satisfies IMessages;

@@ -3,53 +3,53 @@
 import { createContext, useEffect, useState, type ReactNode } from "react";
 
 import {
-	defaultLocale,
-	detectLocaleFromLanguage,
-	locales,
-	messagesByLocale,
-	type Locale,
-	type Messages,
+  defaultLocale,
+  detectLocaleFromLanguage,
+  locales,
+  messagesByLocale,
+  type TLocale,
+  type IMessages,
 } from "@/lang";
 
 const STORAGE_KEY = "locale";
 
 interface I18nContextValue {
-	locale: Locale;
-	setLocale: (locale: Locale) => void;
-	messages: Messages;
+  locale: TLocale;
+  setLocale: (locale: TLocale) => void;
+  messages: IMessages;
 }
 
 export const I18nContext = createContext<I18nContextValue | undefined>(
-	undefined,
+  undefined,
 );
 
 export const I18nProvider = ({ children }: { children: ReactNode }) => {
-	const [locale, setLocale] = useState<Locale>(defaultLocale);
+  const [locale, setLocale] = useState<TLocale>(defaultLocale);
 
-	useEffect(() => {
-		const savedLocale = localStorage.getItem(STORAGE_KEY);
-		if (savedLocale && locales.includes(savedLocale as Locale)) {
-			setLocale(savedLocale as Locale);
-			return;
-		}
+  useEffect(() => {
+    const savedLocale = localStorage.getItem(STORAGE_KEY);
+    if (savedLocale && locales.includes(savedLocale as TLocale)) {
+      setLocale(savedLocale as TLocale);
+      return;
+    }
 
-		setLocale(detectLocaleFromLanguage(navigator.language));
-	}, []);
+    setLocale(detectLocaleFromLanguage(navigator.language));
+  }, []);
 
-	useEffect(() => {
-		localStorage.setItem(STORAGE_KEY, locale);
-		document.documentElement.lang = locale === "gr" ? "el" : locale;
-	}, [locale]);
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, locale);
+    document.documentElement.lang = locale === "gr" ? "el" : locale;
+  }, [locale]);
 
-	return (
-		<I18nContext.Provider
-			value={{
-				locale,
-				setLocale,
-				messages: messagesByLocale[locale],
-			}}
-		>
-			{children}
-		</I18nContext.Provider>
-	);
+  return (
+    <I18nContext.Provider
+      value={{
+        locale,
+        setLocale,
+        messages: messagesByLocale[locale],
+      }}
+    >
+      {children}
+    </I18nContext.Provider>
+  );
 };

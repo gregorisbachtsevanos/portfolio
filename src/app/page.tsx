@@ -1,25 +1,25 @@
-import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import Services from "@/components/sections/Services";
-import Projects from "@/components/sections/Projects";
-import TechStack from "@/components/sections/TechStack";
-import Trust from "@/components/sections/Trust";
-import Contact from "@/components/sections/Contact";
-import Navigation from "@/components/sections/Navigation";
+import Hero from "@/features/Hero/Hero";
+import About from "@/features/About";
+import Services from "@/features/Services";
+import Projects from "@/features/Projects";
+import TechStack from "@/features/TechStack";
+import Trust from "@/features/Trust";
+import Contact from "@/features/Contact";
+import Navigation from "@/features/Navigation";
 
 const Home = () => {
-	return (
-		<main className="min-h-screen bg-background text-foreground transition-colors duration-300">
-			<Navigation />
-			<Hero />
-			<About />
-			<Services />
-			<Projects />
-			<TechStack />
-			<Trust />
-			<Contact />
-		</main>
-	);
+  return (
+    <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <Navigation />
+      <Hero />
+      <About />
+      <Services />
+      <Projects />
+      <TechStack />
+      <Trust />
+      <Contact />
+    </main>
+  );
 };
 
 export default Home;
