@@ -41,7 +41,7 @@ const Navigation = () => {
 					key={option}
 					type="button"
 					onClick={() => setLocale(option)}
-					className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+					className={`rounded-full px-2.5 py-1 text-[11px] font-semibold transition-colors sm:px-3 sm:text-xs ${
 						locale === option
 							? "bg-foreground text-background"
 							: "text-muted-foreground hover:text-foreground"
@@ -63,11 +63,11 @@ const Navigation = () => {
 			}`}
 		>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="flex items-center justify-between h-16">
+				<div className="flex items-center justify-between h-14 gap-3 sm:h-16">
 					<div className="flex-shrink-0">
 						<button
 							onClick={() => scrollToSection("hero")}
-							className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
+							className="max-w-[11rem] text-left text-base font-bold leading-tight bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent sm:max-w-none sm:text-xl"
 						>
 							{siteConfig.name}
 						</button>
@@ -117,11 +117,11 @@ const Navigation = () => {
 						</div>
 					</div>
 
-					<div className="md:hidden flex items-center space-x-2">
+					<div className="md:hidden flex items-center gap-1.5">
 						{renderLanguageSwitcher()}
 						<button
 							onClick={toggleTheme}
-							className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
+							className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
 							aria-label="Toggle theme"
 						>
 							<Sun size={20} className="hidden dark:block" />
@@ -144,35 +144,35 @@ const Navigation = () => {
 			</div>
 
 			{isMobileMenuOpen && (
-				<div className="md:hidden bg-background/95 dark:bg-black/95 backdrop-blur-lg border-b border-foreground/10">
-					<div className="px-2 pt-2 pb-3 space-y-1">
+				<div className="md:hidden border-b border-foreground/10 bg-background/95 shadow-lg backdrop-blur-lg dark:bg-black/95">
+					<div className="space-y-1 px-4 pb-4 pt-2">
 						<button
 							onClick={() => scrollToSection("about")}
-							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
+							className="block w-full rounded-md px-3 py-3 text-left text-base text-muted-foreground transition-colors hover:bg-secondary/5 hover:text-foreground"
 						>
 							{navigation.about}
 						</button>
 						<button
 							onClick={() => scrollToSection("services")}
-							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
+							className="block w-full rounded-md px-3 py-3 text-left text-base text-muted-foreground transition-colors hover:bg-secondary/5 hover:text-foreground"
 						>
 							{navigation.services}
 						</button>
 						<button
 							onClick={() => scrollToSection("projects")}
-							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
+							className="block w-full rounded-md px-3 py-3 text-left text-base text-muted-foreground transition-colors hover:bg-secondary/5 hover:text-foreground"
 						>
 							{navigation.projects}
 						</button>
 						<button
 							onClick={() => scrollToSection("tech-stack")}
-							className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-secondary/5 rounded-md transition-colors"
+							className="block w-full rounded-md px-3 py-3 text-left text-base text-muted-foreground transition-colors hover:bg-secondary/5 hover:text-foreground"
 						>
 							{navigation.techStack}
 						</button>
 						<button
 							onClick={() => scrollToSection("contact")}
-							className="block w-full text-left px-3 py-2 text-blue-600 hover:text-blue-700 hover:bg-secondary/5 rounded-md transition-colors"
+							className="block w-full rounded-md px-3 py-3 text-left text-base text-blue-600 transition-colors hover:bg-secondary/5 hover:text-blue-700"
 						>
 							{navigation.contact}
 						</button>
