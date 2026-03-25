@@ -12,7 +12,8 @@ import ThemeToggleButton from "./components/ThemeToggleButton";
 import useCloseMobileMenuOnResize from "./hooks/useCloseMobileMenuOnResize";
 import useNavbarScrolled from "./hooks/useNavbarScrolled";
 import useScrollToSection from "../../hooks/useScrollToSection";
-import MobileNavItems from "./components/mobileNavItems";
+import MobileNavItems from "./components/mobile/MobileNavItems";
+import MobileNavControls from "./components/mobile/MobileNavControls";
 
 const Navigation = () => {
 	const { toggleTheme } = useTheme();
@@ -76,27 +77,11 @@ const Navigation = () => {
 							</Button>
 						</div>
 					</div>
-					<div className="md:hidden flex items-center gap-1.5">
-						<LanguageSwitcher />
-						<ThemeToggleButton
-							onClick={toggleTheme}
-							className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-						/>
-						<button
-							type="button"
-							onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-							className="text-muted-foreground hover:text-foreground"
-							aria-label="Toggle navigation menu"
-							aria-expanded={isMobileMenuOpen}
-							aria-controls="mobile-menu"
-						>
-							{isMobileMenuOpen ? (
-								<X size={24} />
-							) : (
-								<Menu size={24} />
-							)}
-						</button>
-					</div>
+					<MobileNavControls
+						isOpen={isMobileMenuOpen}
+						toggleMenu={() => setIsMobileMenuOpen((prev) => !prev)}
+						toggleTheme={toggleTheme}
+					/>
 				</div>
 			</div>
 

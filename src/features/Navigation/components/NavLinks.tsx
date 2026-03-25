@@ -1,7 +1,8 @@
 "use client";
 
 import useScrollSpy from "@/hooks/useScrollSpy";
-import { memo, useEffect, useRef, useState } from "react";
+import { memo, useRef } from "react";
+import { useSlidingIndicator } from "../hooks/useActiveItemIndicator";
 
 export interface INavItem {
 	id: string;
@@ -22,49 +23,16 @@ const NavLinks = ({
 	const containerRef = useRef<HTMLDivElement>(null);
 	const itemRefs = useRef<Record<string, HTMLButtonElement | null>>({});
 
-	const [indicatorStyle, setIndicatorStyle] = useState({
-		width: 0,
-		left: 0,
-	});
-
 	const activeSection = useScrollSpy({
 		sectionIds: navItems.map((item) => item.id),
 	});
 
-	// Update indicator position
-	useEffect(() => {
-		if (mobile) return;
-
-		const activeEl = itemRefs.current[activeSection];
-		const container = containerRef.current;
-
-		if (!activeEl || !container) return;
-
-		const { offsetLeft, offsetWidth } = activeEl;
-
-		setIndicatorStyle({
-			left: offsetLeft,
-			width: offsetWidth,
-		});
-	}, [activeSection, mobile]);
-
-	// Handle resize
-	useEffect(() => {
-		if (mobile) return;
-
-		const handleResize = () => {
-			const activeEl = itemRefs.current[activeSection];
-			if (!activeEl) return;
-
-			setIndicatorStyle({
-				left: activeEl.offsetLeft,
-				width: activeEl.offsetWidth,
-			});
-		};
-
-		window.addEventListener("resize", handleResize);
-		return () => window.removeEventListener("resize", handleResize);
-	}, [activeSection, mobile]);
+	const indicatorStyle = useSlidingIndicator({
+		activeKey: activeSection,
+		itemRefs,
+		containerRef,
+		disabled: mobile,
+	});
 
 	const baseClass = mobile
 		? "block w-full rounded-md px-3 py-3 text-left text-base text-muted-foreground transition-colors hover:bg-secondary/5 hover:text-foreground"
