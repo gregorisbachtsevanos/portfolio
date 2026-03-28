@@ -6,6 +6,20 @@
 	"plugins": ["@typescript-eslint"],
 	"rules": {
 		"semi": ["error", "always"],
-		"@typescript-eslint/no-unused-vars": ["warn"]
+		"@typescript-eslint/no-unused-vars": ["warn"],
+		"@typescript-eslint/no-empty-object-type": ["off"],
+		"@typescript-eslint/no-require-imports": ["off"],
+		"no-mixed-spaces-and-tabs": ["warn", "smart-tabs"],
+		"no-trailing-spaces": ["warn"],
+		"max-len": [
+			"warn",
+			{
+				"code": 100,
+				"ignoreUrls": true,
+				"ignoreStrings": true,
+				"ignoreTemplateLiterals": true,
+				"ignoreRegExpLiterals": true
+			}
+		]
 	}
 }
