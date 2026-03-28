@@ -10,7 +10,7 @@ import {
 
 import {
 	defaultLocale,
-	detectLocaleFromLanguage,
+	detectLocaleFromEnvironment,
 	locales,
 	messagesByLocale,
 	type TLocale,
@@ -34,17 +34,21 @@ export const I18nProvider = ({ children }: { children: ReactNode }) => {
 	const initialized = useRef(false);
 
 	useEffect(() => {
-		const savedLocale = localStorage.getItem(STORAGE_KEY);
-		if (savedLocale && locales.includes(savedLocale as TLocale)) {
-			setLocale(savedLocale as TLocale);
-		} else {
-			setLocale(detectLocaleFromLanguage(navigator.language));
-		}
-		initialized.current = true;
-	}, []);
+		if (!initialized.current) {
+			initialized.current = true;
 
-	useEffect(() => {
-		if (!initialized.current) return;
+			const savedLocale = localStorage.getItem(STORAGE_KEY);
+			const initialLocale =
+				savedLocale && locales.includes(savedLocale as TLocale)
+					? (savedLocale as TLocale)
+					: detectLocaleFromEnvironment();
+
+			if (initialLocale !== locale) {
+				setLocale(initialLocale);
+				return;
+			}
+		}
+
 		localStorage.setItem(STORAGE_KEY, locale);
 		document.documentElement.lang = locale === "gr" ? "el" : locale;
 	}, [locale]);

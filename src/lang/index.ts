@@ -1,5 +1,8 @@
 import { serviceIcons, techCategoryIcons } from "./config";
-import { detectLocaleFromLanguage } from "./detectLocale";
+import {
+	detectLocaleFromEnvironment,
+	detectLocaleFromLanguage,
+} from "./detectLocale";
 import { en } from "./en";
 import { gr } from "./gr";
 import { defaultLocale, locales } from "./schema";
@@ -9,6 +12,7 @@ export {
 	locales,
 	serviceIcons,
 	techCategoryIcons,
+	detectLocaleFromEnvironment,
 	detectLocaleFromLanguage,
 };
 export type * from "./schema";
