@@ -1,17 +1,12 @@
 "use client";
 
-import { Button } from "@/components/Button";
-import { siteConfig } from "@/config/site";
 import useI18n from "@/hooks/useI18n";
-import useScrollToSection from "@/hooks/useScrollToSection";
-
-import { ArrowRight, Github, Linkedin } from "lucide-react";
+import Actions from "./components/Actions";
+import Socials from "./components/Social";
 
 const Hero = () => {
 	const { messages } = useI18n();
 	const { hero } = messages;
-
-	const scrollToSection = useScrollToSection();
 
 	return (
 		<section
@@ -28,7 +23,6 @@ const Hero = () => {
 							{hero.availability}
 						</span>
 					</div>
-
 					<h1 className="mb-6 text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-7xl">
 						{hero.title}
 						<br />
@@ -36,48 +30,11 @@ const Hero = () => {
 							{hero.subtitle}
 						</span>
 					</h1>
-
 					<p className="mx-auto mb-10 max-w-3xl text-base leading-relaxed text-muted-foreground sm:mb-12 sm:text-xl lg:text-2xl">
 						{hero.description}
 					</p>
-
-					<div className="mb-10 flex flex-col justify-center gap-3 sm:mb-12 sm:flex-row sm:gap-4">
-						<Button
-							onClick={() => scrollToSection("contact")}
-							size="lg"
-							className="group w-full rounded-lg bg-blue-600 px-6 py-5 text-base text-white hover:bg-blue-700 sm:w-auto sm:px-8 sm:py-6 sm:text-lg"
-						>
-							{hero.ctaProject}
-							<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-						</Button>
-						<Button
-							onClick={() => scrollToSection("projects")}
-							size="lg"
-							variant="outline"
-							className="w-full rounded-lg px-6 py-5 text-base sm:w-auto sm:px-8 sm:py-6 sm:text-lg"
-						>
-							{hero.ctaWork}
-						</Button>
-					</div>
-
-					<div className="flex items-center justify-center gap-5 sm:gap-6">
-						<a
-							href={siteConfig.githubUrl}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-muted-foreground hover:text-foreground transition-colors"
-						>
-							<Github size={24} />
-						</a>
-						<a
-							href={siteConfig.linkedinUrl}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-muted-foreground hover:text-foreground transition-colors"
-						>
-							<Linkedin size={24} />
-						</a>
-					</div>
+					<Actions hero={hero} />
+					<Socials />
 				</div>
 			</div>
 
