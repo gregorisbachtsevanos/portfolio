@@ -71,7 +71,7 @@ const Navigation = () => {
 							<Button
 								type="button"
 								onClick={() => scrollToSection("contact")}
-								className="bg-blue-600 hover:bg-blue-700 text-white"
+								className="bg-sky-600 hover:bg-sky-700 text-white"
 							>
 								{navigation.contact}
 							</Button>

@@ -47,7 +47,7 @@ const Form = (contact: TContact) => {
 				<Button
 					type="submit"
 					disabled={isSubmitting}
-					className="group w-full bg-blue-600 py-5 text-base text-white hover:bg-blue-700 sm:py-6 sm:text-lg"
+					className="group w-full bg-sky-600 py-5 text-base text-white hover:bg-sky-700 sm:py-6 sm:text-lg"
 				>
 					{isSubmitting
 						? contact.submitButton.sending

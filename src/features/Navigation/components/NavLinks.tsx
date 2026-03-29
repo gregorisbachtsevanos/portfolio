@@ -48,7 +48,7 @@ const NavLinks = ({
 						onClick={() => scrollToSection(item.id)}
 						className={`${baseClass} ${
 							activeSection === item.id
-								? "text-blue-500 font-semibold"
+								? "text-sky-500 font-semibold"
 								: ""
 						}`}
 					>
@@ -66,7 +66,7 @@ const NavLinks = ({
 		>
 			{/* Sliding indicator */}
 			<span
-				className="absolute bottom-0 h-[2px] bg-blue-500 transition-all duration-300 ease-out"
+				className="absolute bottom-0 h-[2px] bg-sky-500  transition-all duration-300 ease-out"
 				style={{
 					width: indicatorStyle.width,
 					transform: `translateX(${indicatorStyle.left}px)`,
@@ -82,7 +82,7 @@ const NavLinks = ({
 					type="button"
 					onClick={() => scrollToSection(item.id)}
 					className={`${baseClass} ${
-						activeSection === item.id ? "text-blue-500" : ""
+						activeSection === item.id ? "text-sky-500" : ""
 					}`}
 				>
 					{item.label}

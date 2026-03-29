@@ -19,7 +19,7 @@ const Actions = ({ hero }: IActionsProps) => {
 			<Button
 				onClick={() => scrollToSection("contact")}
 				size="lg"
-				className="group w-full rounded-lg bg-blue-600 px-6 py-5 text-base text-white hover:bg-blue-700 sm:w-auto sm:px-8 sm:py-6 sm:text-lg"
+				className="group w-full rounded-lg bg-sky-600 px-6 py-5 text-base text-white hover:bg-sky-700 sm:w-auto sm:px-8 sm:py-6 sm:text-lg"
 			>
 				{hero.ctaProject}
 				<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
