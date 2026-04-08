@@ -10,9 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   icons: {
-    icon: siteConfig.ogImageUrl,
-    shortcut: siteConfig.ogImageUrl,
-    apple: siteConfig.ogImageUrl,
+    icon: siteConfig.ogLogoUrl,
+    shortcut: siteConfig.ogLogoUrl,
+    apple: siteConfig.ogLogoUrl,
   },
 };
 
