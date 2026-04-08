@@ -1,24 +1,14 @@
-import Hero from "@/features/Hero/Hero";
-import About from "@/features/About";
-import Services from "@/features/Services";
-import Projects from "@/features/Projects";
-import TechStack from "@/features/TechStack";
-import Trust from "@/features/Trust";
-import Contact from "@/features/Contact";
-import Navigation from "@/features/Navigation";
+import HomePage from "@/components/HomePage";
+import { buildPageMetadata, buildStructuredData } from "@/config/seo";
+import { I18nProvider } from "@/lib/i18n";
+
+export const generateMetadata = async () => buildPageMetadata("en");
 
 const Home = () => {
   return (
-    <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
-      <Navigation />
-      <Hero />
-      <About />
-      <Services />
-      <Projects />
-      <TechStack />
-      <Trust />
-      <Contact />
-    </main>
+    <I18nProvider initialLocale="en">
+      <HomePage locale="en" structuredData={buildStructuredData("en")} />
+    </I18nProvider>
   );
 };
 
