@@ -125,6 +125,18 @@ export const buildStructuredData = (locale: TLocale) => {
         "@type": "Person",
         "@id": `${siteConfig.url}#person`,
         name: siteConfig.name,
+        alternateName: [
+          "Gregorios Bachtsevanos",
+          "Gregoris Bachtsevanos",
+          "Bachtsevanos Gregoris",
+          "Bachtsevanos Gregorios",
+          "gregorisbachtsevanos",
+          "bachtsevanosgregoris",
+          "Γρηγόριος Μπαχτσεβάνος",
+          "Γρηγόρης Μπαχτσεβάνος",
+          "Μπαχτσεβάνος Γρηγόρης",
+          "Μπαχτσεβάνος Γρηγόριος",
+        ],
         url: siteConfig.url,
         email: siteConfig.email,
         jobTitle:
