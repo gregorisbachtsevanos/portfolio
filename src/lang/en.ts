@@ -2,12 +2,10 @@ import type { IMessages } from "./schema";
 
 export const en = {
   metadata: {
-    title:
-      "Gregoris Bachtsevanos | Freelance Full-Stack Developer in Greece",
+    title: "Gregoris Bachtsevanos | Freelance Full-Stack Developer in Greece",
     description:
       "Freelance full-stack developer in Greece building business websites, e-commerce stores, landing pages, custom web apps, and REST APIs for startups and growing businesses.",
-    openGraphTitle:
-      "Gregoris Bachtsevanos | Freelance Developer in Greece",
+    openGraphTitle: "Gregoris Bachtsevanos | Freelance Developer in Greece",
     openGraphDescription:
       "Helping businesses launch websites, e-shops, MVPs, and custom software with modern full-stack development.",
     keywords: [

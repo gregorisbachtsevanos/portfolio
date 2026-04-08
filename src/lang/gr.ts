@@ -2,12 +2,10 @@ import type { IMessages } from "./schema";
 
 export const gr = {
   metadata: {
-    title:
-      "Γρηγόρης Μπαχτσεβάνος | Freelance Full-Stack Developer στην Ελλάδα",
+    title: "Γρηγόρης Μπαχτσεβάνος | Freelance Full-Stack Developer στην Ελλάδα",
     description:
       "Freelance full-stack developer με έδρα την Ελλάδα για εταιρικές ιστοσελίδες, e-shop, landing pages, custom web εφαρμογές και REST APIs για startups και επιχειρήσεις.",
-    openGraphTitle:
-      "Γρηγόρης Μπαχτσεβάνος | Freelance Developer στην Ελλάδα",
+    openGraphTitle: "Γρηγόρης Μπαχτσεβάνος | Freelance Developer στην Ελλάδα",
     openGraphDescription:
       "Ανάπτυξη σύγχρονων websites, e-shops, MVPs και custom λογισμικού για επιχειρήσεις και startups.",
     keywords: [
