@@ -1,9 +1,19 @@
 import useI18n from "@/hooks/useI18n";
-import { locales } from "@/lang";
+import { getLocalePathname } from "@/config/seo";
+import { locales, type TLocale } from "@/lang";
+import { useRouter } from "next/navigation";
 
 const LanguageSwitcher = () => {
-  const { locale, setLocale, messages } = useI18n();
+  const router = useRouter();
+  const { locale, messages } = useI18n();
   const { navigation } = messages;
+
+  const handleLanguageChange = (nextLocale: TLocale) => {
+    if (nextLocale === locale) return;
+
+    const hash = typeof window === "undefined" ? "" : window.location.hash;
+    router.push(`${getLocalePathname(nextLocale)}${hash}`, { scroll: false });
+  };
 
   return (
     <div
@@ -14,7 +24,7 @@ const LanguageSwitcher = () => {
         <button
           key={option}
           type="button"
-          onClick={() => setLocale(option)}
+          onClick={() => handleLanguageChange(option)}
           className={`rounded-full px-2.5 py-1 text-[11px] font-semibold transition-colors sm:px-3 sm:text-xs ${
             locale === option
               ? "bg-foreground text-background"
