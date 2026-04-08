@@ -1,18 +1,13 @@
 import useI18n from "@/hooks/useI18n";
-import { getLocalePathname } from "@/config/seo";
 import { locales, type TLocale } from "@/lang";
-import { useRouter } from "next/navigation";
 
 const LanguageSwitcher = () => {
-  const router = useRouter();
-  const { locale, messages } = useI18n();
+  const { locale, setLocale, messages } = useI18n();
   const { navigation } = messages;
 
   const handleLanguageChange = (nextLocale: TLocale) => {
     if (nextLocale === locale) return;
-
-    const hash = typeof window === "undefined" ? "" : window.location.hash;
-    router.push(`${getLocalePathname(nextLocale)}${hash}`, { scroll: false });
+    setLocale(nextLocale);
   };
 
   return (

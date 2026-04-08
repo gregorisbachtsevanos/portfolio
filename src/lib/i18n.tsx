@@ -31,10 +31,11 @@ export const I18nProvider = ({
   const [locale, setLocale] = useState<TLocale>(initialLocale);
 
   useEffect(() => {
-    if (locale !== initialLocale) {
-      setLocale(initialLocale);
+    const saved = localStorage.getItem(STORAGE_KEY) as TLocale | null;
+    if (saved && saved !== locale) {
+      setLocale(saved);
     }
-  }, [initialLocale, locale]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, locale);
