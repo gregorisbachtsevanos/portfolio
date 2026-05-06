@@ -1,12 +1,12 @@
 import {
   TLocale,
-  TProjectId,
-  TServiceId,
-  TTechCategoryId,
-  TTrustReasonId,
+  TProjectsId,
+  TServicesId,
+  TTechCategoriesId,
+  TTrustReasonsId,
 } from "./types";
 
-export const locales = ["en", "gr"] as const;
+export const LOCALES = ["en", "gr"] as const;
 
 export interface IMessages {
   metadata: {
@@ -43,7 +43,7 @@ export interface IMessages {
     title: string;
     subtitle: string;
     items: Record<
-      TServiceId,
+      TServicesId,
       {
         title: string;
         description: string;
@@ -54,7 +54,7 @@ export interface IMessages {
     title: string;
     subtitle: string;
     items: Record<
-      TProjectId,
+      TProjectsId,
       {
         title: string;
         description: string;
@@ -66,7 +66,7 @@ export interface IMessages {
     title: string;
     subtitle: string;
     categories: Record<
-      TTechCategoryId,
+      TTechCategoriesId,
       {
         label: string;
       }
@@ -76,7 +76,7 @@ export interface IMessages {
     title: string;
     subtitle: string;
     reasons: Record<
-      TTrustReasonId,
+      TTrustReasonsId,
       {
         title: string;
         description: string;

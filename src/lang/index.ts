@@ -1,9 +1,9 @@
 import { serviceIcons, techCategoryIcons } from "./config";
 import { en } from "./jsons/en";
 import { gr } from "./jsons/gr";
-import { defaultLocale, locales } from "./schema";
+import { defaultLocale, LOCALES } from "./schema";
 
-export { defaultLocale, locales, serviceIcons, techCategoryIcons };
+export { defaultLocale, LOCALES, serviceIcons, techCategoryIcons };
 
 export * from "./schema";
 

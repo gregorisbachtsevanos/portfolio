@@ -1,23 +1,16 @@
-import { locales } from "./schema";
+import {
+  PROJECTS,
+  SERVICES,
+  TECH_CATEGORIES,
+  TRUST_REASONS,
+} from "./constants";
+import { LOCALES } from "./schema";
 
-export type TLocale = (typeof locales)[number];
+export type TLocale = (typeof LOCALES)[number];
 
-export type TServiceId =
-  | "full-stack-web-apps"
-  | "api-backend"
-  | "startup-mvp"
-  | "devops-deployment"
-  | "performance-optimization";
-
-export type TProjectId =
-  | "authentication-platform"
-  | "task-management-platform"
-  | "developer-dashboard";
-
-export type TTechCategoryId = "frontend" | "backend" | "database" | "devops";
-
-export type TTrustReasonId =
-  | "clean-code"
-  | "scalability"
-  | "production-ready"
-  | "full-stack-expertise";
+export type TServicesId = (typeof SERVICES)[keyof typeof SERVICES];
+export type TProjectsId = (typeof PROJECTS)[keyof typeof PROJECTS];
+export type TTrustReasonsId =
+  (typeof TRUST_REASONS)[keyof typeof TRUST_REASONS];
+export type TTechCategoriesId =
+  (typeof TECH_CATEGORIES)[keyof typeof TECH_CATEGORIES];

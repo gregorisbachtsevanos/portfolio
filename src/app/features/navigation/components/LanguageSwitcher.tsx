@@ -1,5 +1,5 @@
 import useI18n from "@/app/hooks/useI18n";
-import { locales, type TLocale } from "@/lang";
+import { LOCALES, type TLocale } from "@/lang";
 
 const LanguageSwitcher = () => {
   const { locale, setLocale, messages } = useI18n();
@@ -15,7 +15,7 @@ const LanguageSwitcher = () => {
       className="flex items-center rounded-full border border-border/70 bg-secondary/40 p-1"
       aria-label={navigation.languageLabel}
     >
-      {locales.map((option) => (
+      {LOCALES.map((option) => (
         <button
           key={option}
           type="button"

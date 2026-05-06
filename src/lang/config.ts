@@ -9,9 +9,9 @@ import {
   Zap,
 } from "lucide-react";
 
-import type { TServiceId, TTechCategoryId } from "./types";
+import type { TServicesId, TTechCategoriesId } from "./types";
 
-export const serviceIcons: Record<TServiceId, LucideIcon> = {
+export const serviceIcons: Record<TServicesId, LucideIcon> = {
   "full-stack-web-apps": Code,
   "api-backend": Server,
   "startup-mvp": Zap,
@@ -19,7 +19,7 @@ export const serviceIcons: Record<TServiceId, LucideIcon> = {
   "performance-optimization": TrendingUp,
 };
 
-export const techCategoryIcons: Record<TTechCategoryId, LucideIcon> = {
+export const techCategoryIcons: Record<TTechCategoriesId, LucideIcon> = {
   frontend: Code2,
   backend: Server,
   database: Database,

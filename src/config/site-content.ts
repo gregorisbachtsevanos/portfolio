@@ -1,35 +1,36 @@
 import type {
-  TProjectId,
-  TServiceId,
-  TTechCategoryId,
-  TTrustReasonId,
+  TProjectsId,
+  TServicesId,
+  TTechCategoriesId,
+  TTrustReasonsId,
 } from "@/lang";
 import { serviceIcons, techCategoryIcons } from "@/lang";
+import { SERVICES, TECH_CATEGORIES } from "@/lang/constants";
 
 export const services = [
   {
-    id: "full-stack-web-apps",
-    icon: serviceIcons["full-stack-web-apps"],
+    id: SERVICES.fullStackWebApps,
+    icon: serviceIcons[SERVICES.fullStackWebApps],
   },
   {
-    id: "api-backend",
-    icon: serviceIcons["api-backend"],
+    id: SERVICES.apiBackend,
+    icon: serviceIcons[SERVICES.apiBackend],
   },
   {
-    id: "startup-mvp",
-    icon: serviceIcons["startup-mvp"],
+    id: SERVICES.startupMvp,
+    icon: serviceIcons[SERVICES.startupMvp],
   },
   {
-    id: "devops-deployment",
-    icon: serviceIcons["devops-deployment"],
+    id: SERVICES.devopsDeployment,
+    icon: serviceIcons[SERVICES.devopsDeployment],
   },
   {
-    id: "performance-optimization",
-    icon: serviceIcons["performance-optimization"],
+    id: SERVICES.performanceOptimization,
+    icon: serviceIcons[SERVICES.performanceOptimization],
   },
 ] as const satisfies ReadonlyArray<{
-  id: TServiceId;
-  icon: (typeof serviceIcons)[TServiceId];
+  id: TServicesId;
+  icon: (typeof serviceIcons)[TServicesId];
 }>;
 
 export const projects = [
@@ -46,13 +47,13 @@ export const projects = [
     tech: ["React", "TypeScript", "Redux Toolkit", "Vite"],
   },
 ] as const satisfies ReadonlyArray<{
-  id: TProjectId;
+  id: TProjectsId;
   tech: readonly string[];
 }>;
 
 export const techCategories = [
   {
-    id: "frontend",
+    id: TECH_CATEGORIES.frontend,
     icon: techCategoryIcons.frontend,
     technologies: [
       "React.js",
@@ -65,7 +66,7 @@ export const techCategories = [
     ],
   },
   {
-    id: "backend",
+    id: TECH_CATEGORIES.backend,
     icon: techCategoryIcons.backend,
     technologies: [
       "Node.js",
@@ -76,12 +77,12 @@ export const techCategories = [
     ],
   },
   {
-    id: "database",
+    id: TECH_CATEGORIES.database,
     icon: techCategoryIcons.database,
     technologies: ["MongoDB", "MySQL", "PostgreSQL"],
   },
   {
-    id: "devops",
+    id: TECH_CATEGORIES.devops,
     icon: techCategoryIcons.devops,
     technologies: [
       "Docker",
@@ -92,8 +93,8 @@ export const techCategories = [
     ],
   },
 ] as const satisfies ReadonlyArray<{
-  id: TTechCategoryId;
-  icon: (typeof techCategoryIcons)[TTechCategoryId];
+  id: TTechCategoriesId;
+  icon: (typeof techCategoryIcons)[TTechCategoriesId];
   technologies: readonly string[];
 }>;
 
@@ -102,4 +103,4 @@ export const trustReasons = [
   "scalability",
   "production-ready",
   "full-stack-expertise",
-] as const satisfies ReadonlyArray<TTrustReasonId>;
+] as const satisfies ReadonlyArray<TTrustReasonsId>;
