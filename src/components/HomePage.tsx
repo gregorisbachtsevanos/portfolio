@@ -1,11 +1,11 @@
-import About from "@/features/About";
+import About from "@/features/about";
 import Contact from "@/features/Contact";
-import Hero from "@/features/Hero/Hero";
+import Hero from "@/features/hero/Hero";
 import Navigation from "@/features/Navigation";
-import Projects from "@/features/Projects";
-import Services from "@/features/Services";
-import TechStack from "@/features/TechStack";
-import Trust from "@/features/Trust";
+import Projects from "@/features/projects";
+import Services from "@/features/services";
+import TechStack from "@/features/techStack";
+import Trust from "@/features/trust";
 import { getHtmlLang } from "@/config/seo";
 import type { TLocale } from "@/lang";
 
