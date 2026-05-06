@@ -1,6 +1,6 @@
-import HomePage from "@/components/HomePage";
 import { buildPageMetadata, buildStructuredData } from "@/config/seo";
 import { I18nProvider } from "@/lib/i18n";
+import HomePage from "./components/HomePage";
 
 export const generateMetadata = async () => buildPageMetadata("en");
 
