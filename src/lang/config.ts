@@ -9,7 +9,7 @@ import {
   Zap,
 } from "lucide-react";
 
-import type { TServiceId, TTechCategoryId } from "./schema";
+import type { TServiceId, TTechCategoryId } from "./types";
 
 export const serviceIcons: Record<TServiceId, LucideIcon> = {
   "full-stack-web-apps": Code,

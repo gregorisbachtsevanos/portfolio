@@ -54,7 +54,7 @@ const Navigation = () => {
               onClick={() => scrollToSection("hero")}
               className="max-w-[11rem] text-left text-base font-bold leading-tight bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent sm:max-w-none sm:text-xl"
             >
-              {siteConfig.name}
+              {navigation.name}
             </button>
           </div>
           <div className="hidden md:block">
