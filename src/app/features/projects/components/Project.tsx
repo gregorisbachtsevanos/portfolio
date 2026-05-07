@@ -5,7 +5,7 @@ import {
   CardTitle,
 } from "@/app/components/Card";
 import { ProjectProps } from "../types";
-import { Badge } from "@/app/components/Badge";
+import { Badge } from "@/app/features/projects/components/Badge";
 
 const Project = ({ project, projectItem }: ProjectProps) => {
   return (
