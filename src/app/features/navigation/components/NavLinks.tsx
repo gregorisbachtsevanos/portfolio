@@ -1,8 +1,7 @@
-"use client";
-
-import { memo, useRef } from "react";
+import { memo, useMemo, useRef } from "react";
 import { useSlidingIndicator } from "../hooks/useActiveItemIndicator";
 import useScrollSpy from "../hooks/useScrollSpy";
+import { cn } from "@/lib/utils";
 
 export interface INavItem {
   id: string;
@@ -23,9 +22,16 @@ const NavLinks = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Record<string, HTMLButtonElement | null>>({});
 
-  const activeSection = useScrollSpy({
-    sectionIds: navItems.map((item) => item.id),
-  });
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const id = e.currentTarget.dataset.section;
+    if (!id) return;
+
+    scrollToSection(id);
+  };
+
+  const sectionIds = navItems.map((item) => item.id);
+
+  const activeSection = useScrollSpy({ sectionIds });
 
   const indicatorStyle = useSlidingIndicator({
     activeKey: activeSection,
@@ -39,22 +45,17 @@ const NavLinks = ({
     : "relative text-muted-foreground hover:text-foreground transition-colors px-1";
 
   if (mobile) {
-    return (
-      <>
-        {navItems.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            onClick={() => scrollToSection(item.id)}
-            className={`${baseClass} ${
-              activeSection === item.id ? "text-sky-500 font-semibold" : ""
-            }`}
-          >
-            {item.label}
-          </button>
-        ))}
-      </>
-    );
+    return navItems.map((item) => (
+      <button
+        key={item.id}
+        type="button"
+        data-section={item.id}
+        onClick={handleClick}
+        className={cn(baseClass, activeSection === item.id && "text-sky-500")}
+      >
+        {item.label}
+      </button>
+    ));
   }
 
   return (
@@ -75,7 +76,8 @@ const NavLinks = ({
             itemRefs.current[item.id] = el;
           }}
           type="button"
-          onClick={() => scrollToSection(item.id)}
+          data-section={item.id}
+          onClick={handleClick}
           className={`${baseClass} ${
             activeSection === item.id ? "text-sky-500" : ""
           }`}

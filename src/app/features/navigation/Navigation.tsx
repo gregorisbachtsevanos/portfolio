@@ -1,19 +1,18 @@
 "use client";
 
-import { Button } from "../../components/Button";
-import { siteConfig } from "@/config/site";
 import useI18n from "@/app/hooks/useI18n";
+import useScrollToSection from "@/app/hooks/useScrollToSection";
 import useTheme from "@/app/hooks/useTheme";
-import { Menu, X } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
+import { Button } from "../../components/Button";
 import LanguageSwitcher from "./components/LanguageSwitcher";
+import MobileNavControls from "./components/mobile/MobileNavControls";
+import MobileNavItems from "./components/mobile/MobileNavItems";
 import NavLinks from "./components/NavLinks";
 import ThemeToggleButton from "./components/ThemeToggleButton";
 import useCloseMobileMenuOnResize from "./hooks/useCloseMobileMenuOnResize";
 import useNavbarScrolled from "./hooks/useNavbarScrolled";
-import MobileNavItems from "./components/mobile/MobileNavItems";
-import MobileNavControls from "./components/mobile/MobileNavControls";
-import useScrollToSection from "@/app/hooks/useScrollToSection";
+import { cn } from "@/lib/utils";
 
 const Navigation = () => {
   const { toggleTheme } = useTheme();
@@ -40,11 +39,12 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
           ? "bg-background/80 dark:bg-black/80 backdrop-blur-lg border-b border-foreground/10"
-          : "bg-transparent"
-      }`}
+          : "bg-transparent",
+      )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 gap-3 sm:h-16">

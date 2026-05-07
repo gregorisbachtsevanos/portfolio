@@ -11,19 +11,21 @@ import { getHtmlLang } from "@/config/seo";
 import type { TLocale } from "@/lang";
 import Trust from "@/app/features/trust";
 
-export const generateMetadata = async () => buildPageMetadata("en");
+const locale: TLocale = "en";
 
-const Home = () => {
+export const generateMetadata = async () => buildPageMetadata(locale);
+
+export default function Home() {
   return (
-    <I18nProvider initialLocale="en">
+    <I18nProvider initialLocale={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(buildStructuredData("en")),
+          __html: JSON.stringify(buildStructuredData(locale)),
         }}
       />
       <main
-        lang={getHtmlLang("en")}
+        lang={getHtmlLang(locale)}
         className="min-h-screen bg-background text-foreground transition-colors duration-300"
       >
         <Navigation />
@@ -37,6 +39,4 @@ const Home = () => {
       </main>
     </I18nProvider>
   );
-};
-
-export default Home;
+}
