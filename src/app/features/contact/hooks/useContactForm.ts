@@ -2,7 +2,7 @@
 
 import { useState, type ChangeEvent, type FormEvent } from "react";
 
-import { useToast } from "@/app/hooks/useToast";
+import { useToast } from "@/app/features/toaster/hooks/useToast";
 import useI18n from "@/app/hooks/useI18n";
 
 type TContactFormData = {
