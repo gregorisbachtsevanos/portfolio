@@ -23,14 +23,13 @@ const Services = () => {
           </p>
         </div>
         <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {serviceItems.map((service) => {
-            const Icon = service.icon;
-            const serviceItem = services.items[service.id];
-
-            return (
-              <Service key={service.id} Icon={Icon} serviceItem={serviceItem} />
-            );
-          })}
+          {serviceItems.map((service) => (
+            <Service
+              key={service.id}
+              Icon={service.icon}
+              serviceItem={services.items[service.id]}
+            />
+          ))}
         </div>
       </div>
     </section>
