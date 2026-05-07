@@ -1,13 +1,40 @@
 import { buildPageMetadata, buildStructuredData } from "@/config/seo";
 import { I18nProvider } from "@/lib/i18n";
-import HomePage from "./components/HomePage";
+import About from "@/app/features/about";
+import Contact from "@/app/features/contact";
+import Hero from "@/app/features/hero";
+import Navigation from "@/app/features/navigation";
+import Projects from "@/app/features/projects";
+import Services from "@/app/features/services";
+import TechStack from "@/app/features/techStack";
+import { getHtmlLang } from "@/config/seo";
+import type { TLocale } from "@/lang";
+import Trust from "@/app/features/trust";
 
 export const generateMetadata = async () => buildPageMetadata("en");
 
 const Home = () => {
   return (
     <I18nProvider initialLocale="en">
-      <HomePage locale="en" structuredData={buildStructuredData("en")} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildStructuredData("en")),
+        }}
+      />
+      <main
+        lang={getHtmlLang("en")}
+        className="min-h-screen bg-background text-foreground transition-colors duration-300"
+      >
+        <Navigation />
+        <Hero />
+        <About />
+        <Services />
+        <Projects />
+        <TechStack />
+        <Trust />
+        <Contact />
+      </main>
     </I18nProvider>
   );
 };
