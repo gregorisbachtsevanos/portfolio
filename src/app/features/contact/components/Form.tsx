@@ -2,7 +2,7 @@ import { IMessages } from "@/lang";
 import { Send } from "lucide-react";
 import { memo } from "react";
 import useContactForm from "../hooks/useContactForm";
-import { Input } from "@/app/components/Input";
+import { Input } from "@/app/features/contact/components/Input";
 import { Textarea } from "@/app/components/Textarea";
 import { Button } from "@/app/components/Button";
 
