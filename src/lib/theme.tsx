@@ -3,7 +3,11 @@
 import type { ReactNode } from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
-export const themes = ["light", "dark"] as const;
+export const THEME = {
+  LIGHT: "light",
+  DARK: "dark",
+};
+export const themes = Object.values(THEME);
 
 export type TTheme = (typeof themes)[number];
 
@@ -15,7 +19,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       enableSystem
       enableColorScheme
       disableTransitionOnChange
-      themes={[...themes]}
+      themes={themes}
     >
       {children}
     </NextThemesProvider>
