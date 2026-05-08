@@ -2,7 +2,7 @@ import { memo, useMemo, useRef } from "react";
 import { useSlidingIndicator } from "../hooks/useActiveItemIndicator";
 import useScrollSpy from "../hooks/useScrollSpy";
 import { cn } from "@/lib/utils";
-import { usePageEdges } from "@/app/hooks/usePageEdges";
+import { usePageEdges } from "@/app/features/navigation/hooks/usePageEdges";
 import SlidingIndicator from "./SlidingIndicator";
 
 export interface INavItem {
