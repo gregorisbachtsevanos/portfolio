@@ -2,6 +2,8 @@ import { memo, useMemo, useRef } from "react";
 import { useSlidingIndicator } from "../hooks/useActiveItemIndicator";
 import useScrollSpy from "../hooks/useScrollSpy";
 import { cn } from "@/lib/utils";
+import { usePageEdges } from "@/app/hooks/usePageEdges";
+import SlidingIndicator from "./SlidingIndicator";
 
 export interface INavItem {
   id: string;
@@ -21,7 +23,8 @@ const NavLinks = ({
 }: INavLinksProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Record<string, HTMLButtonElement | null>>({});
-
+  const { isTop, isBottom } = usePageEdges();
+  const hideIndicator = !isTop && !isBottom;
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const id = e.currentTarget.dataset.section;
     if (!id) return;
@@ -51,7 +54,10 @@ const NavLinks = ({
         type="button"
         data-section={item.id}
         onClick={handleClick}
-        className={cn(baseClass, activeSection === item.id && "text-sky-500")}
+        className={cn(
+          baseClass,
+          activeSection === item.id && hideIndicator && "text-sky-500",
+        )}
       >
         {item.label}
       </button>
@@ -60,14 +66,7 @@ const NavLinks = ({
 
   return (
     <div ref={containerRef} className="relative flex items-center space-x-6">
-      {/* Sliding indicator */}
-      <span
-        className="absolute bottom-0 h-[2px] bg-sky-500  transition-all duration-300 ease-out"
-        style={{
-          width: indicatorStyle.width,
-          transform: `translateX(${indicatorStyle.left}px)`,
-        }}
-      />
+      {hideIndicator && <SlidingIndicator indicatorStyle={indicatorStyle} />}
 
       {navItems.map((item) => (
         <button
@@ -78,9 +77,10 @@ const NavLinks = ({
           type="button"
           data-section={item.id}
           onClick={handleClick}
-          className={`${baseClass} ${
-            activeSection === item.id ? "text-sky-500" : ""
-          }`}
+          className={cn(
+            baseClass,
+            activeSection === item.id && hideIndicator && "text-sky-500",
+          )}
         >
           {item.label}
         </button>
