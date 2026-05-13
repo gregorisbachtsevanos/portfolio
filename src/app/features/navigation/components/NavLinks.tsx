@@ -4,17 +4,7 @@ import useScrollSpy from "../hooks/useScrollSpy";
 import { cn } from "@/lib/utils";
 import { usePageEdges } from "@/app/features/navigation/hooks/usePageEdges";
 import SlidingIndicator from "./SlidingIndicator";
-
-export interface INavItem {
-  id: string;
-  label: string;
-}
-
-interface INavLinksProps {
-  navItems: INavItem[];
-  scrollToSection: (id: string) => void;
-  mobile?: boolean;
-}
+import { INavLinksProps } from "../types/navigation.types";
 
 const NavLinks = ({
   navItems,
@@ -25,10 +15,10 @@ const NavLinks = ({
   const itemRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const { isTop, isBottom } = usePageEdges();
   const hideIndicator = !isTop && !isBottom;
+
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const id = e.currentTarget.dataset.section;
     if (!id) return;
-
     scrollToSection(id);
   };
 
