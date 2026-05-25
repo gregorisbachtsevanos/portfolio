@@ -96,3 +96,66 @@ body {
 
 /* Section dividers */
 .section-divider { border-color: var(--border); }
+
+@keyframes flicker {
+  0% {
+    opacity: 0.02;
+  }
+  8% {
+    opacity: 0.05;
+  }
+  16% {
+    opacity: 0.03;
+  }
+  24% {
+    opacity: 0.06;
+  }
+  32% {
+    opacity: 0.02;
+  }
+  40% {
+    opacity: 0.07;
+  }
+  48% {
+    opacity: 0.03;
+  }
+  56% {
+    opacity: 0.05;
+  }
+  64% {
+    opacity: 0.02;
+  }
+  72% {
+    opacity: 0.06;
+  }
+  80% {
+    opacity: 0.03;
+  }
+  88% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0.02;
+  }
+}
+
+.flicker-overlay {
+  background: radial-gradient(
+      circle at 20% 15%,
+      rgba(255, 255, 255, 0.06),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(255, 255, 255, 0.04),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(255, 255, 255, 0.03),
+      transparent 55%
+    );
+
+  mix-blend-mode: soft-light;
+  animation: flicker 7s infinite steps(60);
+}
