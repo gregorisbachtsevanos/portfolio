@@ -18,9 +18,12 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 w-full flex-1 flex flex-col justify-center py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left */}
-          <div>
+          <div className="z-10">
             <p className="section-label mb-6 reveal">{t.hero.label}</p>
-            <h1 className="reveal reveal-delay-1 font-extrabold text-[var(--text)] leading-[1.04] tracking-tight text-5xl md:text-6xl xl:text-7xl mb-6">
+            <h1
+              className="reveal reveal-delay-1 font-extrabold text-[var(--text)] leading-[1.04] tracking-tight text-5xl md:text-6xl xl:text-7xl mb-6"
+              style={{ textShadow: "0px 0px 25px var(--bg)" }}
+            >
               {t.hero.headline}
             </h1>
             <p className="reveal reveal-delay-2 text-[var(--muted-2)] text-[15px] leading-relaxed max-w-md mb-10 font-mono">
@@ -66,7 +69,7 @@ export default function Hero() {
           </div>
 
           {/* Right — photo collage */}
-          <div className="relative hidden lg:block h-[520px]">
+          <div className="relative hidden lg:block h-[520px] z-0">
             <div className="img-zoom absolute top-0 right-0 w-[58%] h-[320px] rounded-2xl overflow-hidden border border-[var(--border)]">
               <Image
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80"
