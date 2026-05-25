@@ -66,10 +66,11 @@ export default function Contact() {
           {/* Map */}
           <div className="relative h-[440px] rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--bg-alt)] reveal reveal-delay-2">
             <svg
-              className="absolute inset-0 w-full h-full opacity-10"
+              className="absolute inset-0 w-full h-full opacity-20"
               viewBox="0 0 800 440"
               xmlns="http://www.w3.org/2000/svg"
             >
+              {/* Grid lines */}
               {Array.from({ length: 20 }).map((_, i) => (
                 <line
                   key={`h${i}`}
@@ -92,10 +93,11 @@ export default function Contact() {
                   strokeWidth="0.5"
                 />
               ))}
+              {/* Circles */}
               <circle
                 cx="400"
                 cy="220"
-                r="80"
+                r="60"
                 fill="none"
                 stroke="var(--accent)"
                 strokeWidth="1"
@@ -103,7 +105,7 @@ export default function Contact() {
               <circle
                 cx="400"
                 cy="220"
-                r="40"
+                r="30"
                 fill="none"
                 stroke="var(--accent)"
                 strokeWidth="1"
@@ -111,15 +113,25 @@ export default function Contact() {
               <circle
                 cx="400"
                 cy="220"
-                r="10"
+                r="8"
                 fill="var(--accent)"
-                opacity="0.5"
+                opacity="0.6"
               />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <div className="bg-[var(--surface)]/90 backdrop-blur border border-[var(--border-2)] rounded-2xl px-8 py-6 text-center">
-                <div className="w-10 h-10 rounded-full bg-[var(--accent)]/20 flex items-center justify-center mx-auto mb-3">
-                  <PinIcon />
+                <div className="w-10 h-10 rounded-full bg-[color:color-mix(in_srgb,var(--accent)_12%,transparent)] flex items-center justify-center mx-auto mb-3">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--accent)"
+                    strokeWidth="2"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                 </div>
                 <p className="text-[var(--text)] font-semibold mb-1">
                   {t.contact.location_value}

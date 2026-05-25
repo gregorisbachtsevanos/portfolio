@@ -122,7 +122,7 @@ export const el: Translations = {
     linkedin_label: "LinkedIn",
     github_label: "GitHub",
     location_label: "Τοποθεσία",
-    location_value: "Λονδίνο, Ηνωμένο Βασίλειο",
+    location_value: "Θεσσαλονικη, Ελλαδα",
     remote: "Ανοιχτός για απομακρυσμένη εργασία παγκοσμίως",
     send: "Στείλτε μου email",
   },

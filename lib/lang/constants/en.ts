@@ -122,7 +122,7 @@ export const en: Translations = {
     linkedin_label: "LinkedIn",
     github_label: "GitHub",
     location_label: "Location",
-    location_value: "London, United Kingdom",
+    location_value: "Thessaloniki, Greece",
     remote: "Open to remote worldwide",
     send: "Send me an email",
   },
