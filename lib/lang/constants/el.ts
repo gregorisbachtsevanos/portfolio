@@ -68,42 +68,35 @@ export const el: Translations = {
   timeline: {
     label: "Εμπειρία",
     heading: "Πέντε χρόνια χτίζοντας σε κλίμακα",
-    sub: "Από το πρώτο commit έως την ηγεσία cross-functional ομάδων — ένα χρονολόγιο της εργασίας και των ανθρώπων που με διαμόρφωσαν.",
+    sub: "Από full-stack συστήματα μέχρι enterprise πλατφόρμες — μια πορεία συνεχούς εξέλιξης σε backend, frontend και υποδομές.",
     items: [
       {
-        year: "2020",
-        role: "Junior Frontend Developer",
-        company: "StartupCo",
-        description:
-          "Εντάχθηκα σε μια γρήγορα αναπτυσσόμενη startup. Έχτισα το αρχικό design system και τις ροές onboarding από το μηδέν.",
-      },
-      {
         year: "2021",
-        role: "Mid Frontend Engineer",
-        company: "GrowthLabs",
+        role: "Junior Full Stack Developer",
+        company: "Global Concept | Full Service Digital Agency",
         description:
-          "Ηγήθηκα μετάβασης από CRA σε Next.js, βελτιώνοντας το LCP κατά 40%. Καθοδήγησα δύο junior developers.",
+          "Ανάπτυξη και συντήρηση full-stack web εφαρμογών με PHP, Node.js και Vue.js. Δημιουργία δυναμικών UI με Vue.js και jQuery. Σχεδιασμός και βελτιστοποίηση MySQL βάσεων δεδομένων και RESTful APIs.",
       },
       {
         year: "2022",
-        role: "Senior Engineer",
-        company: "ScaleCorp",
+        role: "Full Stack Developer",
+        company: "Rhoé",
         description:
-          "Σχεδίασα πλατφόρμα micro-frontend που χρησιμοποιείται από 5 ομάδες. Εισήγαγα πρότυπα testing και κουλτούρα code review.",
+          "Σχεδιασμός και ανάπτυξη backend συστημάτων με Node.js, Express και MongoDB. Συμμετοχή σε frontend ανάπτυξη με React. Διαχείριση Dockerized εφαρμογών, Linux servers και CI/CD pipelines με Ansible και Nginx. Παρακολούθηση και troubleshooting παραγωγικών συστημάτων.",
       },
       {
         year: "2023",
-        role: "Lead Engineer",
-        company: "EnterpriseX",
+        role: "Software Engineer - Web",
+        company: "WeAre8",
         description:
-          "Ηγήθηκα ομάδας 7 μηχανικών παραδίδοντας SaaS προϊόν από 0 σε 10k χρήστες σε 6 μήνες.",
+          "Ανάπτυξη high-performance web εφαρμογών με React, Next.js και TypeScript. Βελτιστοποίηση απόδοσης frontend, προσβασιμότητας και UX. Συνεργασία με product & design teams και εφαρμογή security best practices (XSS, CSRF).",
       },
       {
-        year: "2024",
-        role: "Staff Engineer",
-        company: "TechUnicorn",
+        year: "2026",
+        role: "Senior Software Engineer",
+        company: "Netcompany",
         description:
-          "Οδηγώ cross-functional τεχνική στρατηγική, προσλήψεις και ανάπτυξη υποδομής πλατφόρμας για 50+ μηχανικούς.",
+          "Εργασία σε enterprise-scale συστήματα και μεγάλα software projects. Συμμετοχή σε ανάλυση απαιτήσεων, ανάπτυξη και υποστήριξη production συστημάτων με έμφαση σε ποιότητα και scalability.",
       },
     ],
   },

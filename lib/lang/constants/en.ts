@@ -68,42 +68,35 @@ export const en: Translations = {
   timeline: {
     label: "Experience",
     heading: "Five years building at scale",
-    sub: "From my first commit to leading cross-functional teams — a timeline of the work, lessons, and people that shaped me.",
+    sub: "From full-stack systems to enterprise platforms — a continuous journey across backend, frontend, and infrastructure.",
     items: [
       {
-        year: "2020",
-        role: "Junior Frontend Developer",
-        company: "StartupCo",
-        description:
-          "Joined a fast-moving seed stage startup. Built the initial design system and onboarding flows from scratch.",
-      },
-      {
         year: "2021",
-        role: "Mid Frontend Engineer",
-        company: "GrowthLabs",
+        role: "Junior Full Stack Developer",
+        company: "Global Concept | Full Service Digital Agency",
         description:
-          "Led migration from CRA to Next.js, improving LCP by 40%. Mentored two junior developers.",
+          "Developed and maintained full-stack web applications using PHP, Node.js, and Vue.js. Built dynamic UIs with Vue.js and jQuery. Designed, optimized MySQL databases and implemented RESTful APIs.",
       },
       {
         year: "2022",
-        role: "Senior Engineer",
-        company: "ScaleCorp",
+        role: "Full Stack Developer",
+        company: "Rhoé",
         description:
-          "Architected a micro-frontend platform used by 5 product teams. Introduced testing standards and PR review culture.",
+          "Designed and built backend systems using Node.js, Express, and MongoDB. Contributed to React frontend development. Managed Dockerized deployments, Linux servers, and CI/CD pipelines using Ansible and Nginx. Monitored production systems and handled server-side troubleshooting.",
       },
       {
         year: "2023",
-        role: "Lead Engineer",
-        company: "EnterpriseX",
+        role: "Software Engineer - Web",
+        company: "WeAre8",
         description:
-          "Led a team of 7 engineers delivering a customer-facing SaaS product from 0 to 10k users in 6 months.",
+          "Built high-performance web applications using React, Next.js, and TypeScript. Focused on frontend performance, accessibility, and UX. Collaborated with product and design teams and enforced security best practices (XSS, CSRF).",
       },
       {
-        year: "2024",
-        role: "Staff Engineer",
-        company: "TechUnicorn",
+        year: "2026",
+        role: "Senior Software Engineer",
+        company: "Netcompany",
         description:
-          "Driving cross-functional technical strategy, hiring, and building platform infrastructure for 50+ engineers.",
+          "Working on enterprise-scale software systems and large-scale applications. Involved in requirements analysis, development, and production support with a strong focus on scalability and reliability.",
       },
     ],
   },
