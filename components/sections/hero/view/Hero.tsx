@@ -6,7 +6,7 @@ import { stats } from "../utils/helpers.utils";
 export default function Hero() {
   const { t } = useApp();
   return (
-    <section className="relative min-h-screen bg-[var(--bg)] flex flex-col pt-14 overflow-hidden">
+    <section className="relative min-h-screen bg-bg flex flex-col pt-14 overflow-hidden">
       {/* Grain */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -22,24 +22,24 @@ export default function Hero() {
           <div className="z-10">
             <p className="section-label mb-6 reveal">{t.hero.label}</p>
             <h1
-              className="reveal reveal-delay-1 font-extrabold text-[var(--text)] leading-[1.04] tracking-tight text-5xl md:text-6xl xl:text-7xl mb-6"
+              className="reveal reveal-delay-1 font-extrabold text-text leading-[1.04] tracking-tight text-5xl md:text-6xl xl:text-7xl mb-6"
               style={{ textShadow: "0px 0px 25px var(--bg)" }}
             >
               {t.hero.headline}
             </h1>
-            <p className="reveal reveal-delay-2 text-[var(--muted-2)] text-[15px] leading-relaxed max-w-md mb-10 font-mono">
+            <p className="reveal reveal-delay-2 text-muted-2 text-[15px] leading-relaxed max-w-md mb-10 font-mono">
               {t.hero.sub}
             </p>
             <div className="reveal reveal-delay-3 flex flex-wrap items-center gap-4">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 bg-[var(--accent)] hover:bg-[var(--accent-h)] text-white text-[13px] font-semibold px-5 py-2.5 rounded-full transition-colors"
+                className="inline-flex items-center gap-2 bg-accent hover:bg-accent-h text-white text-[13px] font-semibold px-5 py-2.5 rounded-full transition-colors"
               >
                 {t.hero.cta_primary}
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 text-[13px] text-[var(--muted)] hover:text-[var(--text)] transition-colors font-medium"
+                className="inline-flex items-center gap-2 text-[13px] text-muted hover:text-text transition-colors font-medium"
               >
                 {t.hero.cta_secondary}
                 <svg
@@ -55,13 +55,13 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="reveal reveal-delay-4 flex gap-8 mt-14 pt-8 border-t border-[var(--border)]">
+            <div className="reveal reveal-delay-4 flex gap-8 mt-14 pt-8 border-t border-border">
               {stats(t).map((s) => (
                 <div key={s.label}>
-                  <div className="text-2xl font-bold text-[var(--text)]">
+                  <div className="text-2xl font-bold text-text">
                     {s.value}
                   </div>
-                  <div className="text-[12px] text-[var(--muted-2)] mt-0.5 font-mono">
+                  <div className="text-[12px] text-muted-2 mt-0.5 font-mono">
                     {s.label}
                   </div>
                 </div>
@@ -71,7 +71,7 @@ export default function Hero() {
 
           {/* Right — photo collage */}
           <div className="relative hidden lg:block h-[520px] z-0">
-            <div className="img-zoom absolute top-0 right-0 w-[58%] h-[320px] rounded-2xl overflow-hidden border border-[var(--border)]">
+            <div className="img-zoom absolute top-0 right-0 w-[58%] h-[320px] rounded-2xl overflow-hidden border border-border">
               <Image
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80"
                 alt="Team"
@@ -79,7 +79,7 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-            <div className="img-zoom absolute bottom-0 left-0 w-[50%] h-[240px] rounded-2xl overflow-hidden border border-[var(--border)]">
+            <div className="img-zoom absolute bottom-0 left-0 w-[50%] h-[240px] rounded-2xl overflow-hidden border border-border">
               <Image
                 src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80"
                 alt="Developer"
@@ -87,7 +87,7 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-            <div className="img-zoom absolute bottom-4 right-0 w-[38%] h-[180px] rounded-2xl overflow-hidden border border-[var(--border)]">
+            <div className="img-zoom absolute bottom-4 right-0 w-[38%] h-[180px] rounded-2xl overflow-hidden border border-border">
               <Image
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80"
                 alt="Meeting"
@@ -95,10 +95,10 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute top-[200px] left-[5%] bg-[var(--surface)] border border-[var(--border-2)] rounded-xl px-4 py-3 shadow-xl">
+            <div className="absolute top-[200px] left-[5%] bg-surface border border-border-2 rounded-xl px-4 py-3 shadow-xl">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-green-400" />
-                <span className="text-[12px] text-[var(--text)] font-medium">
+                <span className="text-[12px] text-text font-medium">
                   {t.hero.badge}
                 </span>
               </div>

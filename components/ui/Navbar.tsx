@@ -25,7 +25,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--border)]"
+          ? "bg-overlay-bg-90 backdrop-blur-md border-b border-border"
           : ""
       }`}
     >
@@ -33,7 +33,7 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#"
-          className="text-[var(--text)] font-extrabold text-base tracking-tight hover:opacity-60 transition-opacity"
+          className="text-text font-extrabold text-base tracking-tight hover:opacity-60 transition-opacity"
         >
           Graig.
         </a>
@@ -44,7 +44,7 @@ export default function Navbar() {
             <a
               key={l.label}
               href={l.href}
-              className="text-[13px] text-[var(--muted)] hover:text-[var(--text)] transition-colors font-medium"
+              className="text-[13px] text-muted hover:text-text transition-colors font-medium"
             >
               {l.label}
             </a>
@@ -54,15 +54,15 @@ export default function Navbar() {
         {/* Controls */}
         <div className="flex items-center gap-3">
           {/* Locale toggle */}
-          <div className="flex items-center gap-1 bg-[var(--card)] border border-[var(--border)] rounded-full px-1 py-1">
+          <div className="flex items-center gap-1 bg-card border border-border rounded-full px-1 py-1">
             {(["en", "el"] as Locale[]).map((lng) => (
               <button
                 key={lng}
                 onClick={() => setLocale(lng)}
                 className={`text-[11px] font-mono font-semibold px-2.5 py-1 rounded-full transition-all ${
                   locale === lng
-                    ? "bg-[var(--accent)] text-white"
-                    : "text-[var(--muted)] hover:text-[var(--text)]"
+                    ? "bg-accent text-white"
+                    : "text-muted hover:text-text"
                 }`}
               >
                 {lng.toUpperCase()}
@@ -73,7 +73,7 @@ export default function Navbar() {
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--card)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] transition-colors"
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-card border border-border text-muted hover:text-text transition-colors"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
@@ -112,7 +112,7 @@ export default function Navbar() {
           {/* Available badge */}
           <a
             href="#contact"
-            className="hidden md:inline-flex items-center gap-2 text-[12px] font-medium text-[var(--text)] bg-[var(--card)] border border-[var(--border)] px-3 py-1.5 rounded-full hover:border-[var(--border-2)] transition-colors"
+            className="hidden md:inline-flex items-center gap-2 text-[12px] font-medium text-text bg-card border border-border px-3 py-1.5 rounded-full hover:border-border-2 transition-colors"
           >
             {t.nav.available}
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
@@ -120,7 +120,7 @@ export default function Navbar() {
 
           {/* Hamburger */}
           <button
-            className="md:hidden text-[var(--muted)] hover:text-[var(--text)]"
+            className="md:hidden text-muted hover:text-text"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <svg
@@ -147,12 +147,12 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[var(--bg-alt)] border-t border-[var(--border)] px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-bg-alt border-t border-border px-6 py-4 flex flex-col gap-4">
           {navLinks.map((l) => (
             <a
               key={l.label}
               href={l.href}
-              className="text-[14px] text-[var(--muted)] hover:text-[var(--text)] transition-colors"
+              className="text-[14px] text-muted hover:text-text transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {l.label}
