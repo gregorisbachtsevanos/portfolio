@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Dark theme (default) ── */
+:root {
+  --bg:        #0a0a0a;
+  --bg-alt:    #0d0d0d;
+  --surface:   #111111;
+  --card:      #161616;
+  --border:    #1e1e1e;
+  --border-2:  #2a2a2a;
+  --text:      #e5e5e5;
+  --muted:     #888888;
+  --muted-2:   #555555;
+  --muted-3:   #444444;
+  --muted-4:   #333333;
+  --accent:    #3b82f6;
+  --accent-h:  #2563eb;
+}
+
+/* ── Light theme ── */
+html:not(.dark) {
+  --bg:        #f5f5f4;
+  --bg-alt:    #fafaf9;
+  --surface:   #ffffff;
+  --card:      #f0eeec;
+  --border:    #e0ddd9;
+  --border-2:  #ccc9c4;
+  --text:      #111111;
+  --muted:     #555555;
+  --muted-2:   #777777;
+  --muted-3:   #999999;
+  --muted-4:   #aaaaaa;
+  --accent:    #2563eb;
+  --accent-h:  #1d4ed8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-syne), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection { background: var(--accent); color: #fff; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 2px; }
+
+/* Scroll-triggered reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Image zoom on hover */
+.img-zoom { overflow: hidden; }
+.img-zoom img { transition: transform 0.5s ease; }
+.img-zoom:hover img { transform: scale(1.06); }
+
+/* Tags */
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid var(--border-2);
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--muted);
+  font-family: var(--font-dm-mono), monospace;
+  letter-spacing: 0.03em;
+}
+
+/* Mono label above section headings */
+.section-label {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+/* Section dividers */
+.section-divider { border-color: var(--border); }
+
+@keyframes flicker {
+  0% {
+    opacity: 0.02;
+  }
+  8% {
+    opacity: 0.05;
+  }
+  16% {
+    opacity: 0.03;
+  }
+  24% {
+    opacity: 0.06;
+  }
+  32% {
+    opacity: 0.02;
+  }
+  40% {
+    opacity: 0.07;
+  }
+  48% {
+    opacity: 0.03;
+  }
+  56% {
+    opacity: 0.05;
+  }
+  64% {
+    opacity: 0.02;
+  }
+  72% {
+    opacity: 0.06;
+  }
+  80% {
+    opacity: 0.03;
+  }
+  88% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0.02;
+  }
+}
+
+.flicker-overlay {
+  background: radial-gradient(
+      circle at 20% 15%,
+      rgba(255, 255, 255, 0.06),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(255, 255, 255, 0.04),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(255, 255, 255, 0.03),
+      transparent 55%
+    );
+
+  mix-blend-mode: soft-light;
+  animation: flicker 7s infinite steps(60);
+}
