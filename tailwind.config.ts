@@ -29,6 +29,7 @@ const config: Config = {
         accent: "var(--accent)",
         "accent-h": "var(--accent-h)",
         overlay: {
+          "bg-50": "color-mix(in srgb, var(--bg) 50%, transparent)",
           "bg-60": "color-mix(in srgb, var(--bg) 60%, transparent)",
           "bg-90": "color-mix(in srgb, var(--bg) 90%, transparent)",
           "bg-alt-70": "color-mix(in srgb, var(--bg-alt) 70%, transparent)",
