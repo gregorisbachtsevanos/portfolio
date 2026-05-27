@@ -5,11 +5,9 @@ import { CURRENT, SKILLS } from "../constants/about.consts";
 
 export default function About() {
   const { t } = useApp();
+
   return (
-    <section
-      id="about"
-      className="bg-bg-alt border-t border-border py-28"
-    >
+    <section id="about" className="bg-bg-alt border-t border-border py-28">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -38,7 +36,8 @@ export default function About() {
                 {t.about.cta_projects}
               </a>
               <a
-                href="#contact"
+                href="https://github.com/gregorisbachtsevanos?tab=repositories"
+                target="_blank"
                 className="text-[13px] font-semibold text-muted-2 hover:text-text transition-colors"
               >
                 {t.about.cta_more}
@@ -62,10 +61,7 @@ export default function About() {
               </div>
               <div className="flex gap-2 flex-wrap">
                 {CURRENT.map((s) => (
-                  <span
-                    key={s}
-                    className="text-[12px] text-text font-medium"
-                  >
+                  <span key={s} className="text-[12px] text-text font-medium">
                     {s}
                   </span>
                 ))}

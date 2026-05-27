@@ -8,10 +8,7 @@ export default function Projects() {
   const projects = structureProjects(t);
 
   return (
-    <section
-      id="projects"
-      className="bg-bg-alt border-t border-border py-28"
-    >
+    <section id="projects" className="bg-bg-alt border-t border-border py-28">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="section-label mb-4 reveal">{t.projects.label}</p>
@@ -39,9 +36,7 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-overlay-surface-80 to-transparent" />
               </div>
               <div className="p-6">
-                <h3 className="text-text font-bold text-lg mb-2">
-                  {p.title}
-                </h3>
+                <h3 className="text-text font-bold text-lg mb-2">{p.title}</h3>
                 <p className="text-muted-2 text-[13px] leading-relaxed mb-5">
                   {p.desc}
                 </p>
@@ -53,7 +48,8 @@ export default function Projects() {
                   ))}
                 </div>
                 <a
-                  href="#"
+                  href="https://github.com/gregorisbachtsevanos?tab=repositories"
+                  target="_blank"
                   className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-accent hover:gap-2.5 transition-all"
                 >
                   {t.projects.view_project}
@@ -75,7 +71,8 @@ export default function Projects() {
 
         <div className="mt-12 text-center">
           <a
-            href="#"
+            href="https://github.com/gregorisbachtsevanos?tab=repositories"
+            target="_blank"
             className="inline-flex items-center gap-2 border border-border-2 text-[13px] text-muted hover:text-text hover:border-muted-3 transition-all px-6 py-2.5 rounded-full"
           >
             {t.projects.view_all}

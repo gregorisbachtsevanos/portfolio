@@ -3,9 +3,13 @@ export const SKILLS = [
   "Next.js",
   "TypeScript",
   "Node.js",
+  "Express.js",
+  "MongoDB",
   "PostgreSQL",
-  "Figma",
+  "Docker",
   "Redux",
   "Tailwind",
+  "vanilla-extract",
 ];
-export const CURRENT = ["React", "Tailwind", "Next.js", "Figma +"];
+
+export const CURRENT = ["React", "Next.js", "PostgreSQL", "Express.js"];

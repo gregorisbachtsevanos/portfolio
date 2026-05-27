@@ -8,10 +8,7 @@ export default function Contact() {
   const items = structureItems(t);
 
   return (
-    <section
-      id="contact"
-      className="bg-bg border-t border-border py-28"
-    >
+    <section id="contact" className="bg-bg border-t border-border py-28">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
@@ -29,15 +26,14 @@ export default function Contact() {
                   key={item.label}
                   className={`reveal reveal-delay-${Math.min(i + 2, 4)} flex items-start gap-4`}
                 >
-                  <div className="mt-0.5 text-muted-2">
-                    {item.icon}
-                  </div>
+                  <div className="mt-0.5 text-muted-2">{item.icon}</div>
                   <div>
                     <div className="text-[11px] text-muted-3 font-mono uppercase tracking-widest mb-1">
                       {item.label}
                     </div>
                     {item.href ? (
                       <a
+                        target="_blank"
                         href={item.href}
                         className="text-[15px] text-text hover:text-accent transition-colors font-medium"
                       >

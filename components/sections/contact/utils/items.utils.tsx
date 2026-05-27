@@ -5,20 +5,20 @@ import { EmailIcon, GitHubIcon, LinkedInIcon, PinIcon } from "./icons.utils";
 export const structureItems = (t: Translations): ContactItem[] => [
   {
     label: t.contact.email_label,
-    value: "graig@example.com",
-    href: "mailto:graig@example.com",
+    value: "gregorisbachtsevanos@gmail.com",
+    href: "mailto:gregorisbachtsevanos@gmail.com",
     icon: <EmailIcon />,
   },
   {
     label: t.contact.linkedin_label,
     value: "/in/graig-engineer",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/gregorisbachtsevanos/",
     icon: <LinkedInIcon />,
   },
   {
     label: t.contact.github_label,
     value: "github.com/graig",
-    href: "https://github.com",
+    href: "https://github.com/gregorisbachtsevanos",
     icon: <GitHubIcon />,
   },
   {
