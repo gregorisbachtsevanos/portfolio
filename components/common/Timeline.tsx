@@ -28,7 +28,7 @@ export default function Timeline(): JSX.Element {
           {/* Sticky left */}
           <div className="lg:sticky lg:top-28 lg:self-start">
             <p className="section-label mb-5 reveal">{t.timeline.label}</p>
-            <h2 className="reveal reveal-delay-1 text-4xl md:text-5xl font-extrabold text-text tracking-tight leading-tight mb-6">
+            <h2 className="reveal reveal-delay-1 text-[clamp(2rem,6vw,4.5rem)] font-extrabold text-text tracking-tight leading-tight mb-6">
               {t.timeline.heading}
             </h2>
             <p className="reveal reveal-delay-2 text-muted-2 text-[14px] leading-relaxed font-mono">

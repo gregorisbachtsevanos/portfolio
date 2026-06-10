@@ -12,7 +12,7 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="section-label mb-4 reveal">{t.projects.label}</p>
-          <h2 className="reveal reveal-delay-1 text-4xl md:text-5xl font-extrabold text-text tracking-tight mb-4">
+          <h2 className="reveal reveal-delay-1 text-[clamp(2rem,6vw,4.5rem)] font-extrabold text-text tracking-tight mb-4">
             {t.projects.heading}
           </h2>
           <p className="reveal reveal-delay-2 text-muted-2 text-[14px] max-w-sm mx-auto font-mono leading-relaxed">

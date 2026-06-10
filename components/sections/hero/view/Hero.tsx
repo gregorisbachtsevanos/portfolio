@@ -22,7 +22,7 @@ export default function Hero() {
           <div className="z-10">
             <p className="section-label mb-6 reveal">{t.hero.label}</p>
             <h1
-              className="reveal reveal-delay-1 font-extrabold text-text leading-[1.04] tracking-tight text-5xl md:text-6xl xl:text-7xl mb-6"
+              className="reveal reveal-delay-1 font-extrabold text-text leading-[1.04] tracking-tight text-[clamp(2rem,6vw,4.5rem)] mb-6"
               style={{ textShadow: "0px 0px 25px var(--bg)" }}
             >
               {t.hero.headline}
@@ -58,9 +58,7 @@ export default function Hero() {
             <div className="reveal reveal-delay-4 flex gap-8 mt-14 pt-8 border-t border-border">
               {stats(t).map((s) => (
                 <div key={s.label}>
-                  <div className="text-2xl font-bold text-text">
-                    {s.value}
-                  </div>
+                  <div className="text-2xl font-bold text-text">{s.value}</div>
                   <div className="text-[12px] text-muted-2 mt-0.5 font-mono">
                     {s.label}
                   </div>

@@ -13,7 +13,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <p className="section-label mb-5 reveal">{t.contact.label}</p>
-            <h2 className="reveal reveal-delay-1 text-4xl font-extrabold text-text tracking-tight mb-4">
+            <h2 className="reveal reveal-delay-1 text-[clamp(2rem,6vw,4.5rem)] font-extrabold text-text tracking-tight mb-4">
               {t.contact.heading}
             </h2>
             <p className="reveal reveal-delay-2 text-muted-2 text-[14px] font-mono leading-relaxed mb-12">

@@ -12,7 +12,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="section-label mb-5 reveal">{t.about.label}</p>
-            <h2 className="reveal reveal-delay-1 text-4xl md:text-5xl font-extrabold text-text leading-tight tracking-tight mb-8">
+            <h2 className="reveal reveal-delay-1 text-[clamp(2rem,6vw,4.5rem)] font-extrabold text-text leading-tight tracking-tight mb-8">
               {t.about.heading}
             </h2>
             <p className="reveal reveal-delay-2 text-muted-2 text-[15px] leading-relaxed mb-4">
