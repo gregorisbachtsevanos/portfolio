@@ -4,7 +4,7 @@ export const PROJECT_IMAGES = [
   "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
 ];
 export const PROJECT_TAGS = [
-  ["Next.js", "Postgres", "Redis"],
+  ["Node.js", "Express.js", "Postgres"],
   ["React", "WebSockets", "Prisma"],
-  ["TypeScript", "GraphQL", "D3"],
+  ["TypeScript", "REST API", "Webhooks"],
 ];

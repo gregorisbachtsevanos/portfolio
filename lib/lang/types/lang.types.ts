@@ -50,10 +50,13 @@ export interface Translations {
     view_all: string;
     p1_title: string;
     p1_desc: string;
+    p1_link: string;
     p2_title: string;
     p2_desc: string;
+    p2_link: string;
     p3_title: string;
     p3_desc: string;
+    p3_link: string;
   };
   timeline: {
     label: string;

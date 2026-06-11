@@ -58,12 +58,15 @@ export const en: Translations = {
     p1_title: "Authentication platform",
     p1_desc:
       "A production-grade auth platform with OAuth, MFA, and role-based access control. Built for scale.",
-    p2_title: "Task management",
+    p1_link: "",
+    p2_title: "TradeOps",
     p2_desc:
-      "Real-time collaborative project management tool with drag-and-drop, live cursors, and offline sync.",
-    p3_title: "Developer dashboard",
+      "A production-ready automated trading platform that receives TradingView webhook alerts and executes trades with risk management.",
+    p2_link: "https://github.com/gregorisbachtsevanos/TradeOps",
+    p3_title: "Frame-UI",
     p3_desc:
-      "Internal developer experience platform aggregating CI status, deployments, incidents, and on-call.",
+      "A lightweight, reusable UI component library that speeds up frontend development with consistent modern interface components. It’s designed for scalability and maintainability with a modular architecture separating core components, layouts, and utility styles for easy extensibility.",
+    p3_link: "https://github.com/gregorisbachtsevanos/Frame-UI",
   },
   timeline: {
     label: "Experience",

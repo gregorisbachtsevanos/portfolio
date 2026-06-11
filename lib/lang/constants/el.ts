@@ -52,18 +52,21 @@ export const el: Translations = {
   projects: {
     label: "Εργασία",
     heading: "Επιλεγμένα Έργα",
-    sub: "Μια επιλογή πρόσφατης εργασίας που καλύπτει full-stack ανάπτυξη και design.",
+    sub: "Μία επιλογή πρόσφατης εργασίας που καλύπτει full-stack ανάπτυξη και design.",
     view_project: "Δες το έργο",
     view_all: "Όλα τα έργα",
     p1_title: "Πλατφόρμα Αυθεντικοποίησης",
     p1_desc:
       "Πλατφόρμα αυθεντικοποίησης παραγωγικού επιπέδου με OAuth, MFA και έλεγχο πρόσβασης. Σχεδιασμένη για κλίμακα.",
-    p2_title: "Διαχείριση Εργασιών",
+    p1_link: "",
+    p2_title: "TradeOps",
     p2_desc:
-      "Εργαλείο συνεργατικής διαχείρισης έργων σε πραγματικό χρόνο με drag-and-drop και συγχρονισμό offline.",
-    p3_title: "Dashboard Προγραμματιστή",
+      "Αυτοματοποιημένο σύστημα trading που συνδέεται με το TradingView μέσω webhooks και εκτελεί συναλλαγές άμεσα, με ενσωματωμένη διαχείριση ρίσκου.",
+    p2_link: "https://github.com/gregorisbachtsevanos/TradeOps",
+    p3_title: "Frame-UI",
     p3_desc:
-      "Εσωτερική πλατφόρμα που συγκεντρώνει CI status, deployments, incidents και on-call πληροφορίες.",
+      "Μία ελαφριά και επεκτάσιμη βιβλιοθήκη UI components που επιταχύνει την ανάπτυξη frontend, προσφέροντας συνεπή και σύγχρονα στοιχεία διεπαφής. Με modular αρχιτεκτονική και καθαρό διαχωρισμό σε components, layouts και utilities, διευκολύνει τη συντήρηση και την κλιμάκωση κάθε project.",
+    p3_link: "https://github.com/gregorisbachtsevanos/Frame-UI",
   },
   timeline: {
     label: "Εμπειρία",

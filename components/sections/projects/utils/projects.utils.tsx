@@ -6,18 +6,21 @@ export const structureProjects = (t: Translations): ProjectItem[] => [
   {
     title: t.projects.p1_title,
     desc: t.projects.p1_desc,
+    link: t.projects.p1_link,
     tags: PROJECT_TAGS[0],
     img: PROJECT_IMAGES[0],
   },
   {
     title: t.projects.p2_title,
     desc: t.projects.p2_desc,
+    link: t.projects.p2_link,
     tags: PROJECT_TAGS[1],
     img: PROJECT_IMAGES[1],
   },
   {
     title: t.projects.p3_title,
     desc: t.projects.p3_desc,
+    link: t.projects.p3_link,
     tags: PROJECT_TAGS[2],
     img: PROJECT_IMAGES[2],
   },

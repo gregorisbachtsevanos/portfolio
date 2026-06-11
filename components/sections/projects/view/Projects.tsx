@@ -24,7 +24,7 @@ export default function Projects() {
           {projects.map((p, i) => (
             <div
               key={p.title}
-              className={`reveal reveal-delay-${i + 1} group bg-surface border border-border rounded-2xl overflow-hidden hover:border-border-2 transition-colors`}
+              className={`reveal reveal-delay-${i + 1} group bg-surface border border-border rounded-2xl overflow-hidden hover:border-border-2 transition-colors flex flex-col`}
             >
               <div className="img-zoom relative h-48">
                 <Image
@@ -35,35 +35,31 @@ export default function Projects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-overlay-surface-80 to-transparent" />
               </div>
-              <div className="p-6">
-                <h3 className="text-text font-bold text-lg mb-2">{p.title}</h3>
-                <p className="text-muted-2 text-[13px] leading-relaxed mb-5">
-                  {p.desc}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-5">
+              <div className="p-6 flex flex-col flex-1 justify-between">
+                <div>
+                  <h3 className="text-text font-bold text-lg mb-2">
+                    {p.title}
+                  </h3>
+
+                  <p className="text-muted-2 text-[13px] leading-relaxed">
+                    {p.desc}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mt-4">
                   {p.tags.map((tag) => (
                     <span key={tag} className="tag">
                       {tag}
                     </span>
                   ))}
-                </div>
-                <a
-                  href="https://github.com/gregorisbachtsevanos?tab=repositories"
-                  target="_blank"
-                  className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-accent hover:gap-2.5 transition-all"
-                >
-                  {t.projects.view_project}
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    className="mt-5 inline-flex items-center gap-1.5 text-[12px] font-semibold text-accent hover:gap-2.5 transition-all"
                   >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
+                    {t.projects.view_project}
+                  </a>
+                </div>
               </div>
             </div>
           ))}
