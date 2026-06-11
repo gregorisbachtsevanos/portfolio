@@ -23,8 +23,8 @@ export const structureProjects = (
     tags: t.projects.project2.tags,
     img:
       theme === "dark"
-        ? [...t.projects.project1.images.light]
-        : [...t.projects.project1.images.dark],
+        ? [...t.projects.project2.images.light]
+        : [...t.projects.project2.images.dark],
   },
   {
     title: t.projects.project3.title,
@@ -33,7 +33,7 @@ export const structureProjects = (
     tags: t.projects.project3.tags,
     img:
       theme === "dark"
-        ? [...t.projects.project1.images.light]
-        : [...t.projects.project1.images.dark],
+        ? [...t.projects.project3.images.light]
+        : [...t.projects.project3.images.dark],
   },
 ];

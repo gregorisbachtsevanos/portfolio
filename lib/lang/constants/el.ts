@@ -69,14 +69,14 @@ export const el: Translations = {
       link: "",
       images: {
         dark: [
-          "/tradeOps/markets_dark.png",
-          "/tradeOps/trades_dark.png",
-          "/tradeOps/analytics_dark.png",
+          "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=80",
+          "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=80",
+          "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=80",
         ],
         light: [
-          "/tradeOps/markets_light.png",
-          "/tradeOps/trades_light.png",
-          "/tradeOps/analytics_light.png",
+          "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=80",
+          "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=80",
+          "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=80",
         ],
       },
       tags: ["Node.js", "Express.js", "Postgres"],
@@ -105,14 +105,14 @@ export const el: Translations = {
       link: "https://github.com/gregorisbachtsevanos/Frame-UI",
       images: {
         dark: [
-          "/tradeOps/markets_dark.png",
-          "/tradeOps/trades_dark.png",
-          "/tradeOps/analytics_dark.png",
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
         ],
         light: [
-          "/tradeOps/markets_light.png",
-          "/tradeOps/trades_light.png",
-          "/tradeOps/analytics_light.png",
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
         ],
       },
       tags: ["TS", "Vanilla-Extract", "Storybook"],
