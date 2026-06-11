@@ -1,5 +1,5 @@
-import { el } from "../lang/constants/el";
-import { en } from "../lang/constants/en";
+import { el } from "../lang/constants/el/el";
+import { en } from "../lang/constants/en/en";
 import { Translations } from "../lang/types/lang.types";
 
 export type Locale = "en" | "el";
