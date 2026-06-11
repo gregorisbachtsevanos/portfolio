@@ -2,12 +2,11 @@
 import { useApp } from "@/lib/AppContext";
 import Image from "next/image";
 import { structureProjects } from "../utils/projects.utils";
-import ProjectSlider from "../ProjectSlider";
+import ProjectSlider from "../../../ui/ProjectSlider";
 
 export default function Projects() {
   const { t, theme } = useApp();
   const projects = structureProjects(t, theme);
-  console.log(theme);
 
   return (
     <section id="projects" className="bg-bg-alt border-t border-border py-28">
