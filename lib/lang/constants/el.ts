@@ -33,20 +33,28 @@ export const el: Translations = {
     label: "Δεξιότητες",
     heading: "Τεχνική Εξειδίκευση",
     sub: "Εξειδικευμένος σε ολόκληρο το stack — από γρήγορες, λειτουργικές εφαρμογές έως σύνθετα συστήματα.",
-    card1_title: "React, Next.js, TypeScript, Redux, Styled Components, Vite",
-    card1_desc:
-      "Δημιουργία ισχυρών βιβλιοθηκών components και κλιμακούμενων frontend αρχιτεκτονικών.",
-    card2_title: "Node.js & APIs",
-    card2_desc:
-      "Σχεδιασμός εφαρμογών υψηλής απόδοσης και κλιμακούμενων REST / GraphQL APIs.",
-    card3_title: "Cloud & DevOps",
-    card3_desc:
-      "Εκτεταμένη εμπειρία σε cloud υποδομή, CI/CD pipelines και DevOps πρακτικές.",
-    card4_title: "PostgreSQL · Redis · MongoDB",
-    card5_title: "Testing & Ποιότητα",
-    card5_desc:
-      "Jest, Playwright, Vitest — γιατί ο κώδικας που αξίζει είναι αυτός που δουλεύει.",
-    card6_title: "Analytics & Απόδοση",
+    card1: {
+      title: "React, Next.js, TypeScript, Redux, Styled Components, Vite",
+      desc: "Δημιουργία ισχυρών βιβλιοθηκών components και κλιμακούμενων frontend αρχιτεκτονικών.",
+    },
+    card2: {
+      title: "Node.js & APIs",
+      desc: "Σχεδιασμός εφαρμογών υψηλής απόδοσης και κλιμακούμενων REST / GraphQL APIs.",
+    },
+    card3: {
+      title: "Cloud & DevOps",
+      desc: "Εκτεταμένη εμπειρία σε cloud υποδομή, CI/CD pipelines και DevOps πρακτικές.",
+    },
+    card4: {
+      title: "PostgreSQL · Redis · MongoDB",
+    },
+    card5: {
+      title: "Testing & Ποιότητα",
+      desc: "Jest, Playwright, Vitest — γιατί ο κώδικας που αξίζει είναι αυτός που δουλεύει.",
+    },
+    card6: {
+      title: "Analytics & Απόδοση",
+    },
     learn_more: "Μάθε περισσότερα →",
   },
   projects: {
@@ -55,18 +63,60 @@ export const el: Translations = {
     sub: "Μία επιλογή πρόσφατης εργασίας που καλύπτει full-stack ανάπτυξη και design.",
     view_project: "Δες το έργο",
     view_all: "Όλα τα έργα",
-    p1_title: "Πλατφόρμα Αυθεντικοποίησης",
-    p1_desc:
-      "Πλατφόρμα αυθεντικοποίησης παραγωγικού επιπέδου με OAuth, MFA και έλεγχο πρόσβασης. Σχεδιασμένη για κλίμακα.",
-    p1_link: "",
-    p2_title: "TradeOps",
-    p2_desc:
-      "Αυτοματοποιημένο σύστημα trading που συνδέεται με το TradingView μέσω webhooks και εκτελεί συναλλαγές άμεσα, με ενσωματωμένη διαχείριση ρίσκου.",
-    p2_link: "https://github.com/gregorisbachtsevanos/TradeOps",
-    p3_title: "Frame-UI",
-    p3_desc:
-      "Μία ελαφριά και επεκτάσιμη βιβλιοθήκη UI components που επιταχύνει την ανάπτυξη frontend, προσφέροντας συνεπή και σύγχρονα στοιχεία διεπαφής. Με modular αρχιτεκτονική και καθαρό διαχωρισμό σε components, layouts και utilities, διευκολύνει τη συντήρηση και την κλιμάκωση κάθε project.",
-    p3_link: "https://github.com/gregorisbachtsevanos/Frame-UI",
+    project1: {
+      title: "Πλατφόρμα Αυθεντικοποίησης",
+      desc: "Πλατφόρμα αυθεντικοποίησης παραγωγικού επιπέδου με OAuth, MFA και έλεγχο πρόσβασης. Σχεδιασμένη για κλίμακα.",
+      link: "",
+      images: {
+        dark: [
+          "/tradeOps/markets_dark.png",
+          "/tradeOps/trades_dark.png",
+          "/tradeOps/analytics_dark.png",
+        ],
+        light: [
+          "/tradeOps/markets_light.png",
+          "/tradeOps/trades_light.png",
+          "/tradeOps/analytics_light.png",
+        ],
+      },
+      tags: ["Node.js", "Express.js", "Postgres"],
+    },
+    project2: {
+      title: "TradeOps",
+      desc: "Αυτοματοποιημένο σύστημα trading που συνδέεται με το TradingView μέσω webhooks και εκτελεί συναλλαγές άμεσα, με ενσωματωμένη διαχείριση ρίσκου.",
+      link: "https://github.com/gregorisbachtsevanos/TradeOps",
+      images: {
+        dark: [
+          "/tradeOps/markets_dark.png",
+          "/tradeOps/trades_dark.png",
+          "/tradeOps/analytics_dark.png",
+        ],
+        light: [
+          "/tradeOps/markets_light.png",
+          "/tradeOps/trades_light.png",
+          "/tradeOps/analytics_light.png",
+        ],
+      },
+      tags: ["React-Query", "WebSockets", "Webhooks"],
+    },
+    project3: {
+      title: "Frame-UI",
+      desc: "Μία ελαφριά και επεκτάσιμη βιβλιοθήκη UI components που επιταχύνει την ανάπτυξη frontend, προσφέροντας συνεπή και σύγχρονα στοιχεία διεπαφής. Με modular αρχιτεκτονική και καθαρό διαχωρισμό σε components, layouts και utilities, διευκολύνει τη συντήρηση και την κλιμάκωση κάθε project.",
+      link: "https://github.com/gregorisbachtsevanos/Frame-UI",
+      images: {
+        dark: [
+          "/tradeOps/markets_dark.png",
+          "/tradeOps/trades_dark.png",
+          "/tradeOps/analytics_dark.png",
+        ],
+        light: [
+          "/tradeOps/markets_light.png",
+          "/tradeOps/trades_light.png",
+          "/tradeOps/analytics_light.png",
+        ],
+      },
+      tags: ["TS", "Vanilla-Extract", "Storybook"],
+    },
   },
   timeline: {
     label: "Εμπειρία",

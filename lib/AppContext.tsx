@@ -3,11 +3,13 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { translations, type Locale } from "@/lib/utils/i18n";
 import { Translations } from "./lang/types/lang.types";
 
+export type Theme = "dark" | "light";
+
 interface AppContextType {
   locale: Locale;
   setLocale: (l: Locale) => void;
   t: Translations;
-  theme: "dark" | "light";
+  theme: Theme;
   toggleTheme: () => void;
 }
 
@@ -15,11 +17,11 @@ const AppContext = createContext<AppContextType | null>(null);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("en");
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<Theme>("dark");
 
   // Persist + apply theme
   useEffect(() => {
-    const saved = localStorage.getItem("theme") as "dark" | "light" | null;
+    const saved = localStorage.getItem("theme") as Theme | null;
     if (saved) setTheme(saved);
     else if (window.matchMedia("(prefers-color-scheme: light)").matches)
       setTheme("light");

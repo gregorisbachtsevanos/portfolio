@@ -30,16 +30,12 @@ export interface Translations {
     label: string;
     heading: string;
     sub: string;
-    card1_title: string;
-    card1_desc: string;
-    card2_title: string;
-    card2_desc: string;
-    card3_title: string;
-    card3_desc: string;
-    card4_title: string;
-    card5_title: string;
-    card5_desc: string;
-    card6_title: string;
+    card1: Card;
+    card2: Card;
+    card3: Card;
+    card4: Card;
+    card5: Card;
+    card6: Card;
     learn_more: string;
   };
   projects: {
@@ -48,15 +44,9 @@ export interface Translations {
     sub: string;
     view_project: string;
     view_all: string;
-    p1_title: string;
-    p1_desc: string;
-    p1_link: string;
-    p2_title: string;
-    p2_desc: string;
-    p2_link: string;
-    p3_title: string;
-    p3_desc: string;
-    p3_link: string;
+    project1: Project;
+    project2: Project;
+    project3: Project;
   };
   timeline: {
     label: string;
@@ -95,4 +85,17 @@ export interface Translations {
     legal: string;
     built: string;
   };
+}
+
+interface Project {
+  title: string;
+  desc: string;
+  link: string;
+  images: { dark: string[]; light: string[] };
+  tags: string[];
+}
+
+interface Card {
+  title: string;
+  desc?: string;
 }

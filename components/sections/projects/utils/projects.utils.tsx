@@ -1,27 +1,39 @@
 import { Translations } from "@/lib/lang/types/lang.types";
-import { PROJECT_IMAGES, PROJECT_TAGS } from "../constants/project.consts";
 import { ProjectItem } from "../types/project.types";
+import { Theme } from "@/lib/AppContext";
 
-export const structureProjects = (t: Translations): ProjectItem[] => [
+export const structureProjects = (
+  t: Translations,
+  theme: Theme,
+): ProjectItem[] => [
   {
-    title: t.projects.p1_title,
-    desc: t.projects.p1_desc,
-    link: t.projects.p1_link,
-    tags: PROJECT_TAGS[0],
-    img: PROJECT_IMAGES[0],
+    title: t.projects.project1.title,
+    desc: t.projects.project1.desc,
+    link: t.projects.project1.link,
+    tags: t.projects.project1.tags,
+    img:
+      theme === "dark"
+        ? [...t.projects.project1.images.light]
+        : [...t.projects.project1.images.dark],
   },
   {
-    title: t.projects.p2_title,
-    desc: t.projects.p2_desc,
-    link: t.projects.p2_link,
-    tags: PROJECT_TAGS[1],
-    img: PROJECT_IMAGES[1],
+    title: t.projects.project2.title,
+    desc: t.projects.project2.desc,
+    link: t.projects.project2.link,
+    tags: t.projects.project2.tags,
+    img:
+      theme === "dark"
+        ? [...t.projects.project1.images.light]
+        : [...t.projects.project1.images.dark],
   },
   {
-    title: t.projects.p3_title,
-    desc: t.projects.p3_desc,
-    link: t.projects.p3_link,
-    tags: PROJECT_TAGS[2],
-    img: PROJECT_IMAGES[2],
+    title: t.projects.project3.title,
+    desc: t.projects.project3.desc,
+    link: t.projects.project3.link,
+    tags: t.projects.project3.tags,
+    img:
+      theme === "dark"
+        ? [...t.projects.project1.images.light]
+        : [...t.projects.project1.images.dark],
   },
 ];

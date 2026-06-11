@@ -2,10 +2,12 @@
 import { useApp } from "@/lib/AppContext";
 import Image from "next/image";
 import { structureProjects } from "../utils/projects.utils";
+import ProjectSlider from "../ProjectSlider";
 
 export default function Projects() {
-  const { t } = useApp();
-  const projects = structureProjects(t);
+  const { t, theme } = useApp();
+  const projects = structureProjects(t, theme);
+  console.log(theme);
 
   return (
     <section id="projects" className="bg-bg-alt border-t border-border py-28">
@@ -26,15 +28,7 @@ export default function Projects() {
               key={p.title}
               className={`reveal reveal-delay-${i + 1} group bg-surface border border-border rounded-2xl overflow-hidden hover:border-border-2 transition-colors flex flex-col`}
             >
-              <div className="img-zoom relative h-48">
-                <Image
-                  src={p.img}
-                  alt={p.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-overlay-surface-80 to-transparent" />
-              </div>
+              <ProjectSlider images={p.img} alt={p.title} />
               <div className="p-6 flex flex-col flex-1 justify-between">
                 <div>
                   <h3 className="text-text font-bold text-lg mb-2">

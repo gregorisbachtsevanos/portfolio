@@ -22,10 +22,10 @@ export default function TechnicalExpertise() {
           <div className="bg-bg-alt p-7 flex flex-col justify-between min-h-[280px]">
             <div>
               <h3 className="text-text font-bold text-xl leading-snug mb-3">
-                {t.expertise.card1_title}
+                {t.expertise.card1.title}
               </h3>
               <p className="text-muted-2 text-[13px] leading-relaxed">
-                {t.expertise.card1_desc}
+                {t.expertise.card1.desc}
               </p>
             </div>
             <a
@@ -46,11 +46,11 @@ export default function TechnicalExpertise() {
             />
             <div className="absolute inset-0 p-7 flex flex-col justify-between">
               <h3 className="text-white font-bold text-xl leading-snug">
-                {t.expertise.card2_title}
+                {t.expertise.card2.title}
               </h3>
               <div>
                 <p className="text-[#bbb] text-[13px] leading-relaxed mb-4">
-                  {t.expertise.card2_desc}
+                  {t.expertise.card2.desc}
                 </p>
                 <a
                   href="#"
@@ -66,10 +66,10 @@ export default function TechnicalExpertise() {
           <div className="bg-bg-alt p-7 flex flex-col justify-between min-h-[280px]">
             <div>
               <h3 className="text-text font-bold text-xl leading-snug mb-3">
-                {t.expertise.card3_title}
+                {t.expertise.card3.title}
               </h3>
               <p className="text-muted-2 text-[13px] leading-relaxed">
-                {t.expertise.card3_desc}
+                {t.expertise.card3.desc}
               </p>
             </div>
             <a
@@ -90,7 +90,7 @@ export default function TechnicalExpertise() {
             />
             <div className="absolute inset-0 p-7 flex flex-col justify-end">
               <h3 className="text-white font-bold text-lg leading-snug">
-                {t.expertise.card4_title}
+                {t.expertise.card4.title}
               </h3>
             </div>
           </div>
@@ -99,10 +99,10 @@ export default function TechnicalExpertise() {
           <div className="bg-bg-alt p-7 flex flex-col justify-between min-h-[240px]">
             <div>
               <h3 className="text-text font-bold text-xl leading-snug mb-3">
-                {t.expertise.card5_title}
+                {t.expertise.card5.title}
               </h3>
               <p className="text-muted-2 text-[13px] leading-relaxed">
-                {t.expertise.card5_desc}
+                {t.expertise.card5.desc}
               </p>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function TechnicalExpertise() {
             />
             <div className="absolute inset-0 p-7 flex flex-col justify-end">
               <h3 className="text-white font-bold text-lg leading-snug">
-                {t.expertise.card6_title}
+                {t.expertise.card6.title}
               </h3>
             </div>
           </div>

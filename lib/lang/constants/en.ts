@@ -33,20 +33,28 @@ export const en: Translations = {
     label: "Skills",
     heading: "Technical expertise",
     sub: "Skilled across the full stack — from building fast, functional, great applications.",
-    card1_title: "React, Next.js, TypeScript, Redux, Styled Components, Vite",
-    card1_desc:
-      "Building robust component libraries and scalable frontend architectures with modern tooling and best practices.",
-    card2_title: "Node.js & APIs",
-    card2_desc:
-      "Designing high-performance server-side applications and scalable REST / GraphQL APIs.",
-    card3_title: "Cloud & DevOps",
-    card3_desc:
-      "Comprehensive experience across cloud infrastructure, CI/CD pipelines, and DevOps practices enabling seamless deployment.",
-    card4_title: "PostgreSQL · Redis · MongoDB",
-    card5_title: "Testing & Quality",
-    card5_desc:
-      "Jest, Playwright, Vitest — because shipped code that works is the only kind worth shipping.",
-    card6_title: "Analytics & Performance",
+    card1: {
+      title: "React, Next.js, TypeScript, Redux, Styled Components, Vite",
+      desc: "Building robust component libraries and scalable frontend architectures with modern tooling and best practices.",
+    },
+    card2: {
+      title: "Node.js & APIs",
+      desc: "Designing high-performance server-side applications and scalable REST / GraphQL APIs.",
+    },
+    card3: {
+      title: "Cloud & DevOps",
+      desc: "Comprehensive experience across cloud infrastructure, CI/CD pipelines, and DevOps practices enabling seamless deployment.",
+    },
+    card4: {
+      title: "PostgreSQL · Redis · MongoDB",
+    },
+    card5: {
+      title: "Testing & Quality",
+      desc: "Jest, Playwright, Vitest — because shipped code that works is the only kind worth shipping.",
+    },
+    card6: {
+      title: "Analytics & Performance",
+    },
     learn_more: "Learn more →",
   },
   projects: {
@@ -55,18 +63,60 @@ export const en: Translations = {
     sub: "A selection of recent work spanning full-stack development and design.",
     view_project: "View project",
     view_all: "View all projects",
-    p1_title: "Authentication platform",
-    p1_desc:
-      "A production-grade auth platform with OAuth, MFA, and role-based access control. Built for scale.",
-    p1_link: "",
-    p2_title: "TradeOps",
-    p2_desc:
-      "A production-ready automated trading platform that receives TradingView webhook alerts and executes trades with risk management.",
-    p2_link: "https://github.com/gregorisbachtsevanos/TradeOps",
-    p3_title: "Frame-UI",
-    p3_desc:
-      "A lightweight, reusable UI component library that speeds up frontend development with consistent modern interface components. It’s designed for scalability and maintainability with a modular architecture separating core components, layouts, and utility styles for easy extensibility.",
-    p3_link: "https://github.com/gregorisbachtsevanos/Frame-UI",
+    project1: {
+      title: "Authentication platform",
+      desc: "A production-grade auth platform with OAuth, MFA, and role-based access control. Built for scale.",
+      link: "",
+      images: {
+        dark: [
+          "/tradeOps/markets_dark.png",
+          "/tradeOps/trades_dark.png",
+          "/tradeOps/analytics_dark.png",
+        ],
+        light: [
+          "/tradeOps/markets_light.png",
+          "/tradeOps/trades_light.png",
+          "/tradeOps/analytics_light.png",
+        ],
+      },
+      tags: ["Node.js", "Express.js", "Postgres"],
+    },
+    project2: {
+      title: "TradeOps",
+      desc: "A production-ready automated trading platform that receives TradingView webhook alerts and executes trades with risk management. Both dark and light mode versions available.",
+      link: "https://github.com/gregorisbachtsevanos/TradeOps",
+      images: {
+        dark: [
+          "/tradeOps/markets_dark.png",
+          "/tradeOps/trades_dark.png",
+          "/tradeOps/analytics_dark.png",
+        ],
+        light: [
+          "/tradeOps/markets_light.png",
+          "/tradeOps/trades_light.png",
+          "/tradeOps/analytics_light.png",
+        ],
+      },
+      tags: ["React-Query", "WebSockets", "Webhooks"],
+    },
+    project3: {
+      title: "Frame-UI",
+      desc: "A lightweight, reusable UI component library that speeds up frontend development with consistent modern interface components. It’s designed for scalability and maintainability with a modular architecture separating core components, layouts, and utility styles for easy extensibility.",
+      link: "https://github.com/gregorisbachtsevanos/Frame-UI",
+      images: {
+        dark: [
+          "/tradeOps/markets_dark.png",
+          "/tradeOps/trades_dark.png",
+          "/tradeOps/analytics_dark.png",
+        ],
+        light: [
+          "/tradeOps/markets_light.png",
+          "/tradeOps/trades_light.png",
+          "/tradeOps/analytics_light.png",
+        ],
+      },
+      tags: ["TS", "Vanilla-extract/css", "Storybook"],
+    },
   },
   timeline: {
     label: "Experience",
