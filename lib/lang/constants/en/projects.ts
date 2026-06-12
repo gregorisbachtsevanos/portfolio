@@ -46,14 +46,16 @@ export const enProjects = {
     link: "https://github.com/gregorisbachtsevanos/Frame-UI",
     images: {
       dark: [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+        "/frameUI/design_system_light.png",
+        ,
+        "/frameUI/homepage_light.png",
+        ,
       ],
       light: [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+        "/frameUI/design_system_light.png",
+        ,
+        "/frameUI/homepage_light.png",
+        ,
       ],
     },
     tags: ["TS", "Vanilla-extract/css", "Storybook"],
