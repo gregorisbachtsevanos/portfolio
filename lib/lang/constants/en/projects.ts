@@ -45,17 +45,11 @@ export const enProjects = {
     desc: "A lightweight, reusable UI component library that speeds up frontend development with consistent modern interface components. It’s designed for scalability and maintainability with a modular architecture separating core components, layouts, and utility styles for easy extensibility.",
     link: "https://github.com/gregorisbachtsevanos/Frame-UI",
     images: {
-      dark: [
-        "/frameUI/design_system_light.png",
-        ,
-        "/frameUI/homepage_light.png",
-        ,
-      ],
+      dark: ["/frameUI/design_system_light.png", "/frameUI/homepage_light.png"],
       light: [
         "/frameUI/design_system_light.png",
-        ,
+
         "/frameUI/homepage_light.png",
-        ,
       ],
     },
     tags: ["TS", "Vanilla-extract/css", "Storybook"],
