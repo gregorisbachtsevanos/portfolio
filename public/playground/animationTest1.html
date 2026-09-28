@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Anime.js Animation Demo</title>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				background: #111;
+				color: white;
+				overflow: hidden;
+			}
+
+			/* =========================
+           PRELOADER
+        ========================= */
+
+			.preloader-container {
+				position: fixed;
+				inset: 0;
+				z-index: 100;
+				background: #111;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				transition:
+					opacity 1s ease,
+					visibility 1s ease;
+			}
+
+			.renderOutPreloader {
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+			}
+
+			.preloader-content {
+				width: 90%;
+				max-width: 1000px;
+				text-align: center;
+			}
+
+			.animate-title,
+			.animate-text {
+				margin: 20px 0;
+				font-weight: 700;
+			}
+
+			.animate-title {
+				font-size: clamp(40px, 8vw, 100px);
+				color: #fff;
+			}
+
+			.animate-text {
+				font-size: clamp(18px, 3vw, 32px);
+				color: #888;
+			}
+
+			/*
+         * Important:
+         * Your JavaScript turns every character into a span.
+         */
+			.animate-title span,
+			.animate-text span {
+				display: inline-block;
+			}
+
+			/* =========================
+           NAME
+        ========================= */
+
+			.ml5 {
+				margin-top: 80px;
+				font-size: clamp(30px, 6vw, 70px);
+				font-weight: 700;
+			}
+
+			.ml5 .word {
+				display: inline-block;
+				opacity: 0;
+			}
+
+			/* =========================
+           MAIN APP
+        ========================= */
+
+			#app-container {
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				background: radial-gradient(circle at center, #252525 0%, #111 60%);
+
+				transition: opacity 1s ease;
+			}
+
+			/*
+         * Your JS removes "block-application"
+         * after 10.8 seconds.
+         */
+			.block-application {
+				opacity: 0;
+				pointer-events: none;
+			}
+
+			.main-container {
+				opacity: 0;
+			}
+
+			#main-container {
+				width: 90%;
+				max-width: 900px;
+				text-align: center;
+			}
+
+			.main-content h1 {
+				font-size: clamp(40px, 7vw, 80px);
+				margin-bottom: 20px;
+			}
+
+			.main-content p {
+				color: #aaa;
+				font-size: 20px;
+				line-height: 1.6;
+			}
+
+			.demo-card {
+				margin: 50px auto 0;
+				padding: 30px;
+				max-width: 600px;
+
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 20px;
+
+				backdrop-filter: blur(10px);
+			}
+
+			.demo-card span {
+				color: #7dd3fc;
+			}
+
+			/* =========================
+           SMALL SCREEN
+        ========================= */
+
+			@media (max-width: 600px) {
+				.ml5 {
+					margin-top: 50px;
+				}
+
+				.preloader-content {
+					width: 95%;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- ==================================
+         PRELOADER
+    =================================== -->
+
+		<div class="preloader-container">
+			<div class="preloader-content">
+				<h1 class="animate-title">Welcome</h1>
+
+				<p class="animate-text">Creating something beautiful...</p>
+
+				<h2 class="ml5">
+					<span class="word">John</span>
+					<span class="word">Doe</span>
+				</h2>
+			</div>
+		</div>
+
+		<!-- ==================================
+         MAIN APPLICATION
+    =================================== -->
+
+		<div id="app-container" class="block-application">
+			<main id="main-container" class="main-container">
+				<div class="main-content">
+					<h1>Main Application</h1>
+
+					<p>The preloader has finished.</p>
+
+					<div class="demo-card">
+						Your application is now visible.
+						<br /><br />
+						<span>Anime.js animations complete.</span>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<!-- Anime.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+
+		<script>
+			/* =========================================
+       LETTERS ANIMATION
+    ========================================= */
+
+			const lettersAnimation = () => {
+				const title = document.querySelector(".animate-title");
+
+				title.innerHTML = title.textContent.replace(
+					/\S/g,
+					"<span>$&</span>",
+				);
+
+				anime({
+					targets: ".animate-title span",
+
+					rotate: () => anime.random(-360, 360),
+
+					translateX: () => anime.random(-500, 500),
+
+					translateY: () => anime.random(-500, 500),
+
+					opacity: 0,
+
+					duration: 4000,
+
+					delay: anime.stagger(20),
+
+					easing: "easeInOutExpo",
+				});
+
+				const text = document.querySelector(".animate-text");
+
+				text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+				anime({
+					targets: ".animate-text span",
+
+					rotate: () => anime.random(-360, 360),
+
+					translateX: () => anime.random(-500, 500),
+
+					translateY: () => anime.random(-500, 500),
+
+					opacity: 0,
+
+					duration: 4000,
+
+					delay: anime.stagger(20),
+
+					easing: "easeInOutExpo",
+				});
+			};
+
+			/* =========================================
+       REMOVE PRELOADER
+    ========================================= */
+
+			const renderOutPreloader = () => {
+				setTimeout(() => {
+					document
+						.querySelector(".preloader-container")
+						.classList.add("renderOutPreloader");
+
+					document
+						.querySelector("#app-container")
+						.classList.remove("block-application");
+				}, 10800);
+			};
+
+			/* =========================================
+       NAME ANIMATION
+    ========================================= */
+
+			const renderName = () => {
+				setTimeout(() => {
+					anime
+						.timeline({
+							loop: false,
+						})
+
+						.add({
+							targets: ".ml5 .word",
+
+							scale: [14, 1],
+
+							opacity: [0, 1],
+
+							easing: "easeOutCirc",
+
+							duration: 800,
+
+							delay: (el, i) => 800 * i,
+						});
+				}, 3000);
+			};
+
+			/* =========================================
+       SHOW MAIN ELEMENTS
+    ========================================= */
+
+			const renderInElements = () => {
+				setTimeout(() => {
+					document
+						.getElementById("main-container")
+						.classList.remove("main-container");
+				}, 10800);
+			};
+
+			/* =========================================
+       START EVERYTHING
+    ========================================= */
+
+			lettersAnimation();
+
+			renderName();
+
+			renderOutPreloader();
+
+			renderInElements();
+		</script>
+	</body>
+</html>
