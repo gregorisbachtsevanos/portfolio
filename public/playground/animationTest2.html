@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Anime.js Animation Demo</title>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+
+				background: #111;
+
+				color: white;
+
+				overflow: hidden;
+			}
+
+			/* =====================================
+           PRELOADER
+        ===================================== */
+
+			.preloader-container {
+				position: fixed;
+
+				inset: 0;
+
+				z-index: 100;
+
+				background: #111;
+
+				display: flex;
+
+				align-items: center;
+
+				justify-content: center;
+
+				transition:
+					opacity 1s ease,
+					visibility 1s ease;
+			}
+
+			.renderOutPreloader {
+				opacity: 0;
+
+				visibility: hidden;
+
+				pointer-events: none;
+			}
+
+			.preloader-content {
+				width: 90%;
+
+				max-width: 1000px;
+
+				text-align: center;
+			}
+
+			/* =====================================
+           WELCOME
+        ===================================== */
+
+			.animate-title {
+				margin: 20px 0;
+
+				font-size: clamp(40px, 8vw, 100px);
+
+				font-weight: 700;
+
+				color: white;
+			}
+
+			.animate-title span {
+				display: inline-block;
+			}
+
+			/* =====================================
+           DESCRIPTION
+        ===================================== */
+
+			.animate-text {
+				margin: 20px 0;
+
+				font-size: clamp(18px, 3vw, 32px);
+
+				font-weight: 700;
+
+				color: #888;
+			}
+
+			.animate-text span {
+				display: inline-block;
+			}
+
+			/* =====================================
+           NAME
+        ===================================== */
+
+			.ml5 {
+				margin-top: 80px;
+
+				font-size: clamp(30px, 6vw, 70px);
+
+				font-weight: 700;
+
+				/*
+             * IMPORTANT:
+             *
+             * The entire name is hidden
+             * until renderName() is called.
+             */
+
+				visibility: hidden;
+			}
+
+			.ml5.name-visible {
+				visibility: visible;
+			}
+
+			.ml5 .word {
+				display: inline-block;
+			}
+
+			.ml5 .letter {
+				display: inline-block;
+
+				opacity: 0;
+			}
+
+			/* =====================================
+           MAIN APPLICATION
+        ===================================== */
+
+			#app-container {
+				min-height: 100vh;
+
+				display: flex;
+
+				align-items: center;
+
+				justify-content: center;
+
+				background: radial-gradient(circle at center, #252525 0%, #111 60%);
+
+				transition: opacity 1s ease;
+			}
+
+			.block-application {
+				opacity: 0;
+
+				pointer-events: none;
+			}
+
+			.main-container {
+				opacity: 0;
+			}
+
+			#main-container {
+				width: 90%;
+
+				max-width: 900px;
+
+				text-align: center;
+			}
+
+			/* =====================================
+           MAIN CONTENT
+        ===================================== */
+
+			.main-content h1 {
+				font-size: clamp(40px, 7vw, 80px);
+
+				margin-bottom: 20px;
+			}
+
+			.main-content p {
+				color: #aaa;
+
+				font-size: 20px;
+
+				line-height: 1.6;
+			}
+
+			.demo-card {
+				margin: 50px auto 0;
+
+				padding: 30px;
+
+				max-width: 600px;
+
+				background: rgba(255, 255, 255, 0.05);
+
+				border: 1px solid rgba(255, 255, 255, 0.1);
+
+				border-radius: 20px;
+
+				backdrop-filter: blur(10px);
+			}
+
+			.demo-card span {
+				color: #7dd3fc;
+			}
+
+			/* =====================================
+           MOBILE
+        ===================================== */
+
+			@media (max-width: 600px) {
+				.ml5 {
+					margin-top: 50px;
+				}
+
+				.preloader-content {
+					width: 95%;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- =====================================
+         PRELOADER
+    ===================================== -->
+
+		<div class="preloader-container">
+			<div class="preloader-content">
+				<!-- WELCOME -->
+
+				<h1 class="animate-title">Welcome</h1>
+
+				<!-- DESCRIPTION -->
+
+				<p class="animate-text">Creating something beautiful...</p>
+
+				<!-- NAME -->
+
+				<!--
+                This is completely invisible
+                when the page starts.
+            -->
+
+				<h2 class="ml5">
+					<span class="word"> John </span>
+
+					<span class="word"> Doe </span>
+				</h2>
+			</div>
+		</div>
+
+		<!-- =====================================
+         MAIN APPLICATION
+    ===================================== -->
+
+		<div id="app-container" class="block-application">
+			<main id="main-container" class="main-container">
+				<div class="main-content">
+					<h1>Main Application</h1>
+
+					<p>The preloader has finished.</p>
+
+					<div class="demo-card">
+						Your application is now visible.
+
+						<br />
+						<br />
+
+						<span> Anime.js animations complete. </span>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<!-- =====================================
+         ANIME.JS
+    ===================================== -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+
+		<script>
+			/* =====================================
+           SPLIT NAME INTO LETTERS
+        ===================================== */
+
+			const splitIntoLetters = (element) => {
+				const words = element.querySelectorAll(".word");
+
+				words.forEach((word) => {
+					const text = word.textContent.trim();
+
+					word.innerHTML = text
+						.split("")
+						.map((letter) => {
+							return `
+                                <span class="letter">
+                                    ${letter}
+                                </span>
+                            `;
+						})
+						.join("");
+				});
+			};
+
+			/* =====================================
+           WELCOME ANIMATION
+        ===================================== */
+
+			const lettersAnimation = () => {
+				const title = document.querySelector(".animate-title");
+
+				const text = document.querySelector(".animate-text");
+
+				/*
+				 * Split Welcome into letters
+				 */
+
+				title.innerHTML = title.textContent.replace(
+					/\S/g,
+					"<span>$&</span>",
+				);
+
+				/*
+				 * Split description into letters
+				 */
+
+				text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+				/*
+				 * WELCOME
+				 *
+				 * Normal position
+				 *       ↓
+				 * Random position
+				 *       ↓
+				 * Invisible
+				 */
+
+				anime({
+					targets: ".animate-title span",
+
+					rotate: () => anime.random(-360, 360),
+
+					translateX: () => anime.random(-500, 500),
+
+					translateY: () => anime.random(-500, 500),
+
+					opacity: [1, 0],
+
+					duration: 4000,
+
+					delay: anime.stagger(20),
+
+					easing: "easeInOutExpo",
+
+					/*
+					 * THIS IS IMPORTANT.
+					 *
+					 * Only after Welcome
+					 * has completely disappeared
+					 * do we show the name.
+					 */
+
+					complete: () => {
+						renderName();
+					},
+				});
+
+				/*
+				 * DESCRIPTION
+				 */
+
+				anime({
+					targets: ".animate-text span",
+
+					rotate: () => anime.random(-360, 360),
+
+					translateX: () => anime.random(-500, 500),
+
+					translateY: () => anime.random(-500, 500),
+
+					opacity: [1, 0],
+
+					duration: 4000,
+
+					delay: anime.stagger(20),
+
+					easing: "easeInOutExpo",
+				});
+			};
+
+			/* =====================================
+           NAME ANIMATION
+        ===================================== */
+
+			const renderName = () => {
+				const name = document.querySelector(".ml5");
+
+				// Split "John Doe" into individual letters
+				splitIntoLetters(name);
+
+				const letters = name.querySelectorAll(".letter");
+
+				// Put letters at random starting positions
+				// while the name is still invisible
+				anime.set(letters, {
+					translateX: () => anime.random(-500, 500),
+					translateY: () => anime.random(-500, 500),
+					rotate: () => anime.random(-360, 360),
+					opacity: 0,
+				});
+
+				// Now make the name visible
+				name.classList.add("name-visible");
+
+				// Animate the letters FROM random positions
+				// TO their normal positions
+				anime({
+					targets: letters,
+
+					translateX: 0,
+					translateY: 0,
+					rotate: 0,
+
+					opacity: 1,
+
+					duration: 4000,
+
+					delay: anime.stagger(40),
+
+					easing: "easeInOutExpo",
+				});
+			};
+
+			/* =====================================
+           REMOVE PRELOADER
+        ===================================== */
+
+			const renderOutPreloader = () => {
+				/*
+				 * Welcome animation:
+				 * 4 seconds
+				 *
+				 * Name animation:
+				 * 4 seconds
+				 *
+				 * Start fading the preloader
+				 * after approximately 8 seconds.
+				 */
+
+				setTimeout(() => {
+					document
+						.querySelector(".preloader-container")
+						.classList.add("renderOutPreloader");
+
+					document
+						.querySelector("#app-container")
+						.classList.remove("block-application");
+				}, 9000);
+			};
+
+			/* =====================================
+           SHOW MAIN CONTENT
+        ===================================== */
+
+			const renderInElements = () => {
+				setTimeout(() => {
+					document
+						.getElementById("main-container")
+						.classList.remove("main-container");
+				}, 9000);
+			};
+
+			/* =====================================
+           START
+        ===================================== */
+
+			lettersAnimation();
+
+			renderOutPreloader();
+
+			renderInElements();
+		</script>
+	</body>
+</html>
